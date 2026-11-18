@@ -107,6 +107,47 @@ document.addEventListener('DOMContentLoaded', () => {
       "est.cta_whatsapp": "إرسال المقايسة للمهندس حسن عبر واتساب",
       "est.cta_print": "طباعة المقايسة (PDF)",
 
+      // Interactive Lab translations
+      "nav.lab": "المعمل التفاعلي ⚡",
+      "lab.tag": "تجربة تفاعلية حصرية",
+      "lab.title": "معمل الإبداع المعماري التفاعلي",
+      "lab.subtitle": "اختبر الرؤية الهندسية، تفاعل مع الإضاءة والخامات، واكتشف الطراز المعماري الأنسب لبيتك",
+      "lab.tab_ba": "قبل وبعد",
+      "lab.tab_light": "محاكي الشمس والضوء",
+      "lab.tab_360": "جولة 360° بانورامية",
+      "lab.tab_mat": "مغير الخامات اللحظي",
+      "lab.tab_quiz": "كويز الطراز المناسب",
+
+      "ba.title": "التحول المعماري: من الطوب الأحمر إلى التسليم الفاخر",
+      "ba.desc": "اسحب الخط الفاصل يميناً ويساراً لمشاهدة دقة التنفيذ من مرحلة العظم وحتى التشطيب المتكامل",
+      "ba.badge": "مشروع هايد بارك - ماونتن فيو",
+      "ba.raw_label": "مرحلة العظم والتأسيس",
+      "ba.fin_label": "التسليم النهائي الفاخر",
+      "ba.hint": "💡 اسحب المقبض بالماوس أو اللمس لرؤية التحول الكامل",
+
+      "light.title": "محاكي حركة الشمس ودراسة الإضاءة المعمارية",
+      "light.desc": "اختبر كيف يتغير الإحساس بالفراغ المعماري وكتل الواجهة عبر أوقات اليوم المختلفة",
+      "light.morning": "شمس الصباح",
+      "light.sunset": "الغروب الذهبي",
+      "light.night": "الإضاءة الليلية",
+
+      "tour.title": "معاينة بانورامية 360° للفراغات المعمارية",
+      "tour.desc": "استكشف أدق التفاصيل الهندسية والفرش بالدوران الكامل في جميع الاتجاهات",
+      "tour.r1": "المطبخ المودرن 360°",
+      "tour.r2": "غرفة النوم البانورامية",
+      "tour.drag_hint": "اسحب لليمين واليسار للدوران 360°",
+
+      "mat.title": "مغير الخامات والمود بورد المعماري الحي",
+      "mat.desc": "جرّب تأثير تبديل خامات الرخام والأخشاب والألوان على طابع وروح الفراغ الداخلي",
+      "mat.choose_palette": "اختر باليت الخامات والمزاج العام:",
+
+      "quiz.q1": "ما هو الإحساس الأول الذي ترغب في أن يشعر به زوار منزلك؟",
+      "quiz.q2": "ما هي خاماتك المفضلة للأرضيات والحوائط؟",
+      "quiz.q3": "كيف تتخيل نظام الإنارة والأسقف في فراغك المثالي؟",
+      "quiz.res_tag": "تحليلك المعماري الدقيق",
+      "quiz.cta_whatsapp": "استشارة م. حسن لتصميم هذا الطراز في بيتي",
+      "quiz.retake": "إعادة الاختبار ↺",
+
       "exp.tag": "المسيرة المهنية",
       "exp.title": "خبرات عملية مثبتة بالنتائج",
       "exp.subtitle": "تدرج وتنوع مهني في كبرى الشركات والمشاريع الريادية",
@@ -249,6 +290,47 @@ document.addEventListener('DOMContentLoaded', () => {
       "est.m4": "Final inspection & handover",
       "est.cta_whatsapp": "Send Estimate to Eng. Hassan via WhatsApp",
       "est.cta_print": "Print Estimate (PDF)",
+
+      // Interactive Lab translations (EN)
+      "nav.lab": "Interactive Lab ⚡",
+      "lab.tag": "Exclusive Architectural Experience",
+      "lab.title": "Interactive Architectural Lab",
+      "lab.subtitle": "Explore spatial concepts, interact with natural daylight and materials, and discover your design DNA",
+      "lab.tab_ba": "Before & After",
+      "lab.tab_light": "Daylight & Sun Simulator",
+      "lab.tab_360": "360° Panoramic Tour",
+      "lab.tab_mat": "Live Material Swapper",
+      "lab.tab_quiz": "Architectural Style Quiz",
+
+      "ba.title": "Architectural Transformation: Bare Shell to Turnkey Luxury",
+      "ba.desc": "Drag the split slider to witness the engineering transition from rough masonry to refined execution",
+      "ba.badge": "Hyde Park Project - Mountain View",
+      "ba.raw_label": "Bare Shell & Rough-in",
+      "ba.fin_label": "Turnkey Luxury Handover",
+      "ba.hint": "💡 Drag the slider handle with touch or mouse to reveal transformation",
+
+      "light.title": "Daylight Optimization & Sun Angle Simulator",
+      "light.desc": "Observe how natural orientation, shadows, and architectural lighting sculpt exterior massing",
+      "light.morning": "Morning Sun",
+      "light.sunset": "Golden Hour",
+      "light.night": "Night Architectural Scene",
+
+      "tour.title": "360° Panoramic Spatial Inspection",
+      "tour.desc": "Explore interior detailing, joinery, and layout ergonomics with full 360-degree interactive rotation",
+      "tour.r1": "Modern Kitchen 360°",
+      "tour.r2": "Panoramic Master Suite",
+      "tour.drag_hint": "Drag left or right to explore in 360°",
+
+      "mat.title": "Live Material & Architectural Mood Board Swapper",
+      "mat.desc": "Test the atmospheric impact of contrasting marbles, tactile hardwoods, and acoustic paneling",
+      "mat.choose_palette": "Select your architectural material palette:",
+
+      "quiz.q1": "What primary emotion do you want your home to evoke when entering?",
+      "quiz.q2": "Which material finishes resonate most with your aesthetic taste?",
+      "quiz.q3": "How do you envision the ceiling and lighting systems in your ideal space?",
+      "quiz.res_tag": "Your Architectural DNA Analysis",
+      "quiz.cta_whatsapp": "Consult Eng. Hassan to Design This Style for My Home",
+      "quiz.retake": "Retake Quiz ↺",
 
       "exp.tag": "Work Experience",
       "exp.title": "Proven Track Record of Excellence",
@@ -853,5 +935,401 @@ I used the interactive finishing estimator on your portfolio and would like a co
       }
     });
   });
+
+
+  // ==========================================================================
+  // 6. VIRAL ARCHITECTURAL LAB ENGINES (5 INTERACTIVE MODULES)
+  // ==========================================================================
+
+  // --- Module A: Tab Switcher ---
+  const labTabBtns = document.querySelectorAll('.lab-tab-btn');
+  const labTabContents = document.querySelectorAll('.lab-tab-content');
+
+  labTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      labTabBtns.forEach(b => b.classList.remove('active'));
+      labTabContents.forEach(c => c.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetId = btn.getAttribute('data-tab');
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add('active');
+      }
+    });
+  });
+
+
+  // --- Module B: Before / After Split Slider ---
+  const baContainer = document.getElementById('baContainer');
+  const baAfter = document.getElementById('baAfter');
+  const baHandle = document.getElementById('baHandle');
+  let isDraggingBA = false;
+
+  function updateBASlider(clientX) {
+    if (!baContainer || !baAfter || !baHandle) return;
+    const rect = baContainer.getBoundingClientRect();
+    let x = clientX - rect.left;
+    if (x < 0) x = 0;
+    if (x > rect.width) x = rect.width;
+
+    const pct = (x / rect.width) * 100;
+    baHandle.style.left = `${pct}%`;
+    baHandle.style.insetInlineStart = `${pct}%`;
+
+    const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+    if (isRtl) {
+      baAfter.style.width = `${pct}%`;
+    } else {
+      baAfter.style.width = `${100 - pct}%`;
+    }
+  }
+
+  if (baContainer) {
+    baContainer.addEventListener('mousedown', (e) => {
+      isDraggingBA = true;
+      updateBASlider(e.clientX);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDraggingBA) return;
+      updateBASlider(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDraggingBA = false;
+    });
+
+    baContainer.addEventListener('touchstart', (e) => {
+      isDraggingBA = true;
+      if (e.touches[0]) updateBASlider(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDraggingBA) return;
+      if (e.touches[0]) updateBASlider(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      isDraggingBA = false;
+    });
+  }
+
+
+  // --- Module C: Lighting & Sun Simulator ---
+  const lightingImg = document.getElementById('lightingImg');
+  const lightingOverlay = document.getElementById('lightingOverlay');
+  const lightTimeBadge = document.getElementById('lightTimeBadge');
+  const hudTemp = document.getElementById('hudTemp');
+  const hudAngle = document.getElementById('hudAngle');
+  const hudShadow = document.getElementById('hudShadow');
+  const lightingModeBtns = document.querySelectorAll('.lighting-mode-btn');
+
+  lightingModeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      lightingModeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const mode = btn.getAttribute('data-mode');
+      const temp = btn.getAttribute('data-temp');
+      const angle = btn.getAttribute('data-angle');
+      const shadow = btn.getAttribute('data-shadow');
+      const timeStr = btn.getAttribute('data-time');
+
+      if (lightingImg) {
+        lightingImg.className = `lighting-img ${mode}`;
+      }
+      if (lightingOverlay) {
+        lightingOverlay.className = `lighting-overlay ${mode}`;
+      }
+      if (lightTimeBadge) lightTimeBadge.textContent = timeStr;
+      if (hudTemp) hudTemp.textContent = temp;
+      if (hudAngle) hudAngle.textContent = angle;
+      if (hudShadow) hudShadow.textContent = shadow;
+    });
+  });
+
+
+  // --- Module D: 360° Panoramic Room Tour ---
+  const panoViewport = document.getElementById('panoViewport');
+  const panoTrack = document.getElementById('panoTrack');
+  const panoAutoBtn = document.getElementById('panoAutoBtn');
+  const panoResetBtn = document.getElementById('panoResetBtn');
+  const tourRoomBtns = document.querySelectorAll('.tour-room-btn');
+  const panoImg = document.getElementById('panoImg');
+  const panoImgMirror = document.querySelector('.pano-img-mirror');
+
+  let panoOffset = 0;
+  let isDraggingPano = false;
+  let startPanoX = 0;
+  let isAutoPano = true;
+  let autoPanoId = null;
+
+  function runAutoPano() {
+    if (!isAutoPano || !panoTrack) return;
+    panoOffset -= 0.6;
+    if (panoOffset <= -1200) panoOffset = 0;
+    panoTrack.style.transform = `translateX(${panoOffset}px)`;
+    autoPanoId = requestAnimationFrame(runAutoPano);
+  }
+
+  if (panoViewport && panoTrack) {
+    panoViewport.addEventListener('mousedown', (e) => {
+      isDraggingPano = true;
+      startPanoX = e.clientX;
+      isAutoPano = false;
+      if (panoAutoBtn) panoAutoBtn.textContent = '▶ Auto';
+      cancelAnimationFrame(autoPanoId);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDraggingPano || !panoTrack) return;
+      const delta = e.clientX - startPanoX;
+      startPanoX = e.clientX;
+      panoOffset += delta;
+      if (panoOffset > 0) panoOffset = -1200;
+      if (panoOffset < -1200) panoOffset = 0;
+      panoTrack.style.transform = `translateX(${panoOffset}px)`;
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDraggingPano = false;
+    });
+
+    // Touch support for 360 Tour
+    panoViewport.addEventListener('touchstart', (e) => {
+      if (!e.touches[0]) return;
+      isDraggingPano = true;
+      startPanoX = e.touches[0].clientX;
+      isAutoPano = false;
+      if (panoAutoBtn) panoAutoBtn.textContent = '▶ Auto';
+      cancelAnimationFrame(autoPanoId);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDraggingPano || !e.touches[0] || !panoTrack) return;
+      const delta = e.touches[0].clientX - startPanoX;
+      startPanoX = e.touches[0].clientX;
+      panoOffset += delta;
+      if (panoOffset > 0) panoOffset = -1200;
+      if (panoOffset < -1200) panoOffset = 0;
+      panoTrack.style.transform = `translateX(${panoOffset}px)`;
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      isDraggingPano = false;
+    });
+
+    // Auto toggle
+    if (panoAutoBtn) {
+      panoAutoBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isAutoPano = !isAutoPano;
+        panoAutoBtn.textContent = isAutoPano ? '❚❚ Pause' : '▶ Auto';
+        if (isAutoPano) runAutoPano();
+      });
+    }
+
+    if (panoResetBtn) {
+      panoResetBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        panoOffset = 0;
+        panoTrack.style.transform = 'translateX(0px)';
+      });
+    }
+
+    // Room Switcher
+    tourRoomBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tourRoomBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const newSrc = btn.getAttribute('data-img');
+        if (panoImg) panoImg.src = newSrc;
+        if (panoImgMirror) panoImgMirror.src = newSrc;
+      });
+    });
+
+    // Start auto panorama by default
+    runAutoPano();
+  }
+
+
+  // --- Module E: Live Material Swapper ---
+  const matSceneImg = document.getElementById('matSceneImg');
+  const matSpecsOverlay = document.getElementById('matSpecsOverlay');
+  const matSelectedBadge = document.getElementById('matSelectedBadge');
+  const matPresetCards = document.querySelectorAll('.mat-preset-card');
+
+  matPresetCards.forEach(card => {
+    card.addEventListener('click', () => {
+      matPresetCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+
+      const imgSrc = card.getAttribute('data-img');
+      const nameAr = card.getAttribute('data-name-ar');
+      const nameEn = card.getAttribute('data-name-en');
+      const specs = card.getAttribute('data-specs');
+
+      if (matSceneImg) {
+        matSceneImg.style.opacity = '0.3';
+        matSceneImg.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+          matSceneImg.src = imgSrc;
+          matSceneImg.style.opacity = '1';
+          matSceneImg.style.transform = 'scale(1)';
+        }, 200);
+      }
+
+      if (matSelectedBadge) {
+        matSelectedBadge.textContent = currentLang === 'ar' ? `الطراز: ${nameAr}` : `Style: ${nameEn}`;
+      }
+
+      if (matSpecsOverlay && specs) {
+        const specArr = specs.split('|').map(s => s.trim());
+        matSpecsOverlay.innerHTML = specArr.map(s => `<span class="spec-tag">${s}</span>`).join('');
+      }
+    });
+  });
+
+
+  // --- Module F: Architectural Style Quiz ---
+  const quizProgressFill = document.getElementById('quizProgressFill');
+  const quizStepBadge = document.getElementById('quizStepBadge');
+  const quizScreen = document.getElementById('quizScreen');
+  const quizResult = document.getElementById('quizResult');
+  const quizRetakeBtn = document.getElementById('quizRetakeBtn');
+  const quizWhatsappBtn = document.getElementById('quizWhatsappBtn');
+  const resultStyleName = document.getElementById('resultStyleName');
+  const resultStyleDesc = document.getElementById('resultStyleDesc');
+  const resultMaterials = document.getElementById('resultMaterials');
+  const resultSwatches = document.getElementById('resultSwatches');
+
+  let currentQuestion = 1;
+  const userAnswers = [];
+
+  const quizOptionBtns = document.querySelectorAll('.quiz-opt-btn');
+  quizOptionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const val = btn.getAttribute('data-val');
+      userAnswers.push(val);
+
+      if (currentQuestion < 3) {
+        document.querySelector(`.quiz-question-box[data-q="${currentQuestion}"]`).classList.remove('active');
+        currentQuestion++;
+        document.querySelector(`.quiz-question-box[data-q="${currentQuestion}"]`).classList.add('active');
+
+        if (quizStepBadge) {
+          quizStepBadge.textContent = currentLang === 'ar' 
+            ? `السؤال ${currentQuestion} من 3` 
+            : `Question ${currentQuestion} of 3`;
+        }
+        if (quizProgressFill) {
+          quizProgressFill.style.width = `${(currentQuestion / 3) * 100}%`;
+        }
+      } else {
+        // Complete Quiz and calculate result
+        showQuizResults();
+      }
+    });
+  });
+
+  function showQuizResults() {
+    if (quizScreen) quizScreen.style.display = 'none';
+    if (quizResult) quizResult.style.display = 'block';
+
+    // Count occurrences
+    const counts = { luxury: 0, minimal: 0, modern: 0 };
+    userAnswers.forEach(ans => {
+      if (counts[ans] !== undefined) counts[ans]++;
+    });
+
+    let topStyle = 'luxury';
+    if (counts.minimal >= counts.luxury && counts.minimal >= counts.modern) {
+      topStyle = 'minimal';
+    } else if (counts.modern >= counts.luxury && counts.modern >= counts.minimal) {
+      topStyle = 'modern';
+    }
+
+    let styleTitle = '';
+    let styleDesc = '';
+    let styleMats = '';
+    let swatchesColors = [];
+
+    if (topStyle === 'luxury') {
+      styleTitle = currentLang === 'ar' ? 'نيوكلاسيك ملكي معاصر (Royal Neoclassical)' : 'Royal Contemporary Neoclassical';
+      styleDesc = currentLang === 'ar' 
+        ? 'أنت تعشق الفخامة الخالدة، التناظر المعماري، وأثر المساحات المفتوحة مع الرخام المتصل والإضاءات الدافئة التي تمنح إحساساً ملكياً لا ينضب.'
+        : 'You appreciate timeless grandeur, architectural symmetry, and palatial openness with continuous marble and refined statement lighting.';
+      styleMats = currentLang === 'ar' ? 'رخام كلكتا إيطالي + كرانيش معمارية + إكسسوارات نحاسية' : 'Italian Calacatta Marble + Moldings + Brass';
+      swatchesColors = ['#f5eee6', '#c5a880', '#2a2d34'];
+    } else if (topStyle === 'minimal') {
+      styleTitle = currentLang === 'ar' ? 'مودرن جاباندي دافئ (Warm Minimalist / Japandi)' : 'Warm Minimalist / Japandi';
+      styleDesc = currentLang === 'ar'
+        ? 'هدوؤك ينعكس في بيتك: تبحث عن خطوط هندسية نقية، خامات طبيعية كالأخشاب والحجر البيج، مع أقصى استفادة من ضوء النهار والشمس.'
+        : 'Calm and grounded: you seek uncluttered geometry, organic woods, travertine stone, and generous natural daylight.';
+      styleMats = currentLang === 'ar' ? 'خشب جوز أمريكي + حجر ترافنتينو + دهانات جوتن مات' : 'American Walnut + Travertine + Jotun Matt';
+      swatchesColors = ['#e0d6cc', '#795548', '#3e2723'];
+    } else {
+      styleTitle = currentLang === 'ar' ? 'معماري عصري ذكي (Smart Contemporary Tech)' : 'Smart High-Tech Contemporary';
+      styleDesc = currentLang === 'ar'
+        ? 'رؤيتك للمستقبل واضحة: تعشق تكامل التكنولوجيا، أنظمة السمارت هوم، مجريات الإضاءة الماجنتيك، والبورسلين الليزر مع أسطح داكنة مميزة.'
+        : 'Visionary and ergonomic: you love smart home automation, magnetic track lights, laser-cut porcelain, and sleek dark accents.';
+      styleMats = currentLang === 'ar' ? 'بورسلين ليزر كبير + ماجنتيك تراك + أنظمة سمارت' : 'Large Porcelain + Magnetic Tracks + Smart Automation';
+      swatchesColors = ['#cfd8dc', '#37474f', '#00e5ff'];
+    }
+
+    if (resultStyleName) resultStyleName.textContent = styleTitle;
+    if (resultStyleDesc) resultStyleDesc.textContent = styleDesc;
+    if (resultMaterials) resultMaterials.textContent = styleMats;
+
+    if (resultSwatches) {
+      resultSwatches.innerHTML = swatchesColors.map(c => `<span style="background:${c};"></span>`).join('');
+    }
+
+    // Dynamic WhatsApp Link with Quiz Results
+    if (quizWhatsappBtn) {
+      let msg = '';
+      if (currentLang === 'ar') {
+        msg = `مرحباً م. حسن أحمد،
+قمت للتو بإجراء كويز الطراز المعماري على موقعك وكانت نتيجتي:
+
+` +
+          `• الطراز المقترح: ${styleTitle}
+` +
+          `• الخامات المفضلة: ${styleMats}
+
+` +
+          `أرغب في استشارة معمارية لتطبيق هذا الطراز في شقتي / فيلتي. شكراً جزيلاً!`;
+      } else {
+        msg = `Hello Eng. Hassan Ahmed,
+I just completed your architectural style quiz and my result was:
+
+` +
+          `• Recommended Style: ${styleTitle}
+` +
+          `• Preferred Materials: ${styleMats}
+
+` +
+          `I would love to consult with you about designing my apartment / villa in this aesthetic. Thank you!`;
+      }
+      quizWhatsappBtn.href = `https://wa.me/201096978258?text=${encodeURIComponent(msg)}`;
+    }
+  }
+
+  if (quizRetakeBtn) {
+    quizRetakeBtn.addEventListener('click', () => {
+      currentQuestion = 1;
+      userAnswers.length = 0;
+      if (quizProgressFill) quizProgressFill.style.width = '33.3%';
+      if (quizStepBadge) {
+        quizStepBadge.textContent = currentLang === 'ar' ? 'السؤال 1 من 3' : 'Question 1 of 3';
+      }
+      document.querySelectorAll('.quiz-question-box').forEach(q => q.classList.remove('active'));
+      const q1 = document.querySelector('.quiz-question-box[data-q="1"]');
+      if (q1) q1.classList.add('active');
+      if (quizResult) quizResult.style.display = 'none';
+      if (quizScreen) quizScreen.style.display = 'block';
+    });
+  }
 
 });

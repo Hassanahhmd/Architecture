@@ -36,6 +36,7 @@
         <a href="#about" class="nav-link" data-i18n="nav.about">نبذة</a>
         <a href="#stats" class="nav-link" data-i18n="nav.stats">الإنجازات</a>
         <a href="#projects" class="nav-link" data-i18n="nav.projects">المشاريع</a>
+        <a href="#lab" class="nav-link highlight-nav" data-i18n="nav.lab">المعمل التفاعلي ⚡</a>
         <a href="#estimator" class="nav-link" data-i18n="nav.estimator">حاسبة التكلفة</a>
         <a href="#experience" class="nav-link" data-i18n="nav.experience">الخبرات</a>
         <a href="#skills" class="nav-link" data-i18n="nav.skills">المهارات والبرامج</a>
@@ -71,6 +72,7 @@
       <a href="#about" class="drawer-link" data-i18n="nav.about">نبذة</a>
       <a href="#stats" class="drawer-link" data-i18n="nav.stats">الإنجازات</a>
       <a href="#projects" class="drawer-link" data-i18n="nav.projects">المشاريع</a>
+      <a href="#lab" class="drawer-link highlight-nav" data-i18n="nav.lab">المعمل التفاعلي ⚡</a>
       <a href="#estimator" class="drawer-link" data-i18n="nav.estimator">حاسبة التكلفة</a>
       <a href="#experience" class="drawer-link" data-i18n="nav.experience">الخبرات</a>
       <a href="#skills" class="drawer-link" data-i18n="nav.skills">المهارات والبرامج</a>
@@ -245,6 +247,346 @@
       </div>
     </div>
     <div id="lightboxBackdrop" class="lightbox-backdrop"></div>
+
+
+    <!-- ==========================================================================
+         VIRAL ARCHITECTURAL EXPERIENCE LAB (المعمل المعماري التفاعلي)
+         ========================================================================== -->
+    <section class="interactive-lab-section" id="lab">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag" data-i18n="lab.tag">تجربة تفاعلية حصرية</div>
+          <h2 class="section-title" data-i18n="lab.title">معمل الإبداع المعماري التفاعلي</h2>
+          <p class="section-subtitle" data-i18n="lab.subtitle">اختبر الرؤية الهندسية، تفاعل مع الإضاءة والخامات، واكتشف الطراز المعماري الأنسب لبيتك</p>
+        </div>
+
+        <!-- Experience Tab Switchers -->
+        <div class="lab-tabs">
+          <button type="button" class="lab-tab-btn active" data-tab="tab-before-after">
+            <span class="tab-icon">🔀</span>
+            <span data-i18n="lab.tab_ba">قبل وبعد</span>
+          </button>
+          <button type="button" class="lab-tab-btn" data-tab="tab-lighting">
+            <span class="tab-icon">☀️</span>
+            <span data-i18n="lab.tab_light">محاكي الشمس والضوء</span>
+          </button>
+          <button type="button" class="lab-tab-btn" data-tab="tab-360">
+            <span class="tab-icon">🔄</span>
+            <span data-i18n="lab.tab_360">جولة 360° بانورامية</span>
+          </button>
+          <button type="button" class="lab-tab-btn" data-tab="tab-materials">
+            <span class="tab-icon">🎨</span>
+            <span data-i18n="lab.tab_mat">مغير الخامات اللحظي</span>
+          </button>
+          <button type="button" class="lab-tab-btn highlight-tab" data-tab="tab-quiz">
+            <span class="tab-icon">🧬</span>
+            <span data-i18n="lab.tab_quiz">كويز الطراز المناسب</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Before / After Split Slider -->
+        <div class="lab-tab-content active" id="tab-before-after">
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <div>
+                <h3 class="lab-card-title" data-i18n="ba.title">التحول المعماري: من الطوب الأحمر إلى التسليم الفاخر</h3>
+                <p class="lab-card-desc" data-i18n="ba.desc">اسحب الخط الفاصل يميناً ويساراً لمشاهدة دقة التنفيذ من مرحلة العظم وحتى التشطيب المتكامل</p>
+              </div>
+              <div class="ba-badge" data-i18n="ba.badge">مشروع هايد بارك - ماونتن فيو</div>
+            </div>
+
+            <div class="ba-slider-container" id="baContainer">
+              <div class="ba-image-wrapper ba-before">
+                <img src="assets/projects/neoclassical-apartment.jpg" alt="Before - Bare Shell" class="ba-img-raw">
+                <div class="ba-blueprint-filter"></div>
+                <div class="ba-hud-overlay">
+                  <div class="hud-marker marker-1"><span>H: 3.20m</span></div>
+                  <div class="hud-marker marker-2"><span>MEP AXIS</span></div>
+                  <div class="hud-tag">STAGE 01: BARE SHELL</div>
+                </div>
+                <span class="ba-label ba-label-before" data-i18n="ba.raw_label">مرحلة العظم والتأسيس</span>
+              </div>
+
+              <div class="ba-image-wrapper ba-after" id="baAfter">
+                <img src="assets/projects/neoclassical-apartment.jpg" alt="After - Luxury Handover" class="ba-img-finished">
+                <span class="ba-label ba-label-after" data-i18n="ba.fin_label">التسليم النهائي الفاخر</span>
+              </div>
+
+              <div class="ba-handle" id="baHandle">
+                <div class="handle-line"></div>
+                <div class="handle-circle">
+                  <span>&#10094;&#10095;</span>
+                </div>
+              </div>
+            </div>
+            <div class="ba-footer-hint" data-i18n="ba.hint">💡 اسحب المقبض بالماوس أو اللمس لرؤية التحول الكامل</div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Lighting & Sun Simulator -->
+        <div class="lab-tab-content" id="tab-lighting">
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <div>
+                <h3 class="lab-card-title" data-i18n="light.title">محاكي حركة الشمس ودراسة الإضاءة المعمارية</h3>
+                <p class="lab-card-desc" data-i18n="light.desc">اختبر كيف يتغير الإحساس بالفراغ المعماري وكتل الواجهة عبر أوقات اليوم المختلفة</p>
+              </div>
+              <div class="light-time-badge" id="lightTimeBadge">☀️ 09:00 AM — Morning Sun</div>
+            </div>
+
+            <div class="lighting-viewport" id="lightingViewport">
+              <img src="assets/projects/facade.png" alt="Architectural Facade" id="lightingImg" class="lighting-img morning">
+              <div class="lighting-overlay morning" id="lightingOverlay"></div>
+              <div class="lighting-sun-orb" id="lightingSunOrb"></div>
+              
+              <div class="lighting-hud">
+                <div class="hud-item"><span class="hud-k">COLOR TEMP:</span> <strong id="hudTemp">5500K (Daylight)</strong></div>
+                <div class="hud-item"><span class="hud-k">SUN ALTITUDE:</span> <strong id="hudAngle">45° East</strong></div>
+                <div class="hud-item"><span class="hud-k">SHADOWS:</span> <strong id="hudShadow">Crisp / Natural</strong></div>
+              </div>
+            </div>
+
+            <div class="lighting-controls-row">
+              <button type="button" class="lighting-mode-btn active" data-mode="morning" data-temp="5500K (Daylight)" data-angle="45° East" data-shadow="Crisp / Natural" data-time="☀️ 09:00 AM — Morning Sun">
+                <span class="mode-icon">🌅</span>
+                <span class="mode-title" data-i18n="light.morning">شمس الصباح</span>
+                <span class="mode-sub">09:00 AM</span>
+              </button>
+              <button type="button" class="lighting-mode-btn" data-mode="sunset" data-temp="3200K (Golden Glow)" data-angle="18° West" data-shadow="Long / Dramatic" data-time="🌇 05:30 PM — Golden Hour">
+                <span class="mode-icon">🌇</span>
+                <span class="mode-title" data-i18n="light.sunset">الغروب الذهبي</span>
+                <span class="mode-sub">05:30 PM</span>
+              </button>
+              <button type="button" class="lighting-mode-btn" data-mode="night" data-temp="2700K (Warm LED)" data-angle="Cove & Accent" data-shadow="Soft Ambient" data-time="🌙 09:00 PM — Night Scene">
+                <span class="mode-icon">🌙</span>
+                <span class="mode-title" data-i18n="light.night">الإضاءة الليلية</span>
+                <span class="mode-sub">09:00 PM</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: 360° Panoramic Room Tour -->
+        <div class="lab-tab-content" id="tab-360">
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <div>
+                <h3 class="lab-card-title" data-i18n="tour.title">معاينة بانورامية 360° للفراغات المعمارية</h3>
+                <p class="lab-card-desc" data-i18n="tour.desc">استكشف أدق التفاصيل الهندسية والفرش بالدوران الكامل في جميع الاتجاهات</p>
+              </div>
+              <div class="tour-switchers">
+                <button type="button" class="tour-room-btn active" data-img="assets/projects/modern-kitchen-360.jpg" data-i18n="tour.r1">المطبخ المودرن 360°</button>
+                <button type="button" class="tour-room-btn" data-img="assets/projects/panoramic-bedroom.jpg" data-i18n="tour.r2">غرفة النوم البانورامية</button>
+              </div>
+            </div>
+
+            <div class="panorama-viewport" id="panoViewport">
+              <div class="panorama-track" id="panoTrack">
+                <img src="assets/projects/modern-kitchen-360.jpg" alt="Panorama 360" id="panoImg" class="pano-img">
+                <img src="assets/projects/modern-kitchen-360.jpg" alt="Panorama 360 Mirror" class="pano-img-mirror">
+              </div>
+              
+              <div class="pano-badge">
+                <span class="pulse-dot"></span>
+                <span data-i18n="tour.drag_hint">اسحب لليمين واليسار للدوران 360°</span>
+              </div>
+
+              <div class="pano-controls-floating">
+                <button type="button" id="panoAutoBtn" class="pano-f-btn" title="دوران تلقائي / Auto Rotate">▶ Auto</button>
+                <button type="button" id="panoResetBtn" class="pano-f-btn" title="إعادة ضبط / Reset">↺ Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Live Material Swapper -->
+        <div class="lab-tab-content" id="tab-materials">
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <div>
+                <h3 class="lab-card-title" data-i18n="mat.title">مغير الخامات والمود بورد المعماري الحي</h3>
+                <p class="lab-card-desc" data-i18n="mat.desc">جرّب تأثير تبديل خامات الرخام والأخشاب والألوان على طابع وروح الفراغ الداخلي</p>
+              </div>
+              <div class="mat-badge" id="matSelectedBadge">الطراز: نيوكلاسيك فخم (Calacatta)</div>
+            </div>
+
+            <div class="material-showcase-grid">
+              <div class="mat-visual-wrap">
+                <img src="assets/projects/double-height-reception.jpg" alt="Material Scene" id="matSceneImg" class="mat-scene-img">
+                <div class="mat-specs-overlay" id="matSpecsOverlay">
+                  <span class="spec-tag">Marble: Bookmatched Calacatta Gold</span>
+                  <span class="spec-tag">Lighting: Linear Profile LED 3000K</span>
+                  <span class="spec-tag">Accents: Brushed Brass Cladding</span>
+                </div>
+              </div>
+
+              <div class="mat-selector-col">
+                <h4 class="col-heading" data-i18n="mat.choose_palette">اختر باليت الخامات والمزاج العام:</h4>
+
+                <!-- Preset 1 -->
+                <div class="mat-preset-card active" data-img="assets/projects/double-height-reception.jpg" data-name-ar="نيوكلاسيك فخم (Calacatta Gold)" data-name-en="Neoclassical Luxury (Calacatta)" data-specs="Marble: Bookmatched Calacatta Gold | Lighting: 3000K Warm | Accents: Brushed Brass">
+                  <div class="preset-info">
+                    <strong>نيوكلاسيك ملكي (Calacatta & Brass)</strong>
+                    <p>رخام كلكتا إيطالي متصل العروق مع إكسسوارات برونزية ذهبية وإضاءة وورم.</p>
+                  </div>
+                  <div class="swatches-row">
+                    <span class="swatch" style="background: #e8e4de;" title="Calacatta Marble"></span>
+                    <span class="swatch" style="background: #c5a880;" title="Brushed Brass"></span>
+                    <span class="swatch" style="background: #252830;" title="Shadow Gray"></span>
+                  </div>
+                </div>
+
+                <!-- Preset 2 -->
+                <div class="mat-preset-card" data-img="assets/projects/majles-luxury.jpg" data-name-ar="مودرن دافئ (Walnut & Stone)" data-name-en="Warm Modern (Walnut & Stone)" data-specs="Wood: Natural American Walnut | Stone: Beige Travertine | Lighting: 2700K Ambient">
+                  <div class="preset-info">
+                    <strong>مودرن دافئ (American Walnut)</strong>
+                    <p>أخشاب جوز أمريكي طبيعية مدمجة مع حجر ترافنتينو بيج ومخمل فاخر.</p>
+                  </div>
+                  <div class="swatches-row">
+                    <span class="swatch" style="background: #5d4037;" title="American Walnut"></span>
+                    <span class="swatch" style="background: #d7ccc8;" title="Beige Travertine"></span>
+                    <span class="swatch" style="background: #bcaaa4;" title="Warm Linen"></span>
+                  </div>
+                </div>
+
+                <!-- Preset 3 -->
+                <div class="mat-preset-card" data-img="assets/projects/boss-desk.jpg" data-name-ar="تنفيذي صناعي (Executive Matte)" data-name-en="Executive Industrial (Matte Black)" data-specs="Panels: Matte Charcoal Acoustic | Accents: Smoked Oak | Lighting: 4000K Task Linear">
+                  <div class="preset-info">
+                    <strong>تنفيذي عصري (Smoked Oak & Charcoal)</strong>
+                    <p>ألواح أكوستيك فحمية داكنة، أخشاب بلوط مدخن، وخطوط إضاءة ماجنتيك حادة.</p>
+                  </div>
+                  <div class="swatches-row">
+                    <span class="swatch" style="background: #1e2126;" title="Charcoal Acoustic"></span>
+                    <span class="swatch" style="background: #3e2723;" title="Smoked Oak"></span>
+                    <span class="swatch" style="background: #90a4ae;" title="Brushed Steel"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 5: Architectural Style Quiz -->
+        <div class="lab-tab-content" id="tab-quiz">
+          <div class="lab-card quiz-card">
+            
+            <div id="quizScreen">
+              <div class="quiz-progress-bar">
+                <div class="progress-fill" id="quizProgressFill" style="width: 33.3%;"></div>
+              </div>
+              <div class="quiz-header-step">
+                <span class="step-badge" id="quizStepBadge">السؤال 1 من 3</span>
+                <span class="time-hint">⚡ دقيقة واحدة فقط</span>
+              </div>
+
+              <!-- Question 1 -->
+              <div class="quiz-question-box active" data-q="1">
+                <h3 class="quiz-q-title" data-i18n="quiz.q1">ما هو الإحساس الأول الذي ترغب في أن يشعر به زوار منزلك؟</h3>
+                <div class="quiz-options-grid">
+                  <button type="button" class="quiz-opt-btn" data-val="luxury">
+                    <span class="opt-icon">🏛️</span>
+                    <strong>الهيبة والفخامة الملكية</strong>
+                    <small>مساحات مفتوحة، رخام متصل، وثريات معمارية عملاقة</small>
+                  </button>
+                  <button type="button" class="quiz-opt-btn" data-val="minimal">
+                    <span class="opt-icon">🌿</span>
+                    <strong>الهدوء والسكينة والرحابة</strong>
+                    <small>خطوط هندسية نظيفة، خامات طبيعية خشبية وألوان هادئة</small>
+                  </button>
+                  <button type="button" class="quiz-opt-btn" data-val="modern">
+                    <span class="opt-icon">⚡</span>
+                    <strong>العصرية والذكاء العملي</strong>
+                    <small>أنظمة سمارت هوم، إضاءات خطية متطورة، وجلسات مريحة</small>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="quiz-question-box" data-q="2">
+                <h3 class="quiz-q-title" data-i18n="quiz.q2">ما هي خاماتك المفضلة للأرضيات والحوائط؟</h3>
+                <div class="quiz-options-grid">
+                  <button type="button" class="quiz-opt-btn" data-val="luxury">
+                    <span class="opt-icon">✨</span>
+                    <strong>الرخام المستورد والكرانيش المعمارية</strong>
+                    <small>رخام كلكتا أو إمبرادور مع بانوهات جدارية راقية</small>
+                  </button>
+                  <button type="button" class="quiz-opt-btn" data-val="minimal">
+                    <span class="opt-icon">🪵</span>
+                    <strong>الأخشاب الطبيعية والدهانات المات</strong>
+                    <small>باركيه أو HDF فاخر مع درجات بيج وجوتن مات</small>
+                  </button>
+                  <button type="button" class="quiz-opt-btn" data-val="modern">
+                    <span class="opt-icon">📐</span>
+                    <strong>البورسلين الليزر والتكسيات الخشبية</strong>
+                    <small>بلاطات بورسلين كبيرة الحجم وتجاليد خشبية مضيئة</small>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="quiz-question-box" data-q="3">
+                <h3 class="quiz-q-title" data-i18n="quiz.q3">كيف تتخيل نظام الإنارة والأسقف في فراغك المثالي؟</h3>
+                <div class="quiz-options-grid">
+                  <button type="button" class="quiz-opt-btn" data-val="luxury">
+                    <span class="opt-icon">💡</span>
+                    <strong>إضاءات غير مباشرة وثريات فخمة</strong>
+                    <small>بيوت نور هادئة تبرز جمال العمارة والأسقف المعلقة</small>
+                  </button>
+                  <button type="button" class="quiz-opt-btn" data-val="minimal">
+                    <span class="opt-icon">☀️</span>
+                    <strong>اعتماد كبير على الضوء الطبيعي</strong>
+                    <small>نوافذ زجاجية عملاقة وإضاءات سبوت مخفية بلا بهرجة</small>
+                  </button>
+                  <button type="button" class="quiz-opt-btn" data-val="modern">
+                    <span class="opt-icon">🎛️</span>
+                    <strong>ماجنتيك تراك وإنارة ذكية سينمائية</strong>
+                    <small>سيناريوهات إضاءة متغيرة بالتحكم الصوتي أو الهاتف</small>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Quiz Result View (Hidden initially) -->
+            <div id="quizResult" class="quiz-result-view" style="display:none;">
+              <div class="result-celebration">🎉</div>
+              <span class="result-badge" data-i18n="quiz.res_tag">تحليلك المعماري الدقيق</span>
+              <h3 class="result-style-name" id="resultStyleName">الطراز: نيوكلاسيك معاصر فاخر (Contemporary Neoclassical)</h3>
+              <p class="result-style-desc" id="resultStyleDesc">
+                شخصيتك تميل إلى المزج الذكي بين الفخامة الملكية والتطبيق العملي الحديث. يناسبك تماماً استخدام الرخام الطبيعي مع الإضاءات الخطية المخفية والألوان الدافئة المحايدة.
+              </p>
+
+              <div class="result-specs-grid">
+                <div class="r-spec-box">
+                  <span class="r-lbl">الخامات المثالية لك</span>
+                  <strong id="resultMaterials">رخام إيطالي + أخشاب جوز + بروفايل ليد</strong>
+                </div>
+                <div class="r-spec-box">
+                  <span class="r-lbl">الباليت المقترحة</span>
+                  <div class="r-swatches" id="resultSwatches">
+                    <span style="background: #f4ede4;"></span>
+                    <span style="background: #c5a880;"></span>
+                    <span style="background: #3e322b;"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="result-actions">
+                <a id="quizWhatsappBtn" href="#" target="_blank" rel="noopener" class="btn btn-primary">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.101-.477-.15-.678.15-.201.3-.778.98-.954 1.18-.175.201-.351.226-.652.076-.301-.15-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.175.201-.301.301-.502.101-.2.05-.376-.025-.526-.076-.151-.678-1.633-.929-2.235-.245-.587-.494-.508-.678-.517-.175-.01-.376-.01-.577-.01-.201 0-.527.075-.803.376s-1.054 1.03-1.054 2.511 1.079 2.912 1.23 3.113c.15.201 2.122 3.24 5.141 4.543.718.31 1.279.495 1.716.634.721.23 1.377.198 1.896.12.578-.087 1.78-.727 2.031-1.43.251-.703.251-1.305.176-1.43-.075-.126-.276-.201-.577-.352zM12 21.8a9.78 9.78 0 0 1-4.992-1.365l-.358-.213-3.712.973.99-3.619-.233-.37A9.774 9.774 0 0 1 2.2 12c0-5.404 4.396-9.8 9.8-9.8 2.617 0 5.077 1.018 6.928 2.87A9.75 9.75 0 0 1 21.8 12c0 5.404-4.396 9.8-9.8 9.8z"/></svg>
+                  <span data-i18n="quiz.cta_whatsapp">استشارة م. حسن لتصميم هذا الطراز في بيتي</span>
+                </a>
+                <button type="button" id="quizRetakeBtn" class="btn btn-outline" data-i18n="quiz.retake">إعادة الاختبار ↺</button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- Interactive BOQ & Finishing Cost Estimator Section -->
     <section class="estimator-section" id="estimator">
