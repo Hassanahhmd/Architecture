@@ -4,25 +4,33 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette */
-  --bg-primary: #0a0e14;
-  --bg-secondary: #101721;
-  --bg-card: rgba(18, 25, 36, 0.75);
-  --bg-card-hover: rgba(26, 36, 51, 0.9);
-  --border-color: rgba(212, 175, 55, 0.15);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(212, 175, 55, 0.45);
+  /* Modern Sight-Caring Eye-Friendly Architectural Palette */
+  /* Deep warm charcoal slate instead of harsh pure black */
+  --bg-primary: #0d1117;
+  --bg-secondary: #131923;
+  --surface-ground: #0d1117;
+  --surface-card: rgba(19, 25, 35, 0.82);
+  --bg-card: rgba(19, 25, 35, 0.82);
+  --bg-card-hover: rgba(28, 37, 51, 0.95);
+  
+  /* Soft Champage & Warm Bronze Accents (Low Glare, High Contrast) */
+  --accent-gold: #d4b58c;
+  --accent-gold-light: #e8d5bc;
+  --accent-gold-glow: rgba(212, 181, 140, 0.2);
+  --accent-blue-tech: #5ea1e8;
+  --accent-emerald: #10b981;
 
-  /* Architectural Accents */
-  --accent-gold: #c5a880;
-  --accent-gold-light: #e0cca9;
-  --accent-gold-glow: rgba(197, 168, 128, 0.18);
-  --accent-blue-tech: #4a90e2;
-
-  /* Typography Colors */
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  /* Eyecare Reading Typography (Balanced Luminescence) */
+  --text-main: #f3f6fa;
+  --text-light: #f3f6fa;
+  --text-muted: #a3b2c6;
+  --text-dim: #6e819b;
+  
+  /* Subtle Refined Borders */
+  --border-color: rgba(212, 181, 140, 0.22);
+  --border-gold: rgba(212, 181, 140, 0.35);
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(212, 181, 140, 0.55);
 
   /* Fonts */
   --font-arabic: 'Cairo', system-ui, -apple-system, sans-serif;
@@ -3175,4 +3183,71 @@ html[dir="rtl"] .timeline-dot {
     flex-direction: row;
     justify-content: center;
   }
+}
+
+
+/* ==========================================================================
+   ARCHITECT PROFILE REAL PHOTO & MODERN SIGHT-CARING ENHANCEMENTS
+   ========================================================================== */
+.architect-avatar.has-photo {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.photo-glow-ring {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, rgba(212, 181, 140, 0.2) 50%, var(--accent-blue-tech) 100%);
+  box-shadow: 
+    0 0 35px rgba(212, 181, 140, 0.25),
+    0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.photo-glow-ring:hover {
+  transform: scale(1.04);
+  box-shadow: 
+    0 0 45px rgba(212, 181, 140, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.profile-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  background-color: var(--bg-secondary);
+  border: 3px solid var(--bg-primary);
+}
+
+.has-photo .avatar-label {
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  color: var(--accent-gold-light);
+  font-weight: 700;
+  background: rgba(212, 181, 140, 0.08);
+  padding: 0.35rem 0.9rem;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  text-transform: uppercase;
+}
+
+/* Sight-caring smooth scroll and selection colors */
+::selection {
+  background: rgba(212, 181, 140, 0.3);
+  color: #ffffff;
+}
+
+/* Eye-comfort soft card elevation and backdrop blur */
+.project-card, .skills-box, .stat-card, .timeline-item, .summary-card, .lab-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
