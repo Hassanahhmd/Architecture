@@ -1,6 +1,7 @@
 /**
  * HASSAN AHMED | ARCHITECTURAL PORTFOLIO SCRIPT
- * Bilingual Engine (AR/EN), Smooth Interactivity & Filtering
+ * Bilingual Engine (AR/EN), Real Project Renders, Lightbox Gallery
+ * & Interactive Finishing Cost Estimator / BOQ Generator
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "nav.about": "نبذة",
       "nav.stats": "الإنجازات",
       "nav.projects": "المشاريع",
+      "nav.estimator": "حاسبة التكلفة",
       "nav.experience": "الخبرات",
       "nav.skills": "المهارات والبرامج",
       "nav.contact": "تواصل معي",
@@ -44,228 +46,306 @@ document.addEventListener('DOMContentLoaded', () => {
       "projects.title": "مشاريع مختارة بعناية",
       "projects.subtitle": "نماذج حقيقية من مشاريع تم قيادتها من التصميم النظري وحتى التسليم النهائي",
       "projects.filter_all": "الكل",
+      "projects.filter_arch": "معماري",
+      "projects.filter_interior": "تصميم داخلي",
       "projects.filter_retail": "تجاري & ريتيل",
-      "projects.filter_residential": "سكني فاخر",
       "projects.filter_industrial": "صناعي وإنشائي",
-      "projects.view_details": "عرض التفاصيل المعمارية",
+      "projects.view_details": "عرض التفاصيل والصور",
+      "projects.behance_cta": "عرض كافة الأعمال على Behance",
 
-      "projects.p1_cat": "تصميم ريتيل & تجاري",
-      "projects.p1_title": "فرع متجر Baxster الإيطالي - ميفيدا (Mivida)",
-      "projects.p1_desc": "قيادة التصميم المعماري للفرع المصري للعلامة الإيطالية الفاخرة، تطبيق كسوات من الحجر والخشب بطابع فينتدج راقي وتنسيق كامل لأعمال الـ MEP في وقت قياسي.",
-
-      "projects.p2_cat": "ديكور وتنفيذ سكني متكامل",
-      "projects.p2_title": "شقة هايد بارك - ماونتن فيو (Hyde Park)",
-      "projects.p2_desc": "تنفيذ متكامل للديكور الداخلي من الطوب الأحمر (Bare Shell) وحتى التسليم للعميل، شملت أعمال الإلكتروميكانيك والتشطيبات المعمارية والإشراف الموقعي الدقيق.",
-
-      "projects.p3_cat": "بناء وتشطيب صناعي",
-      "projects.p3_title": "مجمع مصنعين صناعيين - 6 أكتوبر",
-      "projects.p3_desc": "التعاقد كمقاول حر ومالك لشركة مقاولات وتنفيذ المبنيين بالكامل شاملين أعمال الإنشاء الخرساني والتشطيبات الصناعية المتكاملة حتى التسليم النهائي.",
-
-      "projects.p4_cat": "هندسة وتنفيذ مصانع",
-      "projects.p4_title": "مصنع شركة أرابيا للألومنيوم (Arabia Aluminium)",
-      "projects.p4_desc": "تنفيذ المبنى الصناعي المتخصص من مرحلة الهيكل والإنشاء وحتى التشطيبات الميكانيكية والمعمارية الكاملة طبقاً للمواصفات القياسية.",
+      // Estimator translations
+      "est.tag": "نظام تسعير ذكي",
+      "est.title": "حاسبة تكلفة التشطيب والمقايسة الفورية",
+      "est.subtitle": "احسب تكلفة تشطيب وحدتك بدقة واحترافية طبقاً لأسعار السوق المصري والاشتراطات الهندسية",
+      "est.unit_type_label": "نوع الوحدة العقارية",
+      "est.unit_apt": "شقة سكنية",
+      "est.unit_villa": "فيلا / دوبلكس",
+      "est.unit_office": "مكتب إداري",
+      "est.unit_retail": "محل تجاري / ريتيل",
+      "est.area_label": "المساحة الإجمالية (متر مربع)",
+      "est.m2": "م²",
+      "est.tier_label": "مستوى التشطيب المطلوب",
+      "est.tier_eco_name": "تشطيب اقتصادي",
+      "est.tier_eco_desc": "تشطيب عملي بمواد معتمدة محلياً تلبي متطلبات الجودة بأفضل ميزانية.",
+      "est.tier_eco_f1": "دهانات GLC معجون وبلاستيك 3030",
+      "est.tier_eco_f2": "سيراميك فرز أول كليوباترا / رويال",
+      "est.tier_eco_f3": "أطقم صحي ليسيكو / إيديال ستاندارد",
+      "est.tier_eco_f4": "أسلاك السويدي وقواطع فينوس / شنايدر",
+      "est.recommended_badge": "الأكثر طلباً",
+      "est.tier_mid_name": "ديلوكس راقي",
+      "est.tier_mid_desc": "مزيج متوازن من الفخامة والعصرية باستخدام خامات أوروبية ومحلية ممتازة.",
+      "est.tier_mid_f1": "دهانات جوتن فينوماستيك أصلي (Jotun)",
+      "est.tier_mid_f2": "بورسلين مستورد ليزر + خشب HDF للغرف",
+      "est.tier_mid_f3": "أطقم ديورافيت (Duravit) وخلاطات جروهي (Grohe)",
+      "est.tier_mid_f4": "جبس بورد كناوف + بيوت نور وبروفايل ليد",
+      "est.tier_lux_name": "سوبر لوكس / ألترا",
+      "est.tier_lux_desc": "فخامة مطلقة، رخام مستورد، أنظمة ذكية، وخامات معمارية استثنائية.",
+      "est.tier_lux_f1": "رخام مستورد كرارة / إمبرادور مع جلي آلي",
+      "est.tier_lux_f2": "صحي دفن معلق جروهي وخلاطات إيطالية",
+      "est.tier_lux_f3": "سمارت هوم (Smart Automation) وتحكم ذكي",
+      "est.tier_lux_f4": "تكسيات خشبية طبيعية وجبس بورد ماجنتيك",
+      "est.addons_label": "البنود الإضافية والتحسينات المخصصة",
+      "est.add_gypsum": "أسقف معلقة وجبس بورد كامل",
+      "est.add_door": "باب مصفح تركي عالي الأمان + نجارة أبواب",
+      "est.add_smart": "نظام سمارت هوم وإنارة ذكية",
+      "est.add_hvac": "تأسيس تكييفات كونسيلد ومواسير فريون",
+      "est.summary_tag": "مقايسة معمارية استرشادية",
+      "est.summary_title": "ملخص التكاليف التقديرية",
+      "est.total_label": "إجمالي التكلفة التقديرية للتشطيب",
+      "est.rate_label": "سعر المتر المربع التقديري:",
+      "est.b_materials": "الخامات ومواد البناء (60%)",
+      "est.b_labor": "المصنعيات والتنفيذ الحرفي (25%)",
+      "est.b_supervision": "الإشراف الهندسي والإدارة (15%)",
+      "est.timeline_lbl": "مدة التنفيذ المتوقعة",
+      "est.warranty_lbl": "ضمان الأعمال",
+      "est.warranty_val": "10 سنوات إنشائي",
+      "est.milestones_title": "جدول الدفعات المقترح",
+      "est.m1": "مقدم تعاقد وتجهيز",
+      "est.m2": "بعد تأسيس MEP",
+      "est.m3": "بعد الجبس والتشطيبات",
+      "est.m4": "عند التسليم النهائي",
+      "est.cta_whatsapp": "إرسال المقايسة للمهندس حسن عبر واتساب",
+      "est.cta_print": "طباعة المقايسة (PDF)",
 
       "exp.tag": "المسيرة المهنية",
       "exp.title": "خبرات عملية مثبتة بالنتائج",
       "exp.subtitle": "تدرج وتنوع مهني في كبرى الشركات والمشاريع الريادية",
       "exp.r1_role": "مصمم ومعماري مشاريع سكنية وفاخرة",
-      "exp.r1_comp": "مشاريع سكنية وتجارية خاصة",
+      "exp.r1_comp": "Residential & Commercial Projects",
       "exp.r1_p1": "إدارة وتوجيه مشاريع الفلل والشقق الفاخرة من الفكرة والتصميم وحتى التنفيذ والتسليم في كمبوندات النخبة (Mivida, Mountain View, Orascom, E-Tapa, Al-Futtaim).",
       "exp.r1_p2": "المشاركة في مرحلة التصميم المبدئي لمركز التأهيل وعلاج الإدمان في المملكة العربية السعودية (Saudi Rehab & Detox Center).",
       "exp.r1_p3": "تصميم وتسليم أكثر من 50 مشروعاً معمارياً وداخلياً متضمناً اللوحات التنفيذية، لوحات المزاج (Mood boards)، ومخططات الفرش والإظهار ثلاثي الأبعاد 3D.",
       "exp.r1_p4": "قيادة فريق يضم 4 مهندسين وتحقيق صفر مخالفات هندسية عبر 30 مشروعاً خاضعاً للإشراف.",
-
       "exp.r2_role": "مهندس معماري",
       "exp.r2_p1": "مراجعة وتطوير المخططات المعمارية ومطابقة ودمج مفاهيم التصميم الداخلي مع الرسومات التنفيذية.",
-
       "exp.r3_role": "مهندس معماري",
       "exp.r3_p1": "تقييم تطوير المخططات واستراتيجيات الاستجابة للطوارئ طبقاً لاشتراطات ومعايير الدفاع المدني والسلامة الإنشائية.",
 
       "skills.tag": "الكفاءات والأدوات",
       "skills.title": "البرمجيات الهندسية والتدريب التخصصي",
       "skills.software_title": "البرمجيات والأدوات الهندسية",
-      "skills.training_title": "التدريبات والشهادات الموقعية",
-      "skills.t1_title": "مشروع Zed Park — أوراسكوم (Jan–Feb 2024)",
-      "skills.t1_desc": "تدريب عملي على الواجهات الزجاجية (Curtain Walls)، العزل الحراري والمائي، وكسوات الـ GRC المتطورة.",
-      "skills.t2_title": "مشروع Linear Park — ريدكون إسبانيا (Jul–Aug 2023)",
-      "skills.t2_desc": "إشراف وتدريب على أعمال اللاندسكيب (Softscape & Hardscape) وأعمال التشطيبات الخارجية.",
-      "skills.t3_title": "شركة Alco Eg للألومنيوم والقطاعات الخاصة",
-      "skills.t3_desc": "شهادة تدريبية معتمدة في تقنيات قطاعات الألومنيوم الخاصة والأنظمة المعمارية المتقدمة.",
+      "skills.training_title": "الدورات والشهادات الميدانية",
+      "skills.languages_title": "اللغات والكفاءات التواصلية",
+      "skills.lang_ar": "العربية",
+      "skills.lang_ar_lvl": "اللغة الأم (Native)",
+      "skills.lang_en": "الإنجليزية",
+      "skills.lang_en_lvl": "ممتاز / احترافي (Professional)",
 
-      "domain.d1": "التصميم المعماري (Architectural Design)",
-      "domain.d2": "التصميم الداخلي (Interior Design)",
-      "domain.d3": "اللاندسكيب وتنسيق الموقع (Landscape Design)",
-      "domain.d4": "التخطيط العمراني (Urban Planning)",
-      "domain.d5": "المخططات التنفيذية (Working Drawings)",
-      "domain.d6": "الإظهار ثلاثي الأبعاد (3D Visualization)",
-
+      "edu.tag": "الخلفية الأكاديمية",
+      "edu.title": "المؤهل التعليمي والاعتماد الدولي",
       "edu.degree": "بكالوريوس الهندسة المعمارية (B.Sc. Architecture Engineering)",
-      "edu.school": "الكلية الكندية الدولية (Canadian International College - CIC)، الجيزة",
-      "edu.validation": "معتمد رسمياً من جامعة كيب بريتون - كندا (Validated by Cape Breton University, Canada)",
+      "edu.college": "الكلية الكندية الدولية - الجيزة (Canadian International College - CIC)",
+      "edu.partner": "معتمد وموثق رسمياً من جامعة كيب بريتون - نوفا سكوشا، كندا (Cape Breton University, Canada)",
+      "edu.dates": "سبتمبر 2019 — يوليو 2024",
 
-      "contact.tag": "ابدأ مشروعك الآن",
-      "contact.title": "جاهز لتحويل رؤيتك المعمارية إلى واقع ملموس؟",
-      "contact.desc": "سواء كنت تبحث عن تصميم فيلا فاخرة، تشطيب متكامل لمقرك أو شقتك، أو استشارة معمارية وإشراف هندسي — يسعدني تواصلك المباشر.",
-      "contact.phone_call": "اتصال هاتفي",
+      "contact.tag": "تواصل مباشر",
+      "contact.title": "لنبدأ في تحويل رؤيتك المعمارية إلى واقع",
+      "contact.subtitle": "سواء كنت تخطط لبناء فيلا، تصميم ديكور داخلي فاخر، أو تنفيذ منشأة صناعية، يسعدني مناقشة مشروعك.",
       "contact.email_label": "البريد الإلكتروني",
-      "contact.location": "القاهرة، مصر (Cairo, Egypt) — متاح للعمل الموقعي وعن بُعد للمشاريع الدولية",
-      "footer.to_top": "العودة للأعلى ↑"
+      "contact.phone_label": "الهاتف المباشر",
+      "contact.behance_label": "معرض الأعمال",
+      "contact.loc_label": "الموقع الحالي",
+      "contact.loc_val": "القاهرة، جمهورية مصر العربية",
+      "contact.btn_whatsapp": "تواصل عبر واتساب فوراً",
+      "contact.btn_email": "إرسال بريد إلكتروني",
+
+      "footer.name": "حسن أحمد",
+      "footer.rights": "جميع الحقوق محفوظة."
     },
+
     en: {
       "nav.name": "Hassan Ahmed",
       "nav.role": "Architect",
       "nav.about": "About",
       "nav.stats": "Achievements",
       "nav.projects": "Projects",
+      "nav.estimator": "Cost Estimator",
       "nav.experience": "Experience",
-      "nav.skills": "Skills & Software",
+      "nav.skills": "Skills & Tools",
       "nav.contact": "Contact",
 
-      "hero.badge": "Available for Architectural & Interior Projects",
+      "hero.badge": "Available for Architecture & Interior Projects",
       "hero.greeting": "Hello, I am",
       "hero.name": "Hassan Ahmed",
-      "hero.subtitle": "Architect | Architectural Design & 3D Visualization",
-      "hero.desc": "B.Sc. Architecture Engineering from Canadian International College (CIC), validated by Cape Breton University, Canada. Specializing in architectural design, interior design, landscape, and 3D visualization. Proven record of delivering 50+ residential, retail, and industrial projects from concept to final client handover across Egypt's premier developments.",
-      "hero.zero_violations": "Zero Code Violations across 30+ Projects",
+      "hero.subtitle": "Architecture Engineer & 3D Visualization Specialist",
+      "hero.desc": "B.Sc. in Architecture Engineering from CIC, validated by Cape Breton University, Canada. Specializing in architectural design, interior fit-outs, and landscape planning, with a proven record of delivering 50+ projects from concept to final handover across Egypt's premier residential compounds.",
+      "hero.zero_violations": "Zero Code Violations across 30+ projects",
       "hero.view_work": "Explore Projects",
       "hero.whatsapp": "WhatsApp Chat",
       "hero.avatar_label": "HASSAN AHMED ARCHITECTURE",
       "hero.floating_projects": "Delivered Projects",
-      "hero.floating_satisfaction": "Turnkey Excellence",
+      "hero.floating_satisfaction": "Turnkey Quality",
 
-      "stats.p1_title": "Delivered Projects",
-      "stats.p1_desc": "Residential, retail & industrial successfully handed over",
+      "stats.p1_title": "Architecture & Interior Projects",
+      "stats.p1_desc": "Residential, retail and industrial successfully delivered",
       "stats.p2_title": "Code Violations",
-      "stats.p2_desc": "Full compliance across 30+ audited & licensed projects",
+      "stats.p2_desc": "Zero code violations across 30 supervised builds",
       "stats.p3_title": "Engineers Led",
-      "stats.p3_desc": "Mentoring and directing architectural & site execution teams",
+      "stats.p3_desc": "Supervised & directed cross-functional site & design teams",
       "stats.p4_title": "Top Compounds",
-      "stats.p4_desc": "Mivida, Mountain View, Orascom, Al-Futtaim, and more",
+      "stats.p4_desc": "Mivida, Mountain View, Orascom, Al-Futtaim and more",
 
-      "projects.tag": "Featured Work",
-      "projects.title": "Curated Architectural Portfolio",
-      "projects.subtitle": "Real-world projects managed from theoretical concept through to final client handover",
+      "projects.tag": "Selected Portfolio",
+      "projects.title": "Curated Engineering Projects",
+      "projects.subtitle": "Real architectural works directed from conceptual mood boards to turnkey handover",
       "projects.filter_all": "All",
+      "projects.filter_arch": "Architecture",
+      "projects.filter_interior": "Interior Design",
       "projects.filter_retail": "Retail & Commercial",
-      "projects.filter_residential": "Luxury Residential",
-      "projects.filter_industrial": "Industrial & Construction",
-      "projects.view_details": "View Architectural Details",
+      "projects.filter_industrial": "Industrial",
+      "projects.view_details": "View Details & Renders",
+      "projects.behance_cta": "View Full Portfolio on Behance",
 
-      "projects.p1_cat": "Retail & Commercial Design",
-      "projects.p1_title": "Baxster Italian Retail Store - Mivida (Emaar)",
-      "projects.p1_desc": "Led the architectural design of the Egyptian branch of the Italian luxury brand, implementing vintage wood and stone cladding and coordinating all MEP works under tight deadlines.",
+      // Estimator translations (EN)
+      "est.tag": "Smart Pricing Engine",
+      "est.title": "Finishing Cost & BOQ Estimator",
+      "est.subtitle": "Calculate accurate, market-grounded finishing costs and bills of quantities according to Egyptian engineering standards",
+      "est.unit_type_label": "Property Type",
+      "est.unit_apt": "Apartment",
+      "est.unit_villa": "Villa / Duplex",
+      "est.unit_office": "Corporate Office",
+      "est.unit_retail": "Retail Store",
+      "est.area_label": "Total Floor Area (Square Meters)",
+      "est.m2": "m²",
+      "est.tier_label": "Finishing Level / Tier",
+      "est.tier_eco_name": "Economy Fit-out",
+      "est.tier_eco_desc": "Practical and durable finishing using certified local materials with optimized budget efficiency.",
+      "est.tier_eco_f1": "GLC putty & 3030 plastic topcoats",
+      "est.tier_eco_f2": "First-choice Cleopatra / Royal ceramics",
+      "est.tier_eco_f3": "Lecico / Ideal Standard sanitary wares",
+      "est.tier_eco_f4": "El Sewedy certified wiring & Schneider breakers",
+      "est.recommended_badge": "Most Popular",
+      "est.tier_mid_name": "Deluxe Grade",
+      "est.tier_mid_desc": "A balanced fusion of luxury and modernity using premium European and certified local materials.",
+      "est.tier_mid_f1": "Original Jotun Fenomastic paint systems",
+      "est.tier_mid_f2": "Imported laser-cut porcelain + HDF wood",
+      "est.tier_mid_f3": "Duravit ceramics & Grohe German mixers",
+      "est.tier_mid_f4": "Knauf gypsum board + hidden LED profile lighting",
+      "est.tier_lux_name": "Ultra Luxury",
+      "est.tier_lux_desc": "Absolute bespoke luxury: imported bookmatched marble, smart automation, and architectural wood claddings.",
+      "est.tier_lux_f1": "Imported Carrara / Emperador marble with automated polishing",
+      "est.tier_lux_f2": "Wall-hung Grohe concealed tanks & Italian fittings",
+      "est.tier_lux_f3": "Full Smart Home Automation & smart lighting",
+      "est.tier_lux_f4": "Natural wood wall claddings & magnetic track lights",
+      "est.addons_label": "Custom Add-on Packages",
+      "est.add_gypsum": "Complete Gypsum Board Ceilings & Coves",
+      "est.add_door": "High-Security Turkish Armored Door + Interior Doors",
+      "est.add_smart": "Smart Home Automation System",
+      "est.add_hvac": "Concealed HVAC Piping & Freon Prep",
+      "est.summary_tag": "Architectural Estimate",
+      "est.summary_title": "Project Cost Summary",
+      "est.total_label": "Total Estimated Fit-out Cost",
+      "est.rate_label": "Estimated Cost per m²:",
+      "est.b_materials": "Materials & Supplies (60%)",
+      "est.b_labor": "Skilled Labor & Craftsmanship (25%)",
+      "est.b_supervision": "Engineering Supervision & Management (15%)",
+      "est.timeline_lbl": "Estimated Duration",
+      "est.warranty_lbl": "Engineering Warranty",
+      "est.warranty_val": "10-Year Structural",
+      "est.milestones_title": "Proposed Payment Schedule",
+      "est.m1": "Down payment & mobilization",
+      "est.m2": "Post MEP rough-in",
+      "est.m3": "Post gypsum & base finishes",
+      "est.m4": "Final inspection & handover",
+      "est.cta_whatsapp": "Send Estimate to Eng. Hassan via WhatsApp",
+      "est.cta_print": "Print Estimate (PDF)",
 
-      "projects.p2_cat": "Turnkey Residential Fit-out",
-      "projects.p2_title": "Hyde Park Apartment - Mountain View",
-      "projects.p2_desc": "Delivered a complete interior fit-out from bare shell to client handover, covering MEP systems, refined architectural finishes, and meticulous on-site supervision.",
-
-      "projects.p3_cat": "Industrial Construction & Finishing",
-      "projects.p3_title": "Two Industrial Factories - 6th of October",
-      "projects.p3_desc": "Contracted as freelance contractor and construction firm owner, executing both factory buildings including reinforced concrete works and full turnkey industrial finishing.",
-
-      "projects.p4_cat": "Industrial Engineering & Handover",
-      "projects.p4_title": "Arabia Aluminium Factory",
-      "projects.p4_desc": "Executed specialized industrial manufacturing facility from structural shell construction to full architectural and mechanical fit-out complying with strict industrial standards.",
-
-      "exp.tag": "Career History",
-      "exp.title": "Demonstrated Professional Track Record",
-      "exp.subtitle": "Experience across top-tier real estate developers and engineering studios",
-      "exp.r1_role": "Architectural Designer, Residential & Commercial",
-      "exp.r1_comp": "Private Architectural Projects",
-      "exp.r1_p1": "Direct villa and apartment projects from concept and design through execution and handover, remotely and on-site, within premium compounds (Mivida, Mountain View, Orascom, E-Tapa, Al-Futtaim).",
-      "exp.r1_p2": "Contributed to the preliminary concept design for a specialized rehabilitation and detox center in Saudi Arabia.",
-      "exp.r1_p3": "Designed and delivered 50+ architectural and interior projects, including working drawings, mood boards, space plans, and 3D visualizations tailored to each client.",
-      "exp.r1_p4": "Led a team of 4 architects and engineers, achieving zero code violations across 30 projects.",
-
+      "exp.tag": "Work Experience",
+      "exp.title": "Proven Track Record of Excellence",
+      "exp.subtitle": "Hands-on engineering across leading architectural practices and top-tier developers",
+      "exp.r1_role": "Architectural Designer, Residential Projects",
+      "exp.r1_comp": "Residential & Commercial Projects",
+      "exp.r1_p1": "Directed villa and apartment projects from concept and design through execution and handover, remotely and on site, in premium compounds including Mivida, Mountain View, Orascom, E-Tapa and Al-Futtaim.",
+      "exp.r1_p2": "Contributed to conceptual stage design for a Saudi detox and rehabilitation center.",
+      "exp.r1_p3": "Designed and delivered 50+ architectural and interior projects, including working drawings, mood boards, space plans and 3D visualizations.",
+      "exp.r1_p4": "Led a team of 4 architects and engineers and achieved zero code violations across 30 projects.",
       "exp.r2_role": "Architecture Engineer",
-      "exp.r2_p1": "Reviewed the development of architectural plans and the seamless integration of interior design concepts with technical documentation.",
-
+      "exp.r2_p1": "Reviewed the development of architectural plans and the integration of interior design concepts.",
       "exp.r3_role": "Architecture Engineer",
-      "exp.r3_p1": "Evaluated plan development and emergency-response strategies in strict compliance with Civil Defense and fire-safety codes.",
+      "exp.r3_p1": "Evaluated plan development and emergency-response strategies in line with Civil Defense requirements.",
 
       "skills.tag": "Core Competencies",
-      "skills.title": "Software Proficiency & Field Training",
-      "skills.software_title": "Engineering & Visualization Software",
-      "skills.training_title": "Field Training & Certifications",
-      "skills.t1_title": "Zed Park Project — Orascom (Jan–Feb 2024)",
-      "skills.t1_desc": "Hands-on training in curtain walls, thermal/acoustic insulation, and GRC cladding installation.",
-      "skills.t2_title": "Linear Park — Redcon Spain (Jul–Aug 2023)",
-      "skills.t2_desc": "Site supervision and training in hardscape, softscape, and premium exterior finishes.",
-      "skills.t3_title": "Alco Eg (Aluminium & Special Sections)",
-      "skills.t3_desc": "Certified professional training in specialized architectural aluminum sections and framing systems.",
+      "skills.title": "Software Proficiency & Professional Training",
+      "skills.software_title": "Engineering Software & Tools",
+      "skills.training_title": "Field Certifications & Site Training",
+      "skills.languages_title": "Languages & Communication",
+      "skills.lang_ar": "Arabic",
+      "skills.lang_ar_lvl": "Native Speaker",
+      "skills.lang_en": "English",
+      "skills.lang_en_lvl": "Professional Working Proficiency",
 
-      "domain.d1": "Architectural Design",
-      "domain.d2": "Interior Design",
-      "domain.d3": "Landscape Design",
-      "domain.d4": "Urban Planning",
-      "domain.d5": "Working Drawings",
-      "domain.d6": "3D Visualization",
-
+      "edu.tag": "Education",
+      "edu.title": "Academic Degree & Accreditation",
       "edu.degree": "B.Sc. Architecture Engineering",
-      "edu.school": "Canadian International College (CIC), Giza",
-      "edu.validation": "Validated by Cape Breton University, Canada (Sep 2019 – Jul 2024)",
+      "edu.college": "Canadian International College (CIC), Giza",
+      "edu.partner": "Validated & Accredited by Cape Breton University, Nova Scotia, Canada",
+      "edu.dates": "Sep 2019 – Jul 2024",
 
-      "contact.tag": "Start Your Project",
-      "contact.title": "Ready to bring your architectural vision to life?",
-      "contact.desc": "Whether you are looking to design a luxury villa, complete a turnkey interior fit-out, or need engineering site supervision — feel free to reach out directly.",
-      "contact.phone_call": "Phone Call",
-      "contact.email_label": "Direct Email",
-      "contact.location": "Cairo, Egypt — Available for on-site & remote international projects",
-      "footer.to_top": "Back to Top ↑"
+      "contact.tag": "Direct Contact",
+      "contact.title": "Let's Bring Your Architectural Vision to Life",
+      "contact.subtitle": "Whether planning a private luxury villa, commercial fit-out, or industrial facility, I am here to assist.",
+      "contact.email_label": "Email Address",
+      "contact.phone_label": "Direct Phone / Mobile",
+      "contact.behance_label": "Portfolio on Behance",
+      "contact.loc_label": "Current Location",
+      "contact.loc_val": "Cairo, Egypt",
+      "contact.btn_whatsapp": "Message on WhatsApp",
+      "contact.btn_email": "Send Email",
+
+      "footer.name": "Hassan Ahmed",
+      "footer.rights": "All rights reserved."
     }
   };
 
-  let currentLang = localStorage.getItem('ha_portfolio_lang') || 'ar';
+  let currentLang = 'ar';
 
   function applyLanguage(lang) {
     currentLang = lang;
-    localStorage.setItem('ha_portfolio_lang', lang);
-
-    const html = document.documentElement;
-    html.setAttribute('lang', lang);
-    html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-
-    const langToggleBtn = document.getElementById('langToggle');
-    if (langToggleBtn) {
-      langToggleBtn.querySelector('.lang-text').textContent = lang === 'ar' ? 'EN' : 'عربي';
-    }
+    const htmlTag = document.documentElement;
+    htmlTag.setAttribute('lang', lang);
+    htmlTag.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
     // Update all text nodes with data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (translations[lang] && translations[lang][key]) {
-        el.innerHTML = translations[lang][key];
+        el.textContent = translations[lang][key];
       }
     });
+
+    // Update Lang button text
+    const langBtnText = document.querySelector('#langToggle .lang-text');
+    if (langBtnText) {
+      langBtnText.textContent = lang === 'ar' ? 'EN' : 'عربي';
+    }
+
+    // Re-render projects and update estimator text in the new language
+    renderProjects(activeFilter);
+    calculateEstimate();
   }
 
-  // Language Toggle Button Event
   const langToggleBtn = document.getElementById('langToggle');
   if (langToggleBtn) {
     langToggleBtn.addEventListener('click', () => {
-      applyLanguage(currentLang === 'ar' ? 'en' : 'ar');
+      const newLang = currentLang === 'ar' ? 'en' : 'ar';
+      applyLanguage(newLang);
     });
   }
 
-  // Initialize Language
-  applyLanguage(currentLang);
-
 
   // ==========================================
-  // 2. Mobile Menu Drawer Navigation
+  // 2. Mobile Drawer Navigation
   // ==========================================
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const closeDrawerBtn = document.getElementById('closeDrawerBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
 
   function openDrawer() {
-    mobileDrawer.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    if (mobileDrawer) mobileDrawer.classList.add('open');
   }
 
   function closeDrawer() {
-    mobileDrawer.classList.remove('open');
-    document.body.style.overflow = '';
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
   }
 
   if (mobileMenuBtn && mobileDrawer) {
@@ -276,54 +356,487 @@ document.addEventListener('DOMContentLoaded', () => {
     closeDrawerBtn.addEventListener('click', closeDrawer);
   }
 
-  // Close drawer on link click
   document.querySelectorAll('.drawer-link').forEach(link => {
     link.addEventListener('click', closeDrawer);
   });
 
 
   // ==========================================
-  // 3. Project Filter Tabs
+  // 3. Projects Data, Dynamic Grid & Lightbox
   // ==========================================
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectsData = [
+    {
+      id: "facade",
+      title_ar: "تصميم واجهة فيلا حديثة (Modern Facade)",
+      title_en: "Modern Villa Facade Design",
+      category: "architectural",
+      image: "assets/projects/facade.png",
+      desc_ar: "تصميم معماري لواجهة فيلا فاخرة بمزيج من الحجر الطبيعي، الخشب المعالج، والإضاءات الخطية المخفية مع دراسة حركة الظلال والتهوية.",
+      desc_en: "Architectural facade design for a luxury villa featuring natural stone, treated wood cladding, and linear accent lighting with daylight optimization.",
+      client: "Private Villa",
+      tools: ["3ds Max", "D5 Render", "AutoCAD"]
+    },
+    {
+      id: "luxe-villa",
+      title_ar: "فيلا لوكس متكاملة (Luxe Villa)",
+      title_en: "Luxe Villa Exterior & Landscape",
+      category: "architectural",
+      image: "assets/projects/luxe-villa.jpg",
+      desc_ar: "دراسة كتل معمارية ودمج المساحات الخضراء والمسابح مع الكتل السكنية لتحقيق أقصى درجات الخصوصية والجمال الهندسي.",
+      desc_en: "Massing study and seamless integration of landscape and pool areas with residential volumes for ultimate privacy and aesthetic balance.",
+      client: "Private Client",
+      tools: ["Revit", "Lumion", "Photoshop"]
+    },
+    {
+      id: "double-height-reception",
+      title_ar: "ريسيبشن مزدوج الارتفاع (Double-Height Reception)",
+      title_en: "Double-Height Luxury Reception",
+      category: "interior",
+      image: "assets/projects/double-height-reception.jpg",
+      desc_ar: "تصميم داخلي فخم بارتفاع مزدوج، تكسيات رخامية متصلة وثريات معمارية عملاقة مع توزيع إضاءة مدروس لإبراز فخامة الفراغ.",
+      desc_en: "Palatial double-height interior space with continuous bookmatched marble, statement chandeliers, and layered illumination.",
+      client: "Compound Villa",
+      tools: ["3ds Max", "D5 Render", "AI Visualization"]
+    },
+    {
+      id: "baxster-store",
+      title_ar: "متجر Baxster الإيطالي - ميفيدا إعمار",
+      title_en: "Baxster Italian Retail Store - Mivida (Emaar)",
+      category: "retail",
+      image: "assets/projects/baxster-store.jpg",
+      desc_ar: "الفرع المصري للعلامة الإيطالية الفاخرة، تطبيق كسوات خشبية وحجرية فينتدج وتنسيق كامل لأعمال الـ MEP طبقاً لأعلى معايير إعمار.",
+      desc_en: "Turnkey architectural fit-out for the Italian luxury brand's Egyptian flagship store in Emaar Mivida with vintage aesthetics and full MEP coordination.",
+      client: "Emaar / Baxster",
+      tools: ["AutoCAD", "Revit", "Site Supervision"]
+    },
+    {
+      id: "modern-kitchen-360",
+      title_ar: "مطبخ مودرن بانورامي (Modern Kitchen 360)",
+      title_en: "Modern Kitchen 360 & Island",
+      category: "interior",
+      image: "assets/projects/modern-kitchen-360.jpg",
+      desc_ar: "استغلال هندسي دقيق للمساحات، جزيرة مطبخ رخامية مدمجة مع أحدث أنظمة التخزين والإضاءة الذكية والتهوية المخفية.",
+      desc_en: "Ergonomic kitchen design featuring a monolithic marble island, concealed storage systems, and smart task lighting.",
+      client: "Residential Fit-out",
+      tools: ["3ds Max", "Lumion"]
+    },
+    {
+      id: "neoclassical-apartment",
+      title_ar: "شقة نيوكلاسيك - هايد بارك ماونتن فيو",
+      title_en: "Neoclassical Apartment - Mountain View",
+      category: "interior",
+      image: "assets/projects/neoclassical-apartment.jpg",
+      desc_ar: "تشطيب كامل من الطوب الأحمر وحتى المفتاح، إشراف موقعي دقيق وتنسيق كافة البنود المعمارية والكهربائية بصفر مخالفات.",
+      desc_en: "Turnkey fit-out from bare shell to final handover with on-site engineering supervision and refined neoclassical detailing.",
+      client: "Mountain View",
+      tools: ["AutoCAD", "MEP Coordination", "Site Execution"]
+    },
+    {
+      id: "majles-luxury",
+      title_ar: "مجلس ضيوف فاخر (Luxury Majles)",
+      title_en: "Contemporary Luxury Majles",
+      category: "interior",
+      image: "assets/projects/majles-luxury.jpg",
+      desc_ar: "تصميم مجلس عربي بطابع مودرن راقي يجمع بين الأصالة وفخامة الخامات والخطوط المعمارية الهادئة مع لمسات ذهبية أنيقة.",
+      desc_en: "Sophisticated contemporary majles blending cultural hospitality with refined materials and minimalist architectural lines.",
+      client: "Private Client",
+      tools: ["3ds Max", "Photoshop"]
+    },
+    {
+      id: "boss-desk",
+      title_ar: "مكتب إداري تنفيذي (Executive Boss Office)",
+      title_en: "Executive CEO Office Fit-out",
+      category: "retail",
+      image: "assets/projects/boss-desk.jpg",
+      desc_ar: "بيئة عمل تنفيذية راقية بتكسيات خشبية داكنة وجلسة اجتماعات مدمجة تعكس هوية الشركة وقوتها الإدارية.",
+      desc_en: "High-end corporate executive suite featuring rich wood paneling, acoustic integration, and executive meeting zone.",
+      client: "Corporate HQ",
+      tools: ["AutoCAD", "3ds Max", "D5 Render"]
+    },
+    {
+      id: "roof-design",
+      title_ar: "تصميم روف وجلسات خارجية (Roof Terrace Design)",
+      title_en: "Roof Terrace & Outdoor Living",
+      category: "architectural",
+      image: "assets/projects/roof-design.png",
+      desc_ar: "تنسيق موقع خارجي وبرجولات خشبية ومناطق شواء مع مراعاة العزل المائي والحراري للأسطح وتصريف مياه الأمطار.",
+      desc_en: "Rooftop terrace featuring wooden pergolas, fire pit, and BBQ zone with strict waterproofing & thermal insulation engineering.",
+      client: "Private Villa",
+      tools: ["Lumion", "AutoCAD"]
+    },
+    {
+      id: "industrial-factories",
+      title_ar: "مصنعي 6 أكتوبر - شركة قباني وأرابيا للألومنيوم",
+      title_en: "Industrial Facilities - 6th of October",
+      category: "industrial",
+      image: "assets/projects/facade.png",
+      desc_ar: "تنفيذ إنشائي وهياكل خرسانية وتشطيبات صناعية كاملة مطابقة للمواصفات الهندسية واشتراطات الدفاع المدني والسلامة المهنية.",
+      desc_en: "Structural concrete execution and complete turnkey industrial finishing complying with strict civil defense standards.",
+      client: "Qabbani & Arabia Aluminium",
+      tools: ["Civil Defense Codes", "Structural Drawings", "Site Management"]
+    }
+  ];
 
+  let activeFilter = 'all';
+  let currentProjectIndex = 0;
+  let filteredProjects = [...projectsData];
+
+  const projectsGrid = document.getElementById('projectsGrid');
+
+  function renderProjects(filter = 'all') {
+    if (!projectsGrid) return;
+    activeFilter = filter;
+    filteredProjects = filter === 'all' 
+      ? projectsData 
+      : projectsData.filter(p => p.category === filter);
+
+    projectsGrid.innerHTML = '';
+
+    filteredProjects.forEach((proj, idx) => {
+      const card = document.createElement('article');
+      card.className = 'project-card';
+      card.setAttribute('data-category', proj.category);
+
+      const title = currentLang === 'ar' ? proj.title_ar : proj.title_en;
+      const desc = currentLang === 'ar' ? proj.desc_ar : proj.desc_en;
+      const viewDetailsText = currentLang === 'ar' ? 'عرض التفاصيل والصور' : 'View Details & Renders';
+
+      card.innerHTML = `
+        <div class="project-image-box" data-idx="${idx}">
+          <img src="${proj.image}" alt="${title}" class="project-img-real" loading="lazy">
+          <div class="project-overlay">
+            <span class="view-details">${viewDetailsText}</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-category">${proj.category.toUpperCase()}</span>
+            <span class="project-client">${proj.client}</span>
+          </div>
+          <h3 class="project-name">${title}</h3>
+          <p class="project-summary">${desc}</p>
+          <div class="project-tags">
+            ${proj.tools.map(t => `<span>${t}</span>`).join('')}
+          </div>
+        </div>
+      `;
+
+      // Click card to open lightbox
+      card.querySelector('.project-image-box').addEventListener('click', () => {
+        openLightbox(idx);
+      });
+
+      projectsGrid.appendChild(card);
+    });
+  }
+
+  // Filter Buttons
+  const filterBtns = document.querySelectorAll('.filter-btn');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      const filterValue = btn.getAttribute('data-filter');
-
-      projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
-          card.style.display = 'flex';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 10);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(15px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 250);
-        }
-      });
+      const filter = btn.getAttribute('data-filter');
+      renderProjects(filter);
     });
   });
 
+  // Lightbox Implementation
+  const lightbox = document.getElementById('lightbox');
+  const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCat = document.getElementById('lightboxCat');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxDesc = document.getElementById('lightboxDesc');
+  const lightboxClient = document.getElementById('lightboxClient');
+  const lightboxTools = document.getElementById('lightboxTools');
+
+  function openLightbox(index) {
+    if (!filteredProjects[index]) return;
+    currentProjectIndex = index;
+    const p = filteredProjects[index];
+
+    lightboxImg.src = p.image;
+    lightboxImg.alt = currentLang === 'ar' ? p.title_ar : p.title_en;
+    lightboxCat.textContent = p.category.toUpperCase();
+    lightboxTitle.textContent = currentLang === 'ar' ? p.title_ar : p.title_en;
+    lightboxDesc.textContent = currentLang === 'ar' ? p.desc_ar : p.desc_en;
+    lightboxClient.textContent = `${currentLang === 'ar' ? 'العميل / المشروع:' : 'Client / Project:'} ${p.client}`;
+    lightboxTools.innerHTML = p.tools.map(t => `<span>${t}</span>`).join('');
+
+    lightbox.classList.add('active');
+    lightboxBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxBackdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', () => {
+      currentProjectIndex = (currentProjectIndex - 1 + filteredProjects.length) % filteredProjects.length;
+      openLightbox(currentProjectIndex);
+    });
+  }
+
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', () => {
+      currentProjectIndex = (currentProjectIndex + 1) % filteredProjects.length;
+      openLightbox(currentProjectIndex);
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') {
+      currentLang === 'ar' ? lightboxPrev.click() : lightboxNext.click();
+    }
+    if (e.key === 'ArrowLeft') {
+      currentLang === 'ar' ? lightboxNext.click() : lightboxPrev.click();
+    }
+  });
+
+  // Initial render of projects
+  renderProjects('all');
+
+
+  // =======================================================
+  // 4. Interactive Finishing Cost & BOQ Estimator Engine
+  // =======================================================
+  const areaSlider = document.getElementById('areaSlider');
+  const areaValue = document.getElementById('areaValue');
+  const unitBtns = document.querySelectorAll('.unit-btn');
+  const tierCards = document.querySelectorAll('.tier-card');
+  const addonGypsum = document.getElementById('addonGypsum');
+  const addonDoor = document.getElementById('addonDoor');
+  const addonSmart = document.getElementById('addonSmart');
+  const addonHvac = document.getElementById('addonHvac');
+
+  const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+  const ratePerMDisplay = document.getElementById('ratePerMDisplay');
+  const costMaterials = document.getElementById('costMaterials');
+  const costLabor = document.getElementById('costLabor');
+  const costSupervision = document.getElementById('costSupervision');
+  const timelineWeeks = document.getElementById('timelineWeeks');
+  const selectedUnitBadge = document.getElementById('selectedUnitBadge');
+  const whatsappEstimateBtn = document.getElementById('whatsappEstimateBtn');
+  const printEstimateBtn = document.getElementById('printEstimateBtn');
+
+  let currentUnitMult = 1.0;
+  let currentUnitNameAr = 'شقة سكنية';
+  let currentUnitNameEn = 'Apartment';
+
+  let currentBaseRate = 8200; // Deluxe by default
+  let currentTierNameAr = 'ديلوكس راقي';
+  let currentTierNameEn = 'Deluxe Grade';
+
+  function formatEGP(num) {
+    return Math.round(num).toLocaleString('en-US');
+  }
+
+  function calculateEstimate() {
+    if (!areaSlider) return;
+
+    const area = parseInt(areaSlider.value, 10);
+    if (areaValue) areaValue.textContent = area;
+
+    // Base finishing rate per m2 adjusted by unit type multiplier
+    let effectiveRate = currentBaseRate * currentUnitMult;
+
+    // Addons per m2
+    let addOnsPerM2 = 0;
+    if (addonGypsum && addonGypsum.checked) addOnsPerM2 += parseFloat(addonGypsum.getAttribute('data-cost') || 0);
+    if (addonSmart && addonSmart.checked) addOnsPerM2 += parseFloat(addonSmart.getAttribute('data-cost') || 0);
+    if (addonHvac && addonHvac.checked) addOnsPerM2 += parseFloat(addonHvac.getAttribute('data-cost') || 0);
+
+    let variableCost = (effectiveRate + addOnsPerM2) * area;
+
+    // Flat addons (e.g., Turkish armored door package)
+    let flatAddons = 0;
+    if (addonDoor && addonDoor.checked) {
+      flatAddons += parseFloat(addonDoor.getAttribute('data-flat') || 0);
+    }
+
+    const totalEstimate = variableCost + flatAddons;
+    const finalRatePerM = Math.round(totalEstimate / area);
+
+    // Distribution: Materials 60%, Labor 25%, Engineering Supervision 15%
+    const materialsVal = totalEstimate * 0.60;
+    const laborVal = totalEstimate * 0.25;
+    const supervisionVal = totalEstimate * 0.15;
+
+    // Duration calculation based on area and tier
+    let baseWeeks = Math.ceil(area / 18);
+    if (currentBaseRate > 10000) baseWeeks += 4; // Luxury takes more time for marble/smart
+    const minWeeks = Math.max(8, baseWeeks);
+    const maxWeeks = minWeeks + 3;
+
+    // Update UI elements
+    if (totalPriceDisplay) totalPriceDisplay.textContent = formatEGP(totalEstimate);
+    if (ratePerMDisplay) ratePerMDisplay.textContent = `${formatEGP(finalRatePerM)} EGP/m²`;
+    if (costMaterials) costMaterials.textContent = `${formatEGP(materialsVal)} EGP`;
+    if (costLabor) costLabor.textContent = `${formatEGP(laborVal)} EGP`;
+    if (costSupervision) costSupervision.textContent = `${formatEGP(supervisionVal)} EGP`;
+
+    if (timelineWeeks) {
+      timelineWeeks.textContent = currentLang === 'ar' 
+        ? `${minWeeks} - ${maxWeeks} أسبوعاً`
+        : `${minWeeks} - ${maxWeeks} Weeks`;
+    }
+
+    if (selectedUnitBadge) {
+      const uName = currentLang === 'ar' ? currentUnitNameAr : currentUnitNameEn;
+      const tName = currentLang === 'ar' ? currentTierNameAr : currentTierNameEn;
+      selectedUnitBadge.textContent = `${uName} · ${tName}`;
+    }
+
+    // Dynamic WhatsApp Link Generation
+    if (whatsappEstimateBtn) {
+      const uName = currentLang === 'ar' ? currentUnitNameAr : currentUnitNameEn;
+      const tName = currentLang === 'ar' ? currentTierNameAr : currentTierNameEn;
+      
+      const selectedAddonsList = [];
+      if (addonGypsum && addonGypsum.checked) selectedAddonsList.push(currentLang === 'ar' ? 'أسقف معلقة كناوف' : 'Gypsum Board Ceilings');
+      if (addonDoor && addonDoor.checked) selectedAddonsList.push(currentLang === 'ar' ? 'باب مصفح تركي ونجارة' : 'Armored & Interior Doors');
+      if (addonSmart && addonSmart.checked) selectedAddonsList.push(currentLang === 'ar' ? 'أنظمة سمارت هوم' : 'Smart Home Automation');
+      if (addonHvac && addonHvac.checked) selectedAddonsList.push(currentLang === 'ar' ? 'تجهيزات تكييف كونسيلد' : 'Concealed HVAC Prep');
+
+      const addonsStr = selectedAddonsList.length > 0 ? selectedAddonsList.join('، ') : (currentLang === 'ar' ? 'بدون إضافات' : 'Standard');
+
+      let message = '';
+      if (currentLang === 'ar') {
+        message = `مرحباً م. حسن أحمد،
+استخدمت حاسبة المقايسة التفاعلية بموقعك وأرغب في استشارة هندسية لمشروعي:
+
+` +
+          `• نوع الوحدة: ${uName}
+` +
+          `• المساحة: ${area} م²
+` +
+          `• مستوى التشطيب: ${tName}
+` +
+          `• البنود المضافة: ${addonsStr}
+` +
+          `• التكلفة التقديرية: ${formatEGP(totalEstimate)} جنيه مصري (~${formatEGP(finalRatePerM)} ج.م/م²)
+` +
+          `• مدة التنفيذ المقترحة: ${minWeeks}-${maxWeeks} أسبوع
+
+` +
+          `برجاء إفادتي بإمكانية تحديد موعد لمعاينة الموقع ومناقشة تفاصيل التصميم والتنفيذ. شكراً لك!`;
+      } else {
+        message = `Hello Eng. Hassan Ahmed,
+I used the interactive finishing estimator on your portfolio and would like a consultation for my project:
+
+` +
+          `• Property Type: ${uName}
+` +
+          `• Total Area: ${area} m²
+` +
+          `• Finishing Tier: ${tName}
+` +
+          `• Selected Add-ons: ${addonsStr}
+` +
+          `• Estimated Cost: ${formatEGP(totalEstimate)} EGP (~${formatEGP(finalRatePerM)} EGP/m²)
+` +
+          `• Estimated Timeline: ${minWeeks}-${maxWeeks} weeks
+
+` +
+          `Looking forward to scheduling a site inspection and discussing design & execution details. Thank you!`;
+      }
+
+      const encodedMsg = encodeURIComponent(message);
+      whatsappEstimateBtn.href = `https://wa.me/201096978258?text=${encodedMsg}`;
+    }
+  }
+
+  // Unit Type Selection
+  unitBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      unitBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentUnitMult = parseFloat(btn.getAttribute('data-mult') || 1.0);
+      
+      const unitType = btn.getAttribute('data-unit');
+      if (unitType === 'apartment') {
+        currentUnitNameAr = 'شقة سكنية';
+        currentUnitNameEn = 'Apartment';
+      } else if (unitType === 'villa') {
+        currentUnitNameAr = 'فيلا / دوبلكس';
+        currentUnitNameEn = 'Villa / Duplex';
+      } else if (unitType === 'office') {
+        currentUnitNameAr = 'مكتب إداري';
+        currentUnitNameEn = 'Corporate Office';
+      } else if (unitType === 'retail') {
+        currentUnitNameAr = 'محل تجاري / ريتيل';
+        currentUnitNameEn = 'Retail Store';
+      }
+      calculateEstimate();
+    });
+  });
+
+  // Slider Listener
+  if (areaSlider) {
+    areaSlider.addEventListener('input', calculateEstimate);
+  }
+
+  // Tier Selection
+  tierCards.forEach(card => {
+    card.addEventListener('click', () => {
+      tierCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      currentBaseRate = parseFloat(card.getAttribute('data-rate') || 8200);
+
+      const tierKey = card.getAttribute('data-tier');
+      if (tierKey === 'economy') {
+        currentTierNameAr = 'تشطيب اقتصادي';
+        currentTierNameEn = 'Economy Fit-out';
+      } else if (tierKey === 'deluxe') {
+        currentTierNameAr = 'ديلوكس راقي';
+        currentTierNameEn = 'Deluxe Grade';
+      } else if (tierKey === 'luxury') {
+        currentTierNameAr = 'سوبر لوكس / ألترا';
+        currentTierNameEn = 'Ultra Luxury';
+      }
+      calculateEstimate();
+    });
+  });
+
+  // Addon Checkboxes
+  [addonGypsum, addonDoor, addonSmart, addonHvac].forEach(chk => {
+    if (chk) chk.addEventListener('change', calculateEstimate);
+  });
+
+  // Print button
+  if (printEstimateBtn) {
+    printEstimateBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  // Initial Calculation
+  calculateEstimate();
+
 
   // ==========================================
-  // 4. Smooth Scroll & Active Nav Spy
+  // 5. Smooth Scroll & Active Nav Spy
   // ==========================================
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.desktop-nav .nav-link:not(.btn-nav-cta)');
 
   window.addEventListener('scroll', () => {
     let current = '';
-    const scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY + 140;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;

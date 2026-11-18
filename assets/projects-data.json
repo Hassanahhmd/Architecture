@@ -1,0 +1,112 @@
+[
+  {
+    "id": "facade",
+    "title_ar": "تصميم واجهة فيلا حديثة (Modern Facade)",
+    "title_en": "Modern Villa Facade Design",
+    "category": "architectural",
+    "image": "assets/projects/facade.png",
+    "desc_ar": "تصميم معماري لواجهة فيلا فاخرة بمزيج من الحجر الطبيعي، الخشب المعالج، والإضاءات الخطية المخفية.",
+    "desc_en": "Architectural facade design for a luxury villa featuring natural stone, treated wood cladding, and linear accent lighting.",
+    "client": "Private Villa",
+    "tools": ["3ds Max", "D5 Render", "AutoCAD"]
+  },
+  {
+    "id": "luxe-villa",
+    "title_ar": "فيلا لوكس متكاملة (Luxe Villa)",
+    "title_en": "Luxe Villa Exterior & Landscape",
+    "category": "architectural",
+    "image": "assets/projects/luxe-villa.jpg",
+    "desc_ar": "دراسة كتل معمارية ودمج المساحات الخضراء والمسابح مع الكتل السكنية لتحقيق أقصى درجات الخصوصية والجمال.",
+    "desc_en": "Massing study and seamless integration of landscape and pool areas with residential volumes for ultimate privacy.",
+    "client": "Private Client",
+    "tools": ["Revit", "Lumion", "Photoshop"]
+  },
+  {
+    "id": "double-height-reception",
+    "title_ar": "ريسيبشن مزدوج الارتفاع (Double-Height Reception)",
+    "title_en": "Double-Height Luxury Reception",
+    "category": "interior",
+    "image": "assets/projects/double-height-reception.jpg",
+    "desc_ar": "تصميم داخلي فخم بارتفاع مزدوج، تكسيات رخامية متصلة وثريات معمارية عملاقة مع توزيع إضاءة مدروس.",
+    "desc_en": "Palatial double-height interior space with continuous bookmatched marble, statement chandeliers, and layered illumination.",
+    "client": "Compound Villa",
+    "tools": ["3ds Max", "D5 Render", "AI Visualization"]
+  },
+  {
+    "id": "baxster-store",
+    "title_ar": "متجر Baxster الإيطالي - ميفيدا إعمار",
+    "title_en": "Baxster Italian Retail Store - Mivida (Emaar)",
+    "category": "retail",
+    "image": "assets/projects/baxster-store.jpg",
+    "desc_ar": "الفرع المصري للعلامة الإيطالية الفاخرة، تطبيق كسوات خشبية وحجرية فينتدج وتنسيق كامل للـ MEP.",
+    "desc_en": "Turnkey architectural fit-out for the Italian luxury brand's Egyptian flagship store in Emaar Mivida with vintage aesthetics.",
+    "client": "Emaar / Baxster",
+    "tools": ["AutoCAD", "Revit", "Site Supervision"]
+  },
+  {
+    "id": "modern-kitchen-360",
+    "title_ar": "مطبخ مودرن بانورامي (Modern Kitchen 360)",
+    "title_en": "Modern Kitchen 360 & Island",
+    "category": "interior",
+    "image": "assets/projects/modern-kitchen-360.jpg",
+    "desc_ar": "استغلال هندسي دقيق للمساحات، جزيرة مطبخ رخامية مدمجة مع أحدث أنظمة التخزين والإضاءة الذكية.",
+    "desc_en": "Ergonomic kitchen design featuring a monolithic marble island, concealed storage systems, and smart task lighting.",
+    "client": "Residential Fit-out",
+    "tools": ["3ds Max", "Lumion"]
+  },
+  {
+    "id": "neoclassical-apartment",
+    "title_ar": "شقة نيوكلاسيك - هايد بارك ماونتن فيو",
+    "title_en": "Neoclassical Apartment - Mountain View",
+    "category": "interior",
+    "image": "assets/projects/neoclassical-apartment.jpg",
+    "desc_ar": "تشطيب كامل من الطوب الأحمر وحتى المفتاح، إشراف موقعي دقيق وتنسيق كافة البنود المعمارية والكهربائية.",
+    "desc_en": "Turnkey fit-out from bare shell to final handover with on-site engineering supervision and refined neoclassical detailing.",
+    "client": "Mountain View",
+    "tools": ["AutoCAD", "MEP Coordination", "Site Execution"]
+  },
+  {
+    "id": "majles-luxury",
+    "title_ar": "مجلس ضيوف فاخر (Luxury Majles)",
+    "title_en": "Contemporary Luxury Majles",
+    "category": "interior",
+    "image": "assets/projects/majles-luxury.jpg",
+    "desc_ar": "تصميم مجلس عربي بطابع مودرن راقي يجمع بين الأصالة وفخامة الخامات والخطوط المعمارية الهادئة.",
+    "desc_en": "Sophisticated contemporary majles blending cultural hospitality with refined materials and minimalist architectural lines.",
+    "client": "Private Client",
+    "tools": ["3ds Max", "Photoshop"]
+  },
+  {
+    "id": "boss-desk",
+    "title_ar": "مكتب إداري تنفيذي (Executive Boss Office)",
+    "title_en": "Executive CEO Office Fit-out",
+    "category": "retail",
+    "image": "assets/projects/boss-desk.jpg",
+    "desc_ar": "بيئة عمل تنفيذية راقية بتكسيات خشبية داكنة وجلسة اجتماعات مدمجة تعكس هوية الشركة وقوتها.",
+    "desc_en": "High-end corporate executive suite featuring rich wood paneling, acoustic integration, and meeting zone.",
+    "client": "Corporate HQ",
+    "tools": ["AutoCAD", "3ds Max", "D5 Render"]
+  },
+  {
+    "id": "roof-design",
+    "title_ar": "تصميم روف وجلسات خارجية (Roof Terrace Design)",
+    "title_en": "Roof Terrace & Outdoor Living",
+    "category": "architectural",
+    "image": "assets/projects/roof-design.png",
+    "desc_ar": "تنسيق موقع خارجي وبرجولات خشبية ومناطق شواء مع مراعاة العزل المائي والحراري للأسطح.",
+    "desc_en": "Rooftop terrace featuring wooden pergolas, fire pit, and BBQ zone with strict waterproofing & thermal insulation.",
+    "client": "Private Villa",
+    "tools": ["Lumion", "AutoCAD"]
+  },
+  {
+    "id": "industrial-factories",
+    "title_ar": "مصنعي 6 أكتوبر - شركة قباني وأرابيا للألومنيوم",
+    "title_en": "Industrial Facilities - 6th of October",
+    "category": "industrial",
+    "image": "assets/projects/facade.png",
+    "desc_ar": "تنفيذ إنشائي وهياكل خرسانية وتشطيبات صناعية كاملة مطابقة للمواصفات الهندسية واشتراطات الدفاع المدني.",
+    "desc_en": "Structural concrete execution and complete turnkey industrial finishing complying with strict civil defense standards.",
+    "client": "Qabbani & Arabia Aluminium",
+    "tools": ["Civil Defense Codes", "Structural Drawings", "Site Management"]
+  }
+]
