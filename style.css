@@ -20,10 +20,10 @@
   /* -------------------------------------------------------------
      20% Modern Luxury Olive Green Accents (الزيتوني العصري)
      ------------------------------------------------------------- */
-  --accent-olive: #485f43;        /* Signature Mediterranean Olive */
-  --accent-olive-dark: #334430;   /* Deep olive for primary buttons */
-  --accent-olive-light: #5f7c58;  /* Fresh leaf olive */
-  --accent-olive-soft: rgba(72, 95, 67, 0.08); /* Subtle background tint */
+  --accent-olive: #3d5637;        /* Signature Mediterranean Olive (+15% Richer) */
+  --accent-olive-dark: #273823;   /* Deep olive for primary buttons */
+  --accent-olive-light: #53734a;  /* Fresh leaf olive */
+  --accent-olive-soft: rgba(61, 86, 55, 0.12); /* Subtle background tint (+15% Presence) */
   --accent-olive-glow: rgba(72, 95, 67, 0.22);
   --accent-sage: #889e83;         /* Elegant sage */
   
@@ -45,9 +45,9 @@
   /* -------------------------------------------------------------
      Architectural Drafting Borders & Shadows
      ------------------------------------------------------------- */
-  --border-subtle: rgba(72, 95, 67, 0.12);
-  --border-color: rgba(72, 95, 67, 0.2);
-  --border-gold: rgba(72, 95, 67, 0.35);
+  --border-subtle: rgba(61, 86, 55, 0.16);
+  --border-color: rgba(61, 86, 55, 0.28);
+  --border-gold: rgba(61, 86, 55, 0.42);
   --border-hover: rgba(72, 95, 67, 0.65);
   
   --shadow-sm: 0 4px 12px rgba(40, 55, 38, 0.04);
@@ -2863,144 +2863,259 @@ button {
   font-weight: 600;
 }
 
+
 /* ==========================================================================
-   Education Section
+   EDUCATION SECTION (PERFECTLY SCALED ICONS MATCHING TEXT)
    ========================================================================== */
 .education-section {
   padding-block: var(--space-2xl);
   background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .edu-card {
   max-width: 860px;
   margin-inline: auto;
   background: #ffffff;
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: 2rem 2.25rem;
   box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
 }
 
-.edu-degree {
-  font-size: 1.45rem;
-  font-weight: 900;
-  color: var(--text-main);
-  margin-bottom: 0.75rem;
-}
-
-.edu-college {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--accent-olive-dark);
-  margin-bottom: 0.5rem;
-}
-
-.edu-partner {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-.edu-dates {
-  display: inline-block;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--text-dim);
-  background: var(--bg-secondary);
-  padding: 0.35rem 0.95rem;
-  border-radius: 30px;
-}
-
-/* ==========================================================================
-   Contact Section
-   ========================================================================== */
-.contact-section {
-  padding-block: var(--space-2xl);
-  background: var(--bg-primary);
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+@media (max-width: 640px) {
+  .edu-card {
+    flex-direction: column;
+    padding: 1.5rem;
   }
 }
 
-.contact-card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-card {
-  background: #ffffff;
-  border: 1px solid var(--border-subtle);
+.edu-icon-wrap {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  max-width: 44px;
   border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-fast);
-}
-
-.contact-card:hover {
-  border-color: var(--border-color);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card);
-}
-
-.contact-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: var(--accent-olive-soft);
+  background: rgba(61, 86, 55, 0.12);
   color: var(--accent-olive-dark);
+  border: 1px solid rgba(61, 86, 55, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.contact-icon svg {
-  width: 22px;
-  height: 22px;
+.edu-icon {
+  width: 22px !important;
+  height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+  display: block;
+  stroke: var(--accent-olive-dark);
 }
 
-.contact-meta {
+.edu-info {
   display: flex;
   flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.edu-date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.edu-degree {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.edu-school {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.edu-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(61, 86, 55, 0.09);
+  border: 1px solid rgba(61, 86, 55, 0.25);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-olive-dark);
+  width: fit-content;
+}
+
+.badge-mini-icon {
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  min-width: 16px !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  fill: var(--accent-olive) !important;
+}
+
+/* ==========================================================================
+   CONTACT SECTION (CARDS, ICONS & LOCATION BAR)
+   ========================================================================== */
+.contact-section {
+  padding-block: var(--space-2xl);
+  background: var(--bg-primary);
+}
+
+.contact-box {
+  max-width: 920px;
+  margin-inline: auto;
+  background: #ffffff;
+  border: 2px solid rgba(61, 86, 55, 0.24);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(39, 56, 35, 0.08);
+}
+
+@media (max-width: 640px) {
+  .contact-box {
+    padding: 1.5rem;
+  }
+}
+
+.contact-header {
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.contact-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-block: 0.5rem 0.75rem;
+}
+
+.contact-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .contact-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-card {
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card:hover {
+  border-color: var(--accent-olive);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(61, 86, 55, 0.15);
+  background: rgba(61, 86, 55, 0.04);
+}
+
+.card-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  max-width: 42px;
+  border-radius: 50%;
+  background: rgba(61, 86, 55, 0.12);
+  color: var(--accent-olive-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(61, 86, 55, 0.25);
+}
+
+.card-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+  display: block !important;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 .card-label {
-  font-size: 0.78rem;
-  color: var(--text-dim);
+  font-size: 0.76rem;
   font-weight: 700;
-  margin-bottom: 0.2rem;
+  color: var(--text-muted);
 }
 
 .card-val {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--text-main);
 }
 
-.contact-action-box {
-  background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem;
+.contact-location-bar {
+  margin-top: 1.75rem;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 1.25rem;
-  box-shadow: var(--shadow-card);
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(61, 86, 55, 0.08);
+  border: 1px solid rgba(61, 86, 55, 0.25);
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-olive-dark);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.loc-icon {
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  min-width: 16px !important;
+  flex-shrink: 0 !important;
+  stroke: var(--accent-olive-dark) !important;
+  display: inline-block !important;
 }
 
 /* ==========================================================================
@@ -3377,4 +3492,46 @@ button {
   margin-top: 0.35rem;
   margin-bottom: 0;
   line-height: 1.4;
+}
+
+/* ==========================================================================
+   +15% OLIVE GREEN ENHANCEMENTS
+   ========================================================================== */
+.hero-image-frame {
+  border: 3px solid var(--accent-olive) !important;
+  outline: 3px solid rgba(61, 86, 55, 0.28) !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 15px 40px rgba(39, 56, 35, 0.16) !important;
+}
+
+.section-tag {
+  background: rgba(61, 86, 55, 0.12) !important;
+  color: var(--accent-olive-dark) !important;
+  border: 1.5px solid rgba(61, 86, 55, 0.32) !important;
+  font-weight: 800 !important;
+}
+
+.btn-primary {
+  background: var(--accent-olive-dark) !important;
+  border: 1px solid #1e2c1b !important;
+  box-shadow: 0 4px 15px rgba(39, 56, 35, 0.2) !important;
+}
+
+.btn-primary:hover {
+  background: #1b2618 !important;
+  box-shadow: 0 8px 25px rgba(39, 56, 35, 0.3) !important;
+}
+
+.stat-card {
+  border-top: 3px solid var(--accent-olive) !important;
+}
+
+.stat-number {
+  color: var(--accent-olive-dark) !important;
+}
+
+.filter-btn.active {
+  background: var(--accent-olive-dark) !important;
+  border-color: var(--accent-olive-dark) !important;
+  color: #ffffff !important;
 }
