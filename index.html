@@ -132,7 +132,7 @@
           </div>
         </div>
 
-        <!-- Architectural Monogram / Visual Badge -->
+        <!-- Architectural Portrait Frame -->
         <div class="hero-visual">
           <div class="arch-card-frame">
             <div class="corner corner-tl"></div>
@@ -140,13 +140,12 @@
             <div class="corner corner-bl"></div>
             <div class="corner corner-br"></div>
             
-            <div class="avatar-holder">
-              <!-- Real Profile Photo -->
-              <div class="architect-avatar has-photo">
-                <div class="photo-glow-ring">
-                  <img src="assets/profile.jpg" alt="Architect Hassan Ahmed" class="profile-real-img" loading="eager">
-                </div>
-                <span class="avatar-label" data-i18n="hero.avatar_label">ENG. HASSAN AHMED · ARCHITECT</span>
+            <div class="portrait-container">
+              <div class="portrait-glow"></div>
+              <img src="assets/profile.jpg" alt="Architect Hassan Ahmed" class="hero-portrait-img" loading="eager">
+              <div class="portrait-badge">
+                <span class="p-name">ENG. HASSAN AHMED</span>
+                <span class="p-title" data-i18n="nav.role">مهندس معماري · ARCHITECT</span>
               </div>
             </div>
 
@@ -264,11 +263,7 @@
 
         <!-- Experience Tab Switchers -->
         <div class="lab-tabs">
-          <button type="button" class="lab-tab-btn active" data-tab="tab-before-after">
-            <span class="tab-icon">🔀</span>
-            <span data-i18n="lab.tab_ba">قبل وبعد</span>
-          </button>
-          <button type="button" class="lab-tab-btn" data-tab="tab-lighting">
+          <button type="button" class="lab-tab-btn active" data-tab="tab-lighting">
             <span class="tab-icon">☀️</span>
             <span data-i18n="lab.tab_light">محاكي الشمس والضوء</span>
           </button>
@@ -286,47 +281,8 @@
           </button>
         </div>
 
-        <!-- Tab 1: Before / After Split Slider -->
-        <div class="lab-tab-content active" id="tab-before-after">
-          <div class="lab-card">
-            <div class="lab-card-header">
-              <div>
-                <h3 class="lab-card-title" data-i18n="ba.title">التحول المعماري: من الطوب الأحمر إلى التسليم الفاخر</h3>
-                <p class="lab-card-desc" data-i18n="ba.desc">اسحب الخط الفاصل يميناً ويساراً لمشاهدة دقة التنفيذ من مرحلة العظم وحتى التشطيب المتكامل</p>
-              </div>
-              <div class="ba-badge" data-i18n="ba.badge">مشروع هايد بارك - ماونتن فيو</div>
-            </div>
-
-            <div class="ba-slider-container" id="baContainer">
-              <div class="ba-image-wrapper ba-before">
-                <img src="assets/projects/neoclassical-apartment.jpg" alt="Before - Bare Shell" class="ba-img-raw">
-                <div class="ba-blueprint-filter"></div>
-                <div class="ba-hud-overlay">
-                  <div class="hud-marker marker-1"><span>H: 3.20m</span></div>
-                  <div class="hud-marker marker-2"><span>MEP AXIS</span></div>
-                  <div class="hud-tag">STAGE 01: BARE SHELL</div>
-                </div>
-                <span class="ba-label ba-label-before" data-i18n="ba.raw_label">مرحلة العظم والتأسيس</span>
-              </div>
-
-              <div class="ba-image-wrapper ba-after" id="baAfter">
-                <img src="assets/projects/neoclassical-apartment.jpg" alt="After - Luxury Handover" class="ba-img-finished">
-                <span class="ba-label ba-label-after" data-i18n="ba.fin_label">التسليم النهائي الفاخر</span>
-              </div>
-
-              <div class="ba-handle" id="baHandle">
-                <div class="handle-line"></div>
-                <div class="handle-circle">
-                  <span>&#10094;&#10095;</span>
-                </div>
-              </div>
-            </div>
-            <div class="ba-footer-hint" data-i18n="ba.hint">💡 اسحب المقبض بالماوس أو اللمس لرؤية التحول الكامل</div>
-          </div>
-        </div>
-
-        <!-- Tab 2: Lighting & Sun Simulator -->
-        <div class="lab-tab-content" id="tab-lighting">
+        <!-- Tab 1: Lighting & Sun Simulator (Active) -->
+        <div class="lab-tab-content active" id="tab-lighting">
           <div class="lab-card">
             <div class="lab-card-header">
               <div>

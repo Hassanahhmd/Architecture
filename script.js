@@ -960,60 +960,7 @@ I used the interactive finishing estimator on your portfolio and would like a co
   });
 
 
-  // --- Module B: Before / After Split Slider ---
-  const baContainer = document.getElementById('baContainer');
-  const baAfter = document.getElementById('baAfter');
-  const baHandle = document.getElementById('baHandle');
-  let isDraggingBA = false;
-
-  function updateBASlider(clientX) {
-    if (!baContainer || !baAfter || !baHandle) return;
-    const rect = baContainer.getBoundingClientRect();
-    let x = clientX - rect.left;
-    if (x < 0) x = 0;
-    if (x > rect.width) x = rect.width;
-
-    const pct = (x / rect.width) * 100;
-    baHandle.style.left = `${pct}%`;
-    baHandle.style.insetInlineStart = `${pct}%`;
-
-    const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-    if (isRtl) {
-      baAfter.style.width = `${pct}%`;
-    } else {
-      baAfter.style.width = `${100 - pct}%`;
-    }
-  }
-
-  if (baContainer) {
-    baContainer.addEventListener('mousedown', (e) => {
-      isDraggingBA = true;
-      updateBASlider(e.clientX);
-    });
-
-    window.addEventListener('mousemove', (e) => {
-      if (!isDraggingBA) return;
-      updateBASlider(e.clientX);
-    });
-
-    window.addEventListener('mouseup', () => {
-      isDraggingBA = false;
-    });
-
-    baContainer.addEventListener('touchstart', (e) => {
-      isDraggingBA = true;
-      if (e.touches[0]) updateBASlider(e.touches[0].clientX);
-    }, { passive: true });
-
-    window.addEventListener('touchmove', (e) => {
-      if (!isDraggingBA) return;
-      if (e.touches[0]) updateBASlider(e.touches[0].clientX);
-    }, { passive: true });
-
-    window.addEventListener('touchend', () => {
-      isDraggingBA = false;
-    });
-  }
+// --- Module B: Removed per request ---
 
 
   // --- Module C: Lighting & Sun Simulator ---

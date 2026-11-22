@@ -277,22 +277,37 @@ button {
   transition: var(--transition-smooth);
 }
 
-/* Mobile Drawer */
+/* Mobile Drawer - Completely hidden on desktop to avoid blocking top info */
 .mobile-drawer {
   position: fixed;
   inset: 0;
-  background: rgba(10, 14, 20, 0.98);
+  background: rgba(13, 17, 23, 0.98);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 200;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  transform: translateY(-100%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(-120%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .mobile-drawer.open {
   transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (min-width: 1024px) {
+  .mobile-drawer {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
 }
 
 .drawer-header {
@@ -507,7 +522,7 @@ button {
   gap: 0.85rem;
 }
 
-/* Architectural Card Visual */
+/* Architectural Card Visual & Portrait */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -516,16 +531,87 @@ button {
 .arch-card-frame {
   position: relative;
   width: 100%;
-  max-width: 380px;
-  height: 400px;
-  background: linear-gradient(160deg, rgba(26, 36, 51, 0.8) 0%, rgba(13, 19, 27, 0.9) 100%);
-  border: 1px solid var(--border-color);
+  max-width: 360px;
+  height: 480px;
+  background: linear-gradient(165deg, rgba(26, 36, 51, 0.8) 0%, rgba(13, 17, 23, 0.95) 100%);
+  border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 1.25rem 1rem 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.55),
+    0 0 35px rgba(212, 181, 140, 0.15);
+  overflow: hidden;
+}
+
+.portrait-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.portrait-glow {
+  position: absolute;
+  top: 15%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(212, 181, 140, 0.28) 0%, rgba(94, 161, 232, 0.15) 50%, transparent 75%);
+  border-radius: 50%;
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-portrait-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  object-position: bottom center;
+  z-index: 2;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.65));
+  transition: transform 0.4s ease;
+}
+
+.arch-card-frame:hover .hero-portrait-img {
+  transform: scale(1.03);
+}
+
+.portrait-badge {
+  position: absolute;
+  bottom: 14px;
+  background: rgba(13, 17, 23, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-gold);
+  padding: 0.45rem 1.1rem;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.portrait-badge .p-name {
+  font-family: var(--font-latin);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.portrait-badge .p-title {
+  font-size: 0.72rem;
+  color: var(--accent-gold);
+  font-weight: 600;
 }
 
 /* Corner Architectural Drafting Marks */
