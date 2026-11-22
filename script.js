@@ -448,116 +448,296 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   const projectsData = [
     {
-      id: "facade",
-      title_ar: "تصميم واجهة فيلا حديثة (Modern Facade)",
-      title_en: "Modern Villa Facade Design",
-      category: "architectural",
-      image: "assets/projects/facade.png",
-      desc_ar: "تصميم معماري لواجهة فيلا فاخرة بمزيج من الحجر الطبيعي، الخشب المعالج، والإضاءات الخطية المخفية مع دراسة حركة الظلال والتهوية.",
-      desc_en: "Architectural facade design for a luxury villa featuring natural stone, treated wood cladding, and linear accent lighting with daylight optimization.",
-      client: "Private Villa",
-      tools: ["3ds Max", "D5 Render", "AutoCAD"]
+        "id": "store",
+        "title_ar": "S.T.O.R.E — متجر مجوهرات وألماس فاخر",
+        "title_en": "S.T.O.R.E — Luxury Jewelry & Diamond Showroom",
+        "category": "retail",
+        "image": "assets/projects/jewelry-store-1.jpg",
+        "gallery": [
+            "assets/projects/jewelry-store-1.jpg",
+            "assets/projects/jewelry-store-2.jpg",
+            "assets/projects/jewelry-store-3.jpg",
+            "assets/projects/jewelry-store-4.jpg",
+            "assets/projects/jewelry-store-5.jpg"
+        ],
+        "desc_ar": "تصميم وتنفيذ متجر مجوهرات وألماس راقي بواجهات عرض زجاجية مضيئة، كاونترات رخامية فاخرة وتجاليد خشبية دافئة مع إضاءة سبوت متخصصة CRI 95+ لإبراز بريق الذهب والأحجار الكريمة.",
+        "desc_en": "High-end luxury jewelry & diamond showroom featuring bespoke illuminated display vitrines, bookmatched marble consultation counters, and calibrated CRI 95+ accent lighting.",
+        "client": "Luxury Jewelry Brand",
+        "tools": [
+            "3ds Max",
+            "Lumion",
+            "Photoshop",
+            "Lighting Design"
+        ]
     },
     {
-      id: "luxe-villa",
-      title_ar: "فيلا لوكس متكاملة (Luxe Villa)",
-      title_en: "Luxe Villa Exterior & Landscape",
-      category: "architectural",
-      image: "assets/projects/luxe-villa.jpg",
-      desc_ar: "دراسة كتل معمارية ودمج المساحات الخضراء والمسابح مع الكتل السكنية لتحقيق أقصى درجات الخصوصية والجمال الهندسي.",
-      desc_en: "Massing study and seamless integration of landscape and pool areas with residential volumes for ultimate privacy and aesthetic balance.",
-      client: "Private Client",
-      tools: ["Revit", "Lumion", "Photoshop"]
+        "id": "facade",
+        "title_ar": "F.A.C.A.D.E. — واجهة عمارة سكنية نيوكلاسيك ملكي",
+        "title_en": "F.A.C.A.D.E. — Royal Neoclassical Residential Building",
+        "category": "architectural",
+        "image": "assets/projects/neoclassical-building-detail.jpg",
+        "gallery": [
+            "assets/projects/neoclassical-building-detail.jpg",
+            "assets/projects/neoclassical-building-wide.jpg"
+        ],
+        "desc_ar": "تصميم معماري لواجهة مبنى سكني فاخر من 6 طوابق بالطراز النيوكلاسيكي الملكي، يتضمن مصعداً بانورامياً زجاجياً مدمجاً، شرفات بأعمدة كلاسيكية وتيجان مذهبة، وتكسيات حجرية متينة.",
+        "desc_en": "Architectural facade design for a 6-story royal neoclassical residential building featuring an integrated panoramic glass elevator shaft, classical colonnades, and gold-leaf corbels.",
+        "client": "Private Developer",
+        "tools": [
+            "AutoCAD",
+            "3ds Max",
+            "Lumion",
+            "Working Drawings"
+        ]
     },
     {
-      id: "double-height-reception",
-      title_ar: "ريسيبشن مزدوج الارتفاع (Double-Height Reception)",
-      title_en: "Double-Height Luxury Reception",
-      category: "interior",
-      image: "assets/projects/double-height-reception.jpg",
-      desc_ar: "تصميم داخلي فخم بارتفاع مزدوج، تكسيات رخامية متصلة وثريات معمارية عملاقة مع توزيع إضاءة مدروس لإبراز فخامة الفراغ.",
-      desc_en: "Palatial double-height interior space with continuous bookmatched marble, statement chandeliers, and layered illumination.",
-      client: "Compound Villa",
-      tools: ["3ds Max", "D5 Render", "AI Visualization"]
+        "id": "dressing",
+        "title_ar": "D.R.E.S.S.I.N.G — غرفة ملابس ودريسنج روم ماستر",
+        "title_en": "D.R.E.S.S.I.N.G — Luxury Walk-in Dressing Suite",
+        "category": "interior",
+        "image": "assets/projects/master-suite-dressing.jpg",
+        "gallery": [
+            "assets/projects/master-suite-dressing.jpg",
+            "assets/projects/dressing-vanity.jpg"
+        ],
+        "desc_ar": "تصميم دريسنج روم مفتوح بتوزيع هندسي مدروس، خزائن بيضاء كلاسيكية بإضاءات LED خطية مدمجة، ركن تسريحة بمرآة مضيئة متموجة، ومنطقة جلوس استرخاء مخملية.",
+        "desc_en": "Custom walk-in dressing suite with tailored modular joinery, integrated concealed LED channel lighting, organic wavy illuminated vanity mirror, and plush lounge seating.",
+        "client": "Private Villa Client",
+        "tools": [
+            "3ds Max",
+            "D5 Render",
+            "Photoshop"
+        ]
     },
     {
-      id: "baxster-store",
-      title_ar: "متجر Baxster الإيطالي - ميفيدا إعمار",
-      title_en: "Baxster Italian Retail Store - Mivida (Emaar)",
-      category: "retail",
-      image: "assets/projects/baxster-store.jpg",
-      desc_ar: "الفرع المصري للعلامة الإيطالية الفاخرة، تطبيق كسوات خشبية وحجرية فينتدج وتنسيق كامل لأعمال الـ MEP طبقاً لأعلى معايير إعمار.",
-      desc_en: "Turnkey architectural fit-out for the Italian luxury brand's Egyptian flagship store in Emaar Mivida with vintage aesthetics and full MEP coordination.",
-      client: "Emaar / Baxster",
-      tools: ["AutoCAD", "Revit", "Site Supervision"]
+        "id": "master-bedroom-proposal",
+        "title_ar": "Master-bedroom design proposal. — جناح النوم الرئيسي الفاخر",
+        "title_en": "Master-bedroom design proposal. — Luxury Master Suite",
+        "category": "interior",
+        "image": "assets/projects/master-bedroom-marble.jpg",
+        "gallery": [
+            "assets/projects/master-bedroom-marble.jpg"
+        ],
+        "desc_ar": "جناح نوم رئيسي يجمع بين الفخامة والسكينة، جدار خلفي من الرخام الأبيض متصل العروق مع إضاءات دافئة مخفية، ثريا زجاجية كريستالية، وكراسي مخملية زمردية.",
+        "desc_en": "Luxury master bedroom suite proposal featuring a bookmatched marble accent wall, warm architectural cove lighting, a statement sculptural chandelier, and emerald velvet lounge chairs.",
+        "client": "Golden House Design",
+        "tools": [
+            "3ds Max",
+            "Lumion",
+            "Photoshop"
+        ]
     },
     {
-      id: "modern-kitchen-360",
-      title_ar: "مطبخ مودرن بانورامي (Modern Kitchen 360)",
-      title_en: "Modern Kitchen 360 & Island",
-      category: "interior",
-      image: "assets/projects/modern-kitchen-360.jpg",
-      desc_ar: "استغلال هندسي دقيق للمساحات، جزيرة مطبخ رخامية مدمجة مع أحدث أنظمة التخزين والإضاءة الذكية والتهوية المخفية.",
-      desc_en: "Ergonomic kitchen design featuring a monolithic marble island, concealed storage systems, and smart task lighting.",
-      client: "Residential Fit-out",
-      tools: ["3ds Max", "Lumion"]
+        "id": "double-height-reception",
+        "title_ar": "DOUBLE HIGHT RECEPTION — ريسيبشن مزدوج الارتفاع فخم",
+        "title_en": "DOUBLE HIGHT RECEPTION — Palatial Double-Height Space",
+        "category": "interior",
+        "image": "assets/projects/double-height-reception.jpg",
+        "gallery": [
+            "assets/projects/double-height-reception.jpg"
+        ],
+        "desc_ar": "تصميم داخلي فخم بارتفاع مزدوج لفيلا سكنية، تكسيات رخامية متصلة وثريات معمارية عملاقة مع توزيع إضاءة مدروس لإبراز فخامة الفراغ.",
+        "desc_en": "Palatial double-height interior space with continuous bookmatched marble, statement chandeliers, and layered illumination.",
+        "client": "Compound Villa",
+        "tools": [
+            "3ds Max",
+            "D5 Render",
+            "Photoshop"
+        ]
     },
     {
-      id: "neoclassical-apartment",
-      title_ar: "شقة نيوكلاسيك - هايد بارك ماونتن فيو",
-      title_en: "Neoclassical Apartment - Mountain View",
-      category: "interior",
-      image: "assets/projects/neoclassical-apartment.jpg",
-      desc_ar: "تشطيب كامل من الطوب الأحمر وحتى المفتاح، إشراف موقعي دقيق وتنسيق كافة البنود المعمارية والكهربائية بصفر مخالفات.",
-      desc_en: "Turnkey fit-out from bare shell to final handover with on-site engineering supervision and refined neoclassical detailing.",
-      client: "Mountain View",
-      tools: ["AutoCAD", "MEP Coordination", "Site Execution"]
+        "id": "luxe-villa",
+        "title_ar": "L.U.X.E.  V.I.L.L.A. — فيلا لوكس ولاندسكيب متكامل",
+        "title_en": "L.U.X.E.  V.I.L.L.A. — Exterior Architecture & Landscape",
+        "category": "architectural",
+        "image": "assets/projects/luxe-villa.jpg",
+        "gallery": [
+            "assets/projects/luxe-villa.jpg"
+        ],
+        "desc_ar": "دراسة كتل معمارية ودمج المساحات الخضراء والمسابح مع الكتل السكنية لتحقيق أقصى درجات الخصوصية والجمال الهندسي.",
+        "desc_en": "Massing study and seamless integration of landscape and pool areas with residential volumes for ultimate privacy and aesthetic balance.",
+        "client": "Private Client",
+        "tools": [
+            "Revit",
+            "Lumion",
+            "Photoshop"
+        ]
     },
     {
-      id: "majles-luxury",
-      title_ar: "مجلس ضيوف فاخر (Luxury Majles)",
-      title_en: "Contemporary Luxury Majles",
-      category: "interior",
-      image: "assets/projects/majles-luxury.jpg",
-      desc_ar: "تصميم مجلس عربي بطابع مودرن راقي يجمع بين الأصالة وفخامة الخامات والخطوط المعمارية الهادئة مع لمسات ذهبية أنيقة.",
-      desc_en: "Sophisticated contemporary majles blending cultural hospitality with refined materials and minimalist architectural lines.",
-      client: "Private Client",
-      tools: ["3ds Max", "Photoshop"]
+        "id": "villa-entrance",
+        "title_ar": "V.I.L.L.A.  E.N.T.R.A.N.C.E. — مدخل فيلا ملكي معاصر",
+        "title_en": "V.I.L.L.A.  E.N.T.R.A.N.C.E. — Grand Architectural Foyer Entrance",
+        "category": "architectural",
+        "image": "assets/projects/villa-entrance.jpg",
+        "gallery": [
+            "assets/projects/villa-entrance.jpg"
+        ],
+        "desc_ar": "تصميم مدخل رئيسي لفيلا خاصة بكتل معمارية متدرجة، مسارات مائية وإضاءات أرضية مخفية توجه حركة الزوار نحو الباب الرئيسي.",
+        "desc_en": "Monumental private villa entrance featuring terraced volumes, water features, and recessed ground lighting guiding visitors toward the grand foyer.",
+        "client": "Private Compound Villa",
+        "tools": [
+            "AutoCAD",
+            "3ds Max",
+            "D5 Render"
+        ]
     },
     {
-      id: "boss-desk",
-      title_ar: "مكتب إداري تنفيذي (Executive Boss Office)",
-      title_en: "Executive CEO Office Fit-out",
-      category: "retail",
-      image: "assets/projects/boss-desk.jpg",
-      desc_ar: "بيئة عمل تنفيذية راقية بتكسيات خشبية داكنة وجلسة اجتماعات مدمجة تعكس هوية الشركة وقوتها الإدارية.",
-      desc_en: "High-end corporate executive suite featuring rich wood paneling, acoustic integration, and executive meeting zone.",
-      client: "Corporate HQ",
-      tools: ["AutoCAD", "3ds Max", "D5 Render"]
+        "id": "boss-desk",
+        "title_ar": "B.O.S.S.  D.E.S.K. — مكتب إداري وتنفيذي راقي",
+        "title_en": "B.O.S.S.  D.E.S.K. — Executive Corporate Suite",
+        "category": "retail",
+        "image": "assets/projects/boss-desk.jpg",
+        "gallery": [
+            "assets/projects/boss-desk.jpg"
+        ],
+        "desc_ar": "بيئة عمل تنفيذية راقية بتكسيات خشبية داكنة وجلسة اجتماعات مدمجة تعكس هوية الشركة وقوتها الإدارية.",
+        "desc_en": "High-end corporate executive suite featuring rich wood paneling, acoustic integration, and executive meeting zone.",
+        "client": "Corporate HQ",
+        "tools": [
+            "AutoCAD",
+            "3ds Max",
+            "D5 Render"
+        ]
     },
     {
-      id: "roof-design",
-      title_ar: "تصميم روف وجلسات خارجية (Roof Terrace Design)",
-      title_en: "Roof Terrace & Outdoor Living",
-      category: "architectural",
-      image: "assets/projects/roof-design.png",
-      desc_ar: "تنسيق موقع خارجي وبرجولات خشبية ومناطق شواء مع مراعاة العزل المائي والحراري للأسطح وتصريف مياه الأمطار.",
-      desc_en: "Rooftop terrace featuring wooden pergolas, fire pit, and BBQ zone with strict waterproofing & thermal insulation engineering.",
-      client: "Private Villa",
-      tools: ["Lumion", "AutoCAD"]
+        "id": "modern-kitchen-360",
+        "title_ar": "Modern Kitchen 360. — مطبخ مودرن بانورامي تفاعلي",
+        "title_en": "Modern Kitchen 360. — Panoramic Kitchen & Island",
+        "category": "interior",
+        "image": "assets/projects/modern-kitchen-360.jpg",
+        "gallery": [
+            "assets/projects/modern-kitchen-360.jpg"
+        ],
+        "desc_ar": "استغلال هندسي دقيق للمساحات، جزيرة مطبخ رخامية مدمجة مع أحدث أنظمة التخزين والإضاءة الذكية والتهوية المخفية.",
+        "desc_en": "Ergonomic kitchen design featuring a monolithic marble island, concealed storage systems, and smart task lighting.",
+        "client": "Residential Fit-out",
+        "tools": [
+            "3ds Max",
+            "Lumion"
+        ]
     },
     {
-      id: "industrial-factories",
-      title_ar: "مصنعي 6 أكتوبر - شركة قباني وأرابيا للألومنيوم",
-      title_en: "Industrial Facilities - 6th of October",
-      category: "industrial",
-      image: "assets/projects/facade.png",
-      desc_ar: "تنفيذ إنشائي وهياكل خرسانية وتشطيبات صناعية كاملة مطابقة للمواصفات الهندسية واشتراطات الدفاع المدني والسلامة المهنية.",
-      desc_en: "Structural concrete execution and complete turnkey industrial finishing complying with strict civil defense standards.",
-      client: "Qabbani & Arabia Aluminium",
-      tools: ["Civil Defense Codes", "Structural Drawings", "Site Management"]
+        "id": "roof-design",
+        "title_ar": "ROOF DESIGN — تصميم روف وتراس خارجي",
+        "title_en": "ROOF DESIGN — Rooftop Terrace & Outdoor Living",
+        "category": "architectural",
+        "image": "assets/projects/roof-design.png",
+        "gallery": [
+            "assets/projects/roof-design.png"
+        ],
+        "desc_ar": "تنسيق موقع خارجي وبرجولات خشبية ومناطق شواء مع مراعاة العزل المائي والحراري للأسطح وتصريف مياه الأمطار.",
+        "desc_en": "Rooftop terrace featuring wooden pergolas, fire pit, and BBQ zone with strict waterproofing & thermal insulation engineering.",
+        "client": "Private Villa",
+        "tools": [
+            "Lumion",
+            "AutoCAD"
+        ]
+    },
+    {
+        "id": "majles",
+        "title_ar": "M.A.J.L.E.S — مجلس ضيوف فاخر معاصر",
+        "title_en": "M.A.J.L.E.S — Contemporary Luxury Majles",
+        "category": "interior",
+        "image": "assets/projects/majles-luxury.jpg",
+        "gallery": [
+            "assets/projects/majles-luxury.jpg"
+        ],
+        "desc_ar": "تصميم مجلس عربي بطابع مودرن راقي يجمع بين الأصالة وفخامة الخامات والخطوط المعمارية الهادئة مع لمسات ذهبية أنيقة.",
+        "desc_en": "Sophisticated contemporary majles blending cultural hospitality with refined materials and minimalist architectural lines.",
+        "client": "Private Client",
+        "tools": [
+            "3ds Max",
+            "Photoshop"
+        ]
+    },
+    {
+        "id": "neoclassical-apartment",
+        "title_ar": "Neoclassical Apartment. — شقة نيوكلاسيك هايد بارك ماونتن فيو",
+        "title_en": "Neoclassical Apartment. — Turnkey Handover Mountain View",
+        "category": "interior",
+        "image": "assets/projects/neoclassical-apartment.jpg",
+        "gallery": [
+            "assets/projects/neoclassical-apartment.jpg"
+        ],
+        "desc_ar": "تشطيب كامل من الطوب الأحمر وحتى المفتاح، إشراف موقعي دقيق وتنسيق كافة البنود المعمارية والكهربائية بصفر مخالفات.",
+        "desc_en": "Turnkey fit-out from bare shell to final handover with on-site engineering supervision and refined neoclassical detailing.",
+        "client": "Mountain View (Hyde Park)",
+        "tools": [
+            "AutoCAD",
+            "MEP Coordination",
+            "Site Execution"
+        ]
+    },
+    {
+        "id": "panoramic-bedroom",
+        "title_ar": "Panoramic guest's bedroom design. — غرفة نوم ضيوف بانورامية",
+        "title_en": "Panoramic guest's bedroom design. — Panoramic Master Bedroom",
+        "category": "interior",
+        "image": "assets/projects/panoramic-bedroom.jpg",
+        "gallery": [
+            "assets/projects/panoramic-bedroom.jpg"
+        ],
+        "desc_ar": "إطلالة بانورامية كاملة مع دراسة وافية للإضاءة الطبيعية والستائر الكهربائية وتوزيع الأثاث بما يحقق أقصى راحة للضيوف.",
+        "desc_en": "Panoramic guest bedroom with sweeping glazed views, motorized solar shading integration, and acoustic comfort zoning.",
+        "client": "Residential Project",
+        "tools": [
+            "3ds Max",
+            "Lumion"
+        ]
+    },
+    {
+        "id": "reception-american",
+        "title_ar": "Reception with American kitchen. — ريسبشن مع مطبخ أمريكي",
+        "title_en": "Reception with American kitchen. — Open Concept Living",
+        "category": "interior",
+        "image": "assets/projects/reception-american.jpg",
+        "gallery": [
+            "assets/projects/reception-american.jpg"
+        ],
+        "desc_ar": "مفهوم المساحات المفتوحة (Open Concept) يدمج منطقة الاستقبال مع مطبخ أمريكي عصري بركن إفطار رخامي متناسق.",
+        "desc_en": "Open-concept living space seamlessly bridging the formal reception with a contemporary American open kitchen and breakfast bar.",
+        "client": "Modern Apartment",
+        "tools": [
+            "AutoCAD",
+            "3ds Max",
+            "Lumion"
+        ]
+    },
+    {
+        "id": "bathroom",
+        "title_ar": "B.A.T.H.R.O.O.M — حمام ماستر فاخر",
+        "title_en": "B.A.T.H.R.O.O.M — Luxury Master Bathroom",
+        "category": "interior",
+        "image": "assets/projects/luxury-bathroom.jpg",
+        "gallery": [
+            "assets/projects/luxury-bathroom.jpg"
+        ],
+        "desc_ar": "حمام ماستر بتكسيات رخامية متصلة، كابينة شاور زجاج سيكوريت مع أطقم وخلاطات دفن جروهي الألمانية وحوض رخامي معلق.",
+        "desc_en": "Luxury master bathroom with floor-to-ceiling porcelain slabs, frameless glass shower enclosure, Grohe concealed brassware, and floating vanity.",
+        "client": "Villa Master Suite",
+        "tools": [
+            "3ds Max",
+            "D5 Render"
+        ]
+    },
+    {
+        "id": "kitchen-design",
+        "title_ar": "KITCHEN DESIGN — مطبخ عصري مدمج",
+        "title_en": "KITCHEN DESIGN — Contemporary Fitted Kitchen",
+        "category": "interior",
+        "image": "assets/projects/kitchen-design.png",
+        "gallery": [
+            "assets/projects/kitchen-design.png"
+        ],
+        "desc_ar": "مطبخ مودرن مدمج بتشطيبات مات وأجهزة بيلت-إن وتوزيع ميكانيكي وكهربائي دقيق لتسهيل الحركة والعمل.",
+        "desc_en": "Modern integrated kitchen featuring matte cabinetry, flush built-in appliances, and precision ergonomic work triangle.",
+        "client": "Residential Fit-out",
+        "tools": [
+            "AutoCAD",
+            "3ds Max"
+        ]
     }
-  ];
+];
 
   let activeFilter = 'all';
   let currentProjectIndex = 0;
@@ -583,9 +763,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const desc = currentLang === 'ar' ? proj.desc_ar : proj.desc_en;
       const viewDetailsText = currentLang === 'ar' ? 'عرض التفاصيل والصور' : 'View Details & Renders';
 
+      const galleryBadge = (proj.gallery && proj.gallery.length > 1) 
+        ? `<span class="gallery-count-badge">📷 ${proj.gallery.length} ${currentLang === 'ar' ? 'لقطات' : 'Views'}</span>` 
+        : '';
+
       card.innerHTML = `
         <div class="project-image-box" data-idx="${idx}">
           <img src="${proj.image}" alt="${title}" class="project-img-real" loading="lazy">
+          ${galleryBadge}
           <div class="project-overlay">
             <span class="view-details">${viewDetailsText}</span>
           </div>
@@ -637,18 +822,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxClient = document.getElementById('lightboxClient');
   const lightboxTools = document.getElementById('lightboxTools');
 
-  function openLightbox(index) {
+  function openLightbox(index, galleryImgIndex = 0) {
     if (!filteredProjects[index]) return;
     currentProjectIndex = index;
     const p = filteredProjects[index];
 
-    lightboxImg.src = p.image;
+    const currentGallery = (p.gallery && p.gallery.length > 0) ? p.gallery : [p.image];
+    const activeImgSrc = currentGallery[galleryImgIndex] || p.image;
+
+    lightboxImg.src = activeImgSrc;
     lightboxImg.alt = currentLang === 'ar' ? p.title_ar : p.title_en;
     lightboxCat.textContent = p.category.toUpperCase();
     lightboxTitle.textContent = currentLang === 'ar' ? p.title_ar : p.title_en;
     lightboxDesc.textContent = currentLang === 'ar' ? p.desc_ar : p.desc_en;
     lightboxClient.textContent = `${currentLang === 'ar' ? 'العميل / المشروع:' : 'Client / Project:'} ${p.client}`;
     lightboxTools.innerHTML = p.tools.map(t => `<span>${t}</span>`).join('');
+
+    // Gallery Thumbnails Container
+    let thumbsContainer = document.getElementById('lightboxThumbs');
+    if (!thumbsContainer) {
+      thumbsContainer = document.createElement('div');
+      thumbsContainer.id = 'lightboxThumbs';
+      thumbsContainer.className = 'lightbox-thumbs-row';
+      const imgWrap = document.querySelector('.lightbox-img-wrap');
+      if (imgWrap) imgWrap.appendChild(thumbsContainer);
+    }
+
+    if (currentGallery.length > 1) {
+      thumbsContainer.style.display = 'flex';
+      thumbsContainer.innerHTML = currentGallery.map((img, gIdx) => `
+        <button type="button" class="thumb-btn ${gIdx === galleryImgIndex ? 'active' : ''}" data-gidx="${gIdx}">
+          <img src="${img}" alt="Angle ${gIdx + 1}" loading="lazy">
+        </button>
+      `).join('');
+
+      thumbsContainer.querySelectorAll('.thumb-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const targetGIdx = parseInt(btn.getAttribute('data-gidx'), 10);
+          openLightbox(currentProjectIndex, targetGIdx);
+        });
+      });
+    } else {
+      thumbsContainer.style.display = 'none';
+      thumbsContainer.innerHTML = '';
+    }
 
     lightbox.classList.add('active');
     lightboxBackdrop.classList.add('active');
