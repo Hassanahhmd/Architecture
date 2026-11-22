@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
       "projects.view_details": "عرض التفاصيل والصور",
       "projects.behance_cta": "عرض كافة الأعمال على Behance",
 
-      // Estimator translations
+            // Estimator translations & 2025 Quotas (AR)
       "est.tag": "نظام تسعير ذكي",
-      "est.title": "حاسبة تكلفة التشطيب والمقايسة الفورية",
+      "est.title": "حاسبة تكلفة التشطيب والمقايسة الفورية 2025",
       "est.subtitle": "احسب تكلفة تشطيب وحدتك بدقة واحترافية طبقاً لأسعار السوق المصري والاشتراطات الهندسية",
       "est.unit_type_label": "نوع الوحدة العقارية",
       "est.unit_apt": "شقة سكنية",
@@ -64,26 +64,74 @@ document.addEventListener('DOMContentLoaded', () => {
       "est.unit_retail": "محل تجاري / ريتيل",
       "est.area_label": "المساحة الإجمالية (متر مربع)",
       "est.m2": "م²",
-      "est.tier_label": "مستوى التشطيب المطلوب",
-      "est.tier_eco_name": "تشطيب اقتصادي",
-      "est.tier_eco_desc": "تشطيب عملي بمواد معتمدة محلياً تلبي متطلبات الجودة بأفضل ميزانية.",
-      "est.tier_eco_f1": "دهانات GLC معجون وبلاستيك 3030",
-      "est.tier_eco_f2": "سيراميك فرز أول كليوباترا / رويال",
-      "est.tier_eco_f3": "أطقم صحي ليسيكو / إيديال ستاندارد",
-      "est.tier_eco_f4": "أسلاك السويدي وقواطع فينوس / شنايدر",
-      "est.recommended_badge": "الأكثر طلباً",
-      "est.tier_mid_name": "ديلوكس راقي",
-      "est.tier_mid_desc": "مزيج متوازن من الفخامة والعصرية باستخدام خامات أوروبية ومحلية ممتازة.",
-      "est.tier_mid_f1": "دهانات جوتن فينوماستيك أصلي (Jotun)",
-      "est.tier_mid_f2": "بورسلين مستورد ليزر + خشب HDF للغرف",
-      "est.tier_mid_f3": "أطقم ديورافيت (Duravit) وخلاطات جروهي (Grohe)",
-      "est.tier_mid_f4": "جبس بورد كناوف + بيوت نور وبروفايل ليد",
-      "est.tier_lux_name": "سوبر لوكس / ألترا",
-      "est.tier_lux_desc": "فخامة مطلقة، رخام مستورد، أنظمة ذكية، وخامات معمارية استثنائية.",
-      "est.tier_lux_f1": "رخام مستورد كرارة / إمبرادور مع جلي آلي",
-      "est.tier_lux_f2": "صحي دفن معلق جروهي وخلاطات إيطالية",
-      "est.tier_lux_f3": "سمارت هوم (Smart Automation) وتحكم ذكي",
-      "est.tier_lux_f4": "تكسيات خشبية طبيعية وجبس بورد ماجنتيك",
+      "est.tier_label": "باقات التشطيب الرسمية لعام 2025 والمزايا المشمولة",
+      "est.quotas_live_tag": "أسعار 2025 الرسمية + هدايا عينية",
+      "est.gift_box_title": "كوتة وهدايا الباقة المشمولة مجاناً:",
+      "est.gift_note": "مقدمة مجاناً وحصرياً ضمن تعاقدات الباقة لعام 2025.",
+
+      // 2025 Quotas Matrix
+      "matrix.badge": "لائحة أسعار وكوتات 2025 المعتمدة",
+      "matrix.title": "جدول باقات التشطيب والهدايا الاستثنائية لعام 2025",
+      "matrix.desc": "شفافية هندسية كاملة — اختر الباقة المناسبة لميزانيتك واطلع على الهدايا العينية المشمولة مع كل مستوى",
+
+      // 7 Tiers (AR)
+      "tier.eco_name": "الباقة الإقتصادية (ECONOMIC)",
+      "tier.eco_desc": "تشطيب عملي بمواد معتمدة تلبي معايير الجودة الهندسية الأساسية بأفضل ميزانية.",
+      "tier.eco_gift": "التشطيب القياسي الأساسي (بدون أجهزة)",
+      "tier.eco_f1": "دهانات GLC بلاستيك 3030 معجون 3 سكاكين",
+      "tier.eco_f2": "سيراميك فرز أول كليوباترا / رويال",
+      "tier.eco_f3": "أطقم صحي ليسيكو / إيديال ستاندارد",
+      "tier.eco_f4": "تأسيس كهرباء كابلات السويدي الأصلية",
+
+      "tier.med_name": "الباقة المتوسطة (MEDIUM)",
+      "tier.med_desc": "توازن مثالي بين الخامات العصرية والأداء العملي مع أجهزة أساسية مشمولة.",
+      "tier.med_gift": "هدية: سخانات كهرباء + تكييف 1.5 حصان ميديا",
+      "tier.med_f1": "سخانات كهرباء عادية للحمامات",
+      "tier.med_f2": "تكييف 1.5 حصان ميديا (Midea)",
+      "tier.med_f3": "دهانات جوتن فينوماستيك أصلي ومظهر حريري",
+      "tier.med_f4": "سيراميك قطع ليزر فاخر وأطقم ديورافيت",
+
+      "tier.vip_name": "باقة في آي بي (VIP PACKAGE)",
+      "tier.vip_desc": "مستوى راقٍ يجمع بين فخامة التشطيب وتجهيزات الترفيه والتبريد.",
+      "tier.vip_gift": "هدية: تكييف 1.5 حصان ميديا + (2) شاشة LG 43 بوصة",
+      "tier.vip_f1": "تكييف 1.5 حصان ميديا (Midea)",
+      "tier.vip_f2": "(2) شاشة 43 LG بوصة سمارت",
+      "tier.vip_f3": "بورسلين أرضيات مستورد + خشب HDF للغرف",
+      "tier.vip_f4": "خلاطات جروهي (Grohe) وأسقف جبس بورد كناوف",
+
+      "tier.uvip_name": "باقة ألترا في آي بي (ULTRA VIP)",
+      "tier.uvip_desc": "أناقة فندقية راقية مع باقة تكييفات وشاشات سمارت مضاعفة.",
+      "tier.uvip_gift": "هدية: (2) تكييف 1.5 حصان + (2) شاشة LG 43 بوصة",
+      "tier.uvip_f1": "(2) تكييف 1.5 حصان سبليت",
+      "tier.uvip_f2": "(2) شاشة 43 LG بوصة بدقة 4K",
+      "tier.uvip_f3": "بورسلين مقاسات كبرى وإضاءات بروفايل وماجنتيك",
+      "tier.uvip_f4": "صحي دفن معلق وأبواب قشرة أرو طبيعي فاخرة",
+
+      "tier.suvip_name": "باقة سوبر ألترا في آي بي (S.U.VIP)",
+      "tier.suvip_desc": "تشطيب نيوكلاسيك ومعاصر متكامل مع مطبخ وجزامة تفصيل مجاناً.",
+      "tier.suvip_gift": "هدية: مطبخ تفصيل (15م) + جزامة تفصيل هدية",
+      "tier.suvip_f1": "مطبخ هدية تفصيل كامل (15 متر طولي)",
+      "tier.suvip_f2": "جزامة مدخل مودرن تفصيل هدية",
+      "tier.suvip_f3": "رخام مستورد وتكسيات جدارية خشبية ورخامية",
+      "tier.suvip_f4": "عزل صوتي متطور وأطقم صحية إيطالية متميزة",
+
+      "tier.elite_badge": "خيار النخبة المعمارية (ELITE)",
+      "tier.elite_name": "باقة إيليت (ELITE PACKAGE)",
+      "tier.elite_desc": "أرقى مقاييس الذوق المعماري والصفوة؛ مطبخ فاخر ودريسنج كامل تفصيل.",
+      "tier.elite_gift": "هدية: مطبخ تفصيل (15م) + دريسنج روم (5م)",
+      "tier.elite_f1": "مطبخ هدية كامل تفصيل (15 متر) بخامات بولي لاك / أكرليك",
+      "tier.elite_f2": "دريسنج روم كامل هدية تفصيل (5 متر) بإضاءات ليد سينسور",
+      "tier.elite_f3": "رخام مستورد كلكتا / سيلفيا / إمبرادور مع جلي كريستالي",
+      "tier.elite_f4": "سمارت هوم متكامل وتكسيات ديكورية وقواطع زجاجية سيكوريت",
+
+      "tier.lux_badge": "قمة الفخامة (ROYAL LUXURY)",
+      "tier.lux_name": "باقة لاكشري (LUXURY PACKAGE)",
+      "tier.lux_desc": "فخامة القصور والفلل الملكية؛ مطبخ 20م ودريسنج 8م وغرفة أطفال كاملة مصنعة.",
+      "tier.lux_gift": "هدية: مطبخ 20م + دريسنج 8م + غرفة أطفال كاملة",
+      "tier.lux_f1": "مطبخ هدية تفصيل عملاق (20 متر) بأعلى المواصفات الأوروبية",
+      "tier.lux_f2": "دريسنج روم ماستر كامل هدية تفصيل (8 متر) مع مرايا مضيئة",
+      "tier.lux_f3": "غرفة أطفال كاملة هدية مصنعة (2 سرير 120 + 1 كومود + دولاب 160)",
+      "tier.lux_f4": "رخام إيطالي بوكماتش، أتمتة شاملة، وأعلى معايير الإشراف المعماري",
       "est.addons_label": "البنود الإضافية والتحسينات المخصصة",
       "est.add_gypsum": "أسقف معلقة وجبس بورد كامل",
       "est.add_door": "باب مصفح تركي عالي الأمان + نجارة أبواب",
@@ -237,9 +285,9 @@ document.addEventListener('DOMContentLoaded', () => {
       "projects.view_details": "View Details & Renders",
       "projects.behance_cta": "View Full Portfolio on Behance",
 
-      // Estimator translations (EN)
+            // Estimator translations & 2025 Quotas (EN)
       "est.tag": "Smart Pricing Engine",
-      "est.title": "Finishing Cost & BOQ Estimator",
+      "est.title": "2025 Finishing Cost & BOQ Estimator",
       "est.subtitle": "Calculate accurate, market-grounded finishing costs and bills of quantities according to Egyptian engineering standards",
       "est.unit_type_label": "Property Type",
       "est.unit_apt": "Apartment",
@@ -248,26 +296,74 @@ document.addEventListener('DOMContentLoaded', () => {
       "est.unit_retail": "Retail Store",
       "est.area_label": "Total Floor Area (Square Meters)",
       "est.m2": "m²",
-      "est.tier_label": "Finishing Level / Tier",
-      "est.tier_eco_name": "Economy Fit-out",
-      "est.tier_eco_desc": "Practical and durable finishing using certified local materials with optimized budget efficiency.",
-      "est.tier_eco_f1": "GLC putty & 3030 plastic topcoats",
-      "est.tier_eco_f2": "First-choice Cleopatra / Royal ceramics",
-      "est.tier_eco_f3": "Lecico / Ideal Standard sanitary wares",
-      "est.tier_eco_f4": "El Sewedy certified wiring & Schneider breakers",
-      "est.recommended_badge": "Most Popular",
-      "est.tier_mid_name": "Deluxe Grade",
-      "est.tier_mid_desc": "A balanced fusion of luxury and modernity using premium European and certified local materials.",
-      "est.tier_mid_f1": "Original Jotun Fenomastic paint systems",
-      "est.tier_mid_f2": "Imported laser-cut porcelain + HDF wood",
-      "est.tier_mid_f3": "Duravit ceramics & Grohe German mixers",
-      "est.tier_mid_f4": "Knauf gypsum board + hidden LED profile lighting",
-      "est.tier_lux_name": "Ultra Luxury",
-      "est.tier_lux_desc": "Absolute bespoke luxury: imported bookmatched marble, smart automation, and architectural wood claddings.",
-      "est.tier_lux_f1": "Imported Carrara / Emperador marble with automated polishing",
-      "est.tier_lux_f2": "Wall-hung Grohe concealed tanks & Italian fittings",
-      "est.tier_lux_f3": "Full Smart Home Automation & smart lighting",
-      "est.tier_lux_f4": "Natural wood wall claddings & magnetic track lights",
+      "est.tier_label": "Official 2025 Finishing Packages & Included Perks",
+      "est.quotas_live_tag": "2025 Official Rates + In-kind Gifts",
+      "est.gift_box_title": "Included Package Perks & Quota Bonus:",
+      "est.gift_note": "Complimentary signature gifts included with 2025 package contracts.",
+
+      // 2025 Quotas Matrix (EN)
+      "matrix.badge": "Official 2025 Price & Quota Schedule",
+      "matrix.title": "2025 Finishing Packages & Exclusive Perks Matrix",
+      "matrix.desc": "Complete engineering transparency — choose the tier that matches your vision and explore in-kind bonus amenities.",
+
+      // 7 Tiers (EN)
+      "tier.eco_name": "Economic Package",
+      "tier.eco_desc": "Cost-effective, durable fit-out with certified local materials meeting engineering standards.",
+      "tier.eco_gift": "Standard Baseline Fit-out (No Appliances)",
+      "tier.eco_f1": "GLC putty & 3030 acrylic paints",
+      "tier.eco_f2": "First-choice Cleopatra / Royal ceramics",
+      "tier.eco_f3": "Lecico / Ideal Standard sanitary wares",
+      "tier.eco_f4": "El Sewedy certified copper electrical wiring",
+
+      "tier.med_name": "Medium Package",
+      "tier.med_desc": "Balanced modern finishing with practical durability and included core appliances.",
+      "tier.med_gift": "Gift: Water Heaters + Midea 1.5 HP AC",
+      "tier.med_f1": "Electric water heaters for bathrooms",
+      "tier.med_f2": "Midea 1.5 HP air conditioner",
+      "tier.med_f3": "Original Jotun Fenomastic silk paint",
+      "tier.med_f4": "Laser-cut porcelain tiles & Duravit sanitary wares",
+
+      "tier.vip_name": "VIP Package",
+      "tier.vip_desc": "Elevated luxury combining premium materials with cooling and smart entertainment systems.",
+      "tier.vip_gift": "Gift: Midea 1.5 HP AC + (2) LG 43-inch Smart TVs",
+      "tier.vip_f1": "Midea 1.5 HP air conditioner",
+      "tier.vip_f2": "(2) LG 43-inch Smart 4K TVs",
+      "tier.vip_f3": "Imported porcelain flooring + German HDF for bedrooms",
+      "tier.vip_f4": "Grohe German mixers + Knauf gypsum ceilings",
+
+      "tier.uvip_name": "Ultra VIP Package",
+      "tier.uvip_desc": "Hotel-grade luxury with dual air conditioning units and dual 4K smart screens.",
+      "tier.uvip_gift": "Gift: (2) 1.5 HP ACs + (2) LG 43-inch Smart TVs",
+      "tier.uvip_f1": "(2) 1.5 HP split air conditioners",
+      "tier.uvip_f2": "(2) LG 43-inch Smart 4K TVs",
+      "tier.uvip_f3": "Large-format porcelain slabs & magnetic profile lights",
+      "tier.uvip_f4": "Concealed wall-hung tanks & natural oak veneer doors",
+
+      "tier.suvip_name": "Super Ultra VIP Package",
+      "tier.suvip_desc": "Neoclassical & modern masterclass with custom-manufactured kitchen and shoe cabinet.",
+      "tier.suvip_gift": "Gift: Custom Kitchen (15m) + Shoe Cabinet",
+      "tier.suvip_f1": "Full custom kitchen (15 linear meters) included",
+      "tier.suvip_f2": "Custom entrance shoe cabinet included",
+      "tier.suvip_f3": "Imported natural marble & acoustic wood claddings",
+      "tier.suvip_f4": "Advanced sound insulation & premium Italian fixtures",
+
+      "tier.elite_badge": "Architectural Choice (ELITE)",
+      "tier.elite_name": "Elite Package",
+      "tier.elite_desc": "Signature architectural perfection; custom kitchen and full master dressing room included.",
+      "tier.elite_gift": "Gift: Custom Kitchen (15m) + Dressing Room (5m)",
+      "tier.elite_f1": "Custom luxury kitchen (15m) with Poly-lac / Acrylic fronts",
+      "tier.elite_f2": "Custom dressing room (5m) with sensor LED illumination",
+      "tier.elite_f3": "Imported Calacatta / Sylvia marble with automated mirror polish",
+      "tier.elite_f4": "Integrated Smart Home automation & tempered glass partitions",
+
+      "tier.lux_badge": "Royal Luxury (PALACE GRADE)",
+      "tier.lux_name": "Luxury Package",
+      "tier.lux_desc": "Pinnacle of royal luxury; giant 20m kitchen, 8m dressing room, and full manufactured kids bedroom.",
+      "tier.lux_gift": "Gift: Kitchen (20m) + Dressing (8m) + Kids Bedroom Set",
+      "tier.lux_f1": "Massive custom kitchen (20 linear meters) to European specs",
+      "tier.lux_f2": "Master dressing room (8 linear meters) with backlit mirrors",
+      "tier.lux_f3": "Complete kids bedroom set (2 beds 120cm + nightstand + wardrobe 160cm)",
+      "tier.lux_f4": "Bookmatched Italian marble, comprehensive automation & bespoke supervision",
       "est.addons_label": "Custom Add-on Packages",
       "est.add_gypsum": "Complete Gypsum Board Ceilings & Coves",
       "est.add_door": "High-Security Turkish Armored Door + Interior Doors",
@@ -911,13 +1007,14 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects('all');
 
 
-  // =======================================================
-  // 4. Interactive Finishing Cost & BOQ Estimator Engine
-  // =======================================================
+    // ==========================================
+  // 4. Interactive 2025 BOQ & Finishing Cost Estimator (All 7 Quota Tiers)
+  // ==========================================
   const areaSlider = document.getElementById('areaSlider');
   const areaValue = document.getElementById('areaValue');
   const unitBtns = document.querySelectorAll('.unit-btn');
   const tierCards = document.querySelectorAll('.tier-card');
+  const quotaPillCards = document.querySelectorAll('.quota-pill-card');
   const addonGypsum = document.getElementById('addonGypsum');
   const addonDoor = document.getElementById('addonDoor');
   const addonSmart = document.getElementById('addonSmart');
@@ -933,16 +1030,95 @@ document.addEventListener('DOMContentLoaded', () => {
   const whatsappEstimateBtn = document.getElementById('whatsappEstimateBtn');
   const printEstimateBtn = document.getElementById('printEstimateBtn');
 
+  const giftMainText = document.getElementById('giftMainText');
+  const giftSubText = document.getElementById('giftSubText');
+
+  // Official 2025 Pricing & Quotas Definition
+  const QUOTA_PACKAGES = {
+    economic: {
+      rate: 5500,
+      nameAr: 'الباقة الإقتصادية (ECONOMIC)',
+      nameEn: 'Economic Package',
+      giftAr: 'التشطيب القياسي الأساسي المعتمد (بدون أجهزة أو هدايا عينية)',
+      giftEn: 'Standard baseline certified fit-out (No appliances)',
+      noteAr: 'تشطيب عملي بمواد معتمدة تلبي معايير الجودة الأساسية بأفضل ميزانية.',
+      noteEn: 'Practical certified fit-out for standard budgets.'
+    },
+    medium: {
+      rate: 7000,
+      nameAr: 'الباقة المتوسطة (MEDIUM)',
+      nameEn: 'Medium Package',
+      giftAr: 'سخانات كهرباء عادية للحمامات + تكييف 1.5 حصان ميديا (Midea)',
+      giftEn: 'Electric water heaters for bathrooms + 1.5 HP Midea AC',
+      noteAr: 'مقدمة مجاناً وحصرياً ضمن تعاقدات الباقة المتوسطة لعام 2025.',
+      noteEn: 'Complimentary bonus for 2025 Medium contracts.'
+    },
+    vip: {
+      rate: 9300,
+      nameAr: 'باقة في آي بي (VIP PACKAGE)',
+      nameEn: 'VIP Package',
+      giftAr: 'تكييف 1.5 حصان ميديا + (2) شاشة LG 43 بوصة سمارت',
+      giftEn: '1.5 HP Midea AC + (2) LG 43-inch Smart 4K TVs',
+      noteAr: 'مقدمة مجاناً وحصرياً ضمن تعاقدات باقة VIP لعام 2025.',
+      noteEn: 'Complimentary bonus for 2025 VIP contracts.'
+    },
+    ultravip: {
+      rate: 11000,
+      nameAr: 'باقة ألترا في آي بي (ULTRA VIP)',
+      nameEn: 'Ultra VIP Package',
+      giftAr: '(2) تكييف 1.5 حصان + (2) شاشة LG 43 بوصة بدقة 4K',
+      giftEn: '(2) 1.5 HP ACs + (2) LG 43-inch Smart 4K TVs',
+      noteAr: 'مقدمة مجاناً وحصرياً ضمن تعاقدات باقة Ultra VIP لعام 2025.',
+      noteEn: 'Complimentary bonus for 2025 Ultra VIP contracts.'
+    },
+    superultravip: {
+      rate: 13000,
+      nameAr: 'باقة سوبر ألترا في آي بي (S.U.VIP)',
+      nameEn: 'Super Ultra VIP Package',
+      giftAr: 'مطبخ كامل تفصيل هدية (15 متر) + جزامة مدخل تفصيل هدية',
+      giftEn: 'Custom full kitchen (15m) + Custom entrance shoe cabinet',
+      noteAr: 'مقدمة مجاناً وحصرياً ضمن تعاقدات باقة Super Ultra VIP لعام 2025.',
+      noteEn: 'Complimentary bonus for 2025 Super Ultra VIP contracts.'
+    },
+    elite: {
+      rate: 20000,
+      nameAr: 'باقة إيليت (ELITE PACKAGE)',
+      nameEn: 'Elite Package (Architectural Choice)',
+      giftAr: 'مطبخ كامل تفصيل هدية (15 متر) + دريسنج روم كامل تفصيل هدية (5 متر)',
+      giftEn: 'Custom luxury kitchen (15m) + Custom dressing room (5m)',
+      noteAr: 'مقدمة مجاناً وحصرياً ضمن تعاقدات باقة إيليت (خيار النخبة المعمارية) لعام 2025.',
+      noteEn: 'Complimentary signature bonus for 2025 Elite contracts.'
+    },
+    luxury: {
+      rate: 24000,
+      nameAr: 'باقة لاكشري الملكية (LUXURY PACKAGE)',
+      nameEn: 'Luxury Royal Package',
+      giftAr: 'مطبخ فاخر هدية (20 متر) + دريسنج روم ماستر هدية (8 متر) + غرفة أطفال كاملة مصنعة هدية (2 سرير 120 + 1 كومود + دولاب 160)',
+      giftEn: 'Luxury kitchen (20m) + Master dressing room (8m) + Full custom kids bedroom set (2 beds 120 + nightstand + wardrobe 160)',
+      noteAr: 'مقدمة مجاناً وحصرياً لقصور وفلل باقة لاكشري الملكية لعام 2025.',
+      noteEn: 'Complimentary royal bonus for 2025 Luxury contracts.'
+    }
+  };
+
+  // State defaults (Initial: Elite package 20,000 EGP/m2 per client specification)
+  let currentTierKey = 'elite';
+  let currentBaseRate = 20000;
   let currentUnitMult = 1.0;
   let currentUnitNameAr = 'شقة سكنية';
   let currentUnitNameEn = 'Apartment';
 
-  let currentBaseRate = 8200; // Deluxe by default
-  let currentTierNameAr = 'ديلوكس راقي';
-  let currentTierNameEn = 'Deluxe Grade';
-
   function formatEGP(num) {
     return Math.round(num).toLocaleString('en-US');
+  }
+
+  function updateGiftDisplay() {
+    const pkg = QUOTA_PACKAGES[currentTierKey] || QUOTA_PACKAGES.elite;
+    if (giftMainText) {
+      giftMainText.textContent = currentLang === 'ar' ? pkg.giftAr : pkg.giftEn;
+    }
+    if (giftSubText) {
+      giftSubText.textContent = currentLang === 'ar' ? pkg.noteAr : pkg.noteEn;
+    }
   }
 
   function calculateEstimate() {
@@ -950,6 +1126,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const area = parseInt(areaSlider.value, 10);
     if (areaValue) areaValue.textContent = area;
+
+    const pkg = QUOTA_PACKAGES[currentTierKey] || QUOTA_PACKAGES.elite;
+    const tierName = currentLang === 'ar' ? pkg.nameAr : pkg.nameEn;
+    const tierGift = currentLang === 'ar' ? pkg.giftAr : pkg.giftEn;
 
     // Base finishing rate per m2 adjusted by unit type multiplier
     let effectiveRate = currentBaseRate * currentUnitMult;
@@ -978,7 +1158,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Duration calculation based on area and tier
     let baseWeeks = Math.ceil(area / 18);
-    if (currentBaseRate > 10000) baseWeeks += 4; // Luxury takes more time for marble/smart
+    if (currentBaseRate >= 13000) baseWeeks += 3; // Custom woodcraft & dressings
+    if (currentBaseRate >= 20000) baseWeeks += 3; // Marble & smart automation
     const minWeeks = Math.max(8, baseWeeks);
     const maxWeeks = minWeeks + 3;
 
@@ -997,14 +1178,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (selectedUnitBadge) {
       const uName = currentLang === 'ar' ? currentUnitNameAr : currentUnitNameEn;
-      const tName = currentLang === 'ar' ? currentTierNameAr : currentTierNameEn;
-      selectedUnitBadge.textContent = `${uName} · ${tName}`;
+      selectedUnitBadge.textContent = `${uName} · ${tierName}`;
     }
+
+    // Update Gift Box
+    updateGiftDisplay();
 
     // Dynamic WhatsApp Link Generation
     if (whatsappEstimateBtn) {
       const uName = currentLang === 'ar' ? currentUnitNameAr : currentUnitNameEn;
-      const tName = currentLang === 'ar' ? currentTierNameAr : currentTierNameEn;
       
       const selectedAddonsList = [];
       if (addonGypsum && addonGypsum.checked) selectedAddonsList.push(currentLang === 'ar' ? 'أسقف معلقة كناوف' : 'Gypsum Board Ceilings');
@@ -1017,47 +1199,78 @@ document.addEventListener('DOMContentLoaded', () => {
       let message = '';
       if (currentLang === 'ar') {
         message = `مرحباً م. حسن أحمد،
-استخدمت حاسبة المقايسة التفاعلية بموقعك وأرغب في استشارة هندسية لمشروعي:
+استخدمت حاسبة المقايسة التفاعلية بموقعك لحساب تكلفة تشطيب لعام 2025:
 
 ` +
           `• نوع الوحدة: ${uName}
 ` +
           `• المساحة: ${area} م²
 ` +
-          `• مستوى التشطيب: ${tName}
+          `• باقة التشطيب (أسعار 2025): ${tierName} (~${formatEGP(currentBaseRate)} ج.م/م²)
 ` +
-          `• البنود المضافة: ${addonsStr}
+          `• 🎁 الهدايا المشمولة مجاناً: ${tierGift}
 ` +
-          `• التكلفة التقديرية: ${formatEGP(totalEstimate)} جنيه مصري (~${formatEGP(finalRatePerM)} ج.م/م²)
+          `• البنود الإضافية: ${addonsStr}
+` +
+          `• التكلفة الإجمالية التقديرية: ${formatEGP(totalEstimate)} جنيه مصري (~${formatEGP(finalRatePerM)} ج.م/م²)
 ` +
           `• مدة التنفيذ المقترحة: ${minWeeks}-${maxWeeks} أسبوع
 
 ` +
-          `برجاء إفادتي بإمكانية تحديد موعد لمعاينة الموقع ومناقشة تفاصيل التصميم والتنفيذ. شكراً لك!`;
+          `برجاء إفادتي بإمكانية تحديد موعد لمعاينة الموقع ومناقشة تفاصيل التعاقد واستلام الهدايا المشمولة. شكراً لك!`;
       } else {
         message = `Hello Eng. Hassan Ahmed,
-I used the interactive finishing estimator on your portfolio and would like a consultation for my project:
+I used the interactive finishing estimator on your portfolio for a 2025 project consultation:
 
 ` +
           `• Property Type: ${uName}
 ` +
           `• Total Area: ${area} m²
 ` +
-          `• Finishing Tier: ${tName}
+          `• 2025 Finishing Package: ${tierName} (~${formatEGP(currentBaseRate)} EGP/m²)
+` +
+          `• 🎁 Included Complimentary Perks: ${tierGift}
 ` +
           `• Selected Add-ons: ${addonsStr}
 ` +
-          `• Estimated Cost: ${formatEGP(totalEstimate)} EGP (~${formatEGP(finalRatePerM)} EGP/m²)
+          `• Estimated Total: ${formatEGP(totalEstimate)} EGP (~${formatEGP(finalRatePerM)} EGP/m²)
 ` +
           `• Estimated Timeline: ${minWeeks}-${maxWeeks} weeks
 
 ` +
-          `Looking forward to scheduling a site inspection and discussing design & execution details. Thank you!`;
+          `Looking forward to scheduling a site inspection and discussing contract execution and perks. Thank you!`;
       }
 
       const encodedMsg = encodeURIComponent(message);
       whatsappEstimateBtn.href = `https://wa.me/201096978258?text=${encodedMsg}`;
     }
+  }
+
+  // Select a tier across both the grid cards and the carousel pills
+  function selectTier(key) {
+    if (!QUOTA_PACKAGES[key]) return;
+    currentTierKey = key;
+    currentBaseRate = QUOTA_PACKAGES[key].rate;
+
+    // Update active class on Step 3 tier cards
+    tierCards.forEach(c => {
+      if (c.getAttribute('data-tier') === key) {
+        c.classList.add('active');
+      } else {
+        c.classList.remove('active');
+      }
+    });
+
+    // Update active class on Quotas Matrix pills
+    quotaPillCards.forEach(p => {
+      if (p.getAttribute('data-tier') === key) {
+        p.classList.add('active');
+      } else {
+        p.classList.remove('active');
+      }
+    });
+
+    calculateEstimate();
   }
 
   // Unit Type Selection
@@ -1090,25 +1303,24 @@ I used the interactive finishing estimator on your portfolio and would like a co
     areaSlider.addEventListener('input', calculateEstimate);
   }
 
-  // Tier Selection
+  // Tier Card Selection Listeners
   tierCards.forEach(card => {
     card.addEventListener('click', () => {
-      tierCards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      currentBaseRate = parseFloat(card.getAttribute('data-rate') || 8200);
+      const key = card.getAttribute('data-tier');
+      selectTier(key);
+    });
+  });
 
-      const tierKey = card.getAttribute('data-tier');
-      if (tierKey === 'economy') {
-        currentTierNameAr = 'تشطيب اقتصادي';
-        currentTierNameEn = 'Economy Fit-out';
-      } else if (tierKey === 'deluxe') {
-        currentTierNameAr = 'ديلوكس راقي';
-        currentTierNameEn = 'Deluxe Grade';
-      } else if (tierKey === 'luxury') {
-        currentTierNameAr = 'سوبر لوكس / ألترا';
-        currentTierNameEn = 'Ultra Luxury';
+  // Quota Carousel Pills Click Listeners
+  quotaPillCards.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const key = pill.getAttribute('data-tier');
+      selectTier(key);
+      // Smooth scroll to step 3 so the client sees the selection
+      const step3 = document.querySelector('.tier-cards-grid');
+      if (step3) {
+        step3.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
-      calculateEstimate();
     });
   });
 
@@ -1124,8 +1336,8 @@ I used the interactive finishing estimator on your portfolio and would like a co
     });
   }
 
-  // Initial Calculation
-  calculateEstimate();
+  // Initial Calculation with Elite tier (20,000 EGP/m2)
+  selectTier('elite');
 
 
   // ==========================================
