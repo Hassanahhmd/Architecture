@@ -12,6 +12,8 @@ password_hash = PasswordHash.recommended()
 bearer = HTTPBearer(auto_error=False)
 JWT_SECRET = os.getenv("JWT_SECRET", "development-only-change-before-deploy")
 JWT_ALGORITHM = "HS256"
+if os.getenv("ENVIRONMENT") == "production" and (len(JWT_SECRET) < 32 or JWT_SECRET.startswith("development-only")):
+    raise RuntimeError("Set a strong JWT_SECRET (at least 32 characters) before production deployment.")
 
 def hash_password(password: str) -> str:
     return password_hash.hash(password)
