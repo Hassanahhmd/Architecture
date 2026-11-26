@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 from uuid import uuid4
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from ..db import get_db
@@ -16,6 +16,7 @@ class ProjectInput(BaseModel):
     design: dict
 
 class ProjectView(ProjectInput):
+    model_config = ConfigDict(from_attributes=True)
     id: str
     created_at: datetime
     updated_at: datetime
