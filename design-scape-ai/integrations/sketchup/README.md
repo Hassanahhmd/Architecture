@@ -3,8 +3,9 @@
 This Ruby extension imports the project's JSON export as separate named SketchUp groups with simple material assignments.
 
 ## Install for development
-1. Copy `design_scape_ai_loader.rb` and `design_scape_ai.rb` into SketchUp's Plugins folder.
-2. Restart SketchUp.
+1. Download the `design-scape-ai-sketchup-extension` artifact from the GitHub Actions workflow (or package the two files using the documented folder structure).
+2. In SketchUp, open Extension Manager → Install Extension and select `design-scape-ai-sketchup.rbz`.
+3. Restart SketchUp.
 3. Choose Extensions → Import Design Scape AI JSON.
 4. Select a JSON exported from Design Scape AI.
 
