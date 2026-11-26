@@ -7,7 +7,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from fastapi.testclient import TestClient
 from app.main import app
+from app.db import Base, engine
+from app import models
 
+Base.metadata.create_all(bind=engine)
 client = TestClient(app)
 
 def test_health_reports_ai_configuration():
