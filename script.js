@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "hero.badge": "متاح للمشاريع والاستشارات المعمارية",
       "hero.greeting": "أهلاً، أنا",
       "hero.name": "حسن أحمد",
-      "hero.subtitle": "مهندس معماري ومصمم إظهار بصري ثلاثي الأبعاد",
+      "hero.quiz": "ابدأ اختبار الطراز المعماري",
+      "hero.subtitle": "Architecture Engineer & 3D Visualization Specialist",
       "hero.desc": "حاصل على بكالوريوس الهندسة المعمارية (CIC) معتمد من جامعة كيب بريتون - كندا. متخصص في التصميم المعماري، الديكور الداخلي، واللاندسكيب، مع سجل حافل بتسليم أكثر من 50 مشروعاً سكنياً وتجارياً وصناعياً من مرحلة الفكرة وحتى التسليم النهائي في كبرى المجمعات السكنية بمصر.",
       "hero.zero_violations": "صفر مخالفات هندسية عبر 30+ مشروع",
       "hero.view_work": "تصفح المشاريع",
@@ -52,6 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
       "projects.filter_industrial": "صناعي وإنشائي",
       "projects.view_details": "عرض التفاصيل والصور",
       "projects.behance_cta": "عرض كافة الأعمال على Behance",
+      "tiktok.tag": "من أعمال الاستوديو",
+      "tiktok.title": "جولات المشاريع على تيك توك",
+      "tiktok.subtitle": "شاهد تفاصيل التصميم والتحولات المعمارية من Design-Scape.",
+      "tiktok.profile": "شاهد جميع الفيديوهات على تيك توك",
 
             // Estimator translations & 2025 Quotas (AR)
       "est.tag": "نظام تسعير ذكي",
@@ -156,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "est.cta_print": "طباعة المقايسة (PDF)",
 
       // Interactive Lab translations
-      "nav.lab": "المعمل التفاعلي ⚡",
+      "nav.lab": "🧬 اختبار الطراز المعماري",
       "lab.tag": "تجربة تفاعلية حصرية",
       "lab.title": "معمل الإبداع المعماري التفاعلي",
       "lab.subtitle": "اختبر الرؤية الهندسية، تفاعل مع الإضاءة والخامات، واكتشف الطراز المعماري الأنسب لبيتك",
@@ -256,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "hero.badge": "Available for Architecture & Interior Projects",
       "hero.greeting": "Hello, I am",
       "hero.name": "Hassan Ahmed",
+      "hero.quiz": "Take the Architectural Style Quiz",
       "hero.subtitle": "Architecture Engineer & 3D Visualization Specialist",
       "hero.desc": "B.Sc. in Architecture Engineering from CIC, validated by Cape Breton University, Canada. Specializing in architectural design, interior fit-outs, and landscape planning, with a proven record of delivering 50+ projects from concept to final handover across Egypt's premier residential compounds.",
       "hero.zero_violations": "Zero Code Violations across 30+ projects",
@@ -284,6 +290,10 @@ document.addEventListener('DOMContentLoaded', () => {
       "projects.filter_industrial": "Industrial",
       "projects.view_details": "View Details & Renders",
       "projects.behance_cta": "View Full Portfolio on Behance",
+      "tiktok.tag": "From the studio",
+      "tiktok.title": "Project walkthroughs on TikTok",
+      "tiktok.subtitle": "Watch real design details and transformations from Design-Scape.",
+      "tiktok.profile": "View all videos on TikTok",
 
             // Estimator translations & 2025 Quotas (EN)
       "est.tag": "Smart Pricing Engine",
@@ -388,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "est.cta_print": "Print Estimate (PDF)",
 
       // Interactive Lab translations (EN)
-      "nav.lab": "Interactive Lab ⚡",
+      "nav.lab": "🧬 Architectural Style Quiz",
       "lab.tag": "Exclusive Architectural Experience",
       "lab.title": "Interactive Architectural Lab",
       "lab.subtitle": "Explore spatial concepts, interact with natural daylight and materials, and discover your design DNA",
@@ -1370,6 +1380,19 @@ I used the interactive finishing estimator on your portfolio for a 2025 project 
   // ==========================================================================
   // 6. VIRAL ARCHITECTURAL LAB ENGINES (5 INTERACTIVE MODULES)
   // ==========================================================================
+
+  // Keep the Architectural Style Quiz easy to reach from the first screen.
+  document.querySelectorAll('[data-open-quiz]').forEach(link => {
+    link.addEventListener('click', () => {
+      const quizButton = document.querySelector('.lab-tab-btn[data-tab="tab-quiz"]');
+      const quizContent = document.getElementById('tab-quiz');
+      if (!quizButton || !quizContent) return;
+      labTabBtns.forEach(button => button.classList.remove('active'));
+      labTabContents.forEach(content => content.classList.remove('active'));
+      quizButton.classList.add('active');
+      quizContent.classList.add('active');
+    });
+  });
 
   // --- Module A: Tab Switcher ---
   const labTabBtns = document.querySelectorAll('.lab-tab-btn');
