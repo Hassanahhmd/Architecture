@@ -37,3 +37,29 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: pytest -q
+
+  integrations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate integration source syntax
+        run: |
+          ruby -c design-scape-ai/integrations/sketchup/design_scape_ai.rb
+          ruby -c design-scape-ai/integrations/sketchup/design_scape_ai/main.rb
+          python -m py_compile design-scape-ai/integrations/blender/design_scape_import.py
+          python -m py_compile design-scape-ai/integrations/3ds-max/design_scape_import.py
+      - name: Package SketchUp RBZ
+        run: |
+          mkdir -p dist
+          cd design-scape-ai/integrations/sketchup
+          zip -r ../../../dist/design-scape-ai-sketchup.rbz design_scape_ai.rb design_scape_ai
+      - uses: actions/upload-artifact@v4
+        with:
+          name: design-scape-ai-sketchup-extension
+          path: dist/design-scape-ai-sketchup.rbz
