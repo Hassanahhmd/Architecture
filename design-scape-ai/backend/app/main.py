@@ -130,6 +130,15 @@ def validate_spec(room: Room, design: DesignSpec) -> list[str]:
             errors.append(f"{module.label}: exceeds room height")
         if module.depth_mm > room.depth_mm:
             errors.append(f"{module.label}: exceeds room depth")
+    # Front-elevation collision check; nested drawers inside wardrobe bays are intentional.
+    for index, left in enumerate(design.modules):
+        for right in design.modules[index + 1:]:
+            overlap_x = min(left.x_mm + left.width_mm, right.x_mm + right.width_mm) - max(left.x_mm, right.x_mm)
+            overlap_y = min(left.y_mm + left.height_mm, right.y_mm + right.height_mm) - max(left.y_mm, right.y_mm)
+            if overlap_x > 0 and overlap_y > 0:
+                nested_drawer = ((left.kind == "drawer" and right.kind == "wardrobe") or (right.kind == "drawer" and left.kind == "wardrobe"))
+                if not nested_drawer:
+                    errors.append(f"{left.label} overlaps {right.label} in the front elevation")
     return errors
 
 @app.get("/health")
@@ -187,7 +196,6 @@ async def generate_ai_concepts(
         }]
         if image_data_url:
             user_content.append({"type": "image_url", "image_url": {"url": image_data_url, "detail": "high"}})
-        schema = AIConceptResponse.model_json_schema()
         response = client.chat.completions.create(
             model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"),
             temperature=0.4,
@@ -201,8 +209,11 @@ async def generate_ai_concepts(
         if not payload:
             raise ValueError("AI provider returned an empty response")
         parsed = AIConceptResponse.model_validate_json(payload)
+        room = Room(width_mm=width_mm, depth_mm=depth_mm, height_mm=height_mm)
         for design in parsed.designs:
-            errors = validate_spec(Room(width_mm=width_mm, depth_mm=depth_mm, height_mm=height_mm), design)
+            if design.product_type != product_type:
+                raise ValueError(f"{design.name}: product type does not match the requested project")
+            errors = validate_spec(room, design)
             if errors:
                 raise ValueError("; ".join(errors))
         return parsed
