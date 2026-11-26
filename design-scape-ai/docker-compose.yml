@@ -18,7 +18,7 @@ services:
       context: ./backend
     environment:
       DATABASE_URL: postgresql+psycopg://designscape:change-this-local-password@db:5432/designscape
-      JWT_SECRET: change-this-to-a-long-random-secret
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in your .env file}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4.1-mini}
       CORS_ORIGINS: http://localhost:3000
