@@ -16,6 +16,13 @@ A web-first parametric kitchen and dressing-room concept studio by Design Scape.
 - JSON project, OBJ geometry and preliminary cut-list CSV downloads.
 - Indicative cost calculation using editable-in-code starter assumptions.
 
+### Accounts and project storage
+- Email/password registration and login with hashed passwords and signed 12-hour JWT access tokens.
+- Authenticated account profile endpoint and owner-scoped project create/list/read/update/delete APIs.
+- Five free AI credits are assigned at registration; successful AI design generation consumes one credit.
+- SQLite is used by default for local backend runs; Docker Compose provisions PostgreSQL for containerized development.
+- Cloud project data is stored in the configured database. Password hashes are never returned by API responses.
+
 ### API
 - FastAPI endpoints for health, deterministic concepts, optional AI concepts, room-envelope / front-elevation validation and preliminary cut-list rows.
 - AI route accepts JPEG, PNG and WEBP reference images up to 8 MB. Images are treated as style references; text dimensions remain authoritative.
@@ -39,6 +46,7 @@ python -m venv .venv
 # Windows: .venv\\Scripts\\activate
 # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
+export JWT_SECRET='replace-this-with-a-long-random-secret'
 uvicorn app.main:app --reload --port 8000
 ```
 
@@ -50,7 +58,19 @@ Set `OPENAI_API_KEY` and optionally `OPENAI_MODEL` in the backend process enviro
 
 Without the key, the app uses deterministic parametric presets and clearly reports that AI generation is unavailable.
 
-### 3. Run frontend
+### 3. Run the full stack with Docker Compose (alternative)
+
+From the `design-scape-ai` directory, set `OPENAI_API_KEY` in your shell if you want AI image/prompt generation, then run:
+
+```bash
+docker compose up --build
+```
+
+Web app: http://localhost:3000 · API docs: http://localhost:8000/docs
+
+Change the example database password and JWT secret before exposing this stack to the internet.
+
+### 4. Run frontend
 
 In a second terminal:
 
@@ -62,13 +82,13 @@ npm run dev
 
 Open http://localhost:3000. Set `NEXT_PUBLIC_API_URL=http://localhost:8000` if the API runs elsewhere.
 
-### 4. Optional PostgreSQL starter
+### 5. Optional PostgreSQL starter
 
 ```bash
 docker compose up -d db
 ```
 
-The Prisma schema is included as a persistence design baseline. Project persistence is not yet wired to Prisma; current browser save uses localStorage.
+The runtime API currently persists users and projects through SQLAlchemy. The Prisma schema is retained as an alternative schema reference and is not used by the runtime. Browser-local save remains available as an offline fallback.
 
 ## API endpoints
 
@@ -81,7 +101,8 @@ The Prisma schema is included as a persistence design baseline. Project persiste
 ## Important limitations and safety
 
 - AI generation requires a valid provider key, model access, internet connectivity and billing on the provider account.
-- No authentication, user accounts, tenant isolation, subscription checkout, payment webhooks, cloud project storage or admin dashboard are implemented.
+- Authentication and owner-scoped project storage are implemented as a starter. Production readiness still requires email verification, password reset, rate limiting, refresh/revocation strategy, stronger account recovery and security review.
+- Subscription checkout, payment webhooks, paid plan management, invoices and admin dashboard are not implemented. AI credits currently start at five per account and are not replenished by payment.
 - The Prisma schema is not yet connected to runtime persistence.
 - Cost figures are illustrative placeholders, not supplier quotations. Replace them with verified supplier / workshop price lists.
 - Cut lists assume a simple 18 mm panel / 6 mm back construction and are preliminary only. They do not include edge-banding deductions, grain direction, hardware drilling, appliance voids, CNC nesting, joinery details or workshop-specific rules.
