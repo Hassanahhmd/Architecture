@@ -46,12 +46,40 @@ def test_invalid_room_is_rejected():
     assert response.status_code == 422
 
 def test_ai_endpoint_requires_secret_instead_of_fake_generation(monkeypatch):
+    import uuid
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
-    response = client.post("/api/v1/ai-concepts", data={
+    email = f"{uuid.uuid4()}@example.com"
+    registered = client.post("/api/v1/auth/register", json={"email": email, "password": "ci-test-password-123"})
+    assert registered.status_code == 201
+    token = registered.json()["access_token"]
+    response = client.post("/api/v1/ai-concepts", headers={"Authorization": f"Bearer {token}"}, data={
         "product_type": "kitchen", "width_mm": 4200, "depth_mm": 3200,
         "height_mm": 2800, "prompt": "minimal kitchen"
     })
     assert response.status_code == 503
+
+def test_authenticated_user_can_save_and_list_projects():
+    import uuid
+    email = f"{uuid.uuid4()}@example.com"
+    registered = client.post("/api/v1/auth/register", json={"email": email, "password": "ci-test-password-123"})
+    assert registered.status_code == 201
+    token = registered.json()["access_token"]
+    headers = {"Authorization": f"Bearer {token}"}
+    saved = client.post("/api/v1/projects", headers=headers, json={
+        "name": "CI kitchen",
+        "product_type": "kitchen",
+        "room": {"width": 4.2, "depth": 3.2, "height": 2.8},
+        "design": {"id": "sample", "modules": []}
+    })
+    assert saved.status_code == 201
+    assert saved.json()["name"] == "CI kitchen"
+    listed = client.get("/api/v1/projects", headers=headers)
+    assert listed.status_code == 200
+    assert any(p["id"] == saved.json()["id"] for p in listed.json())
+
+def test_projects_require_authentication():
+    response = client.get("/api/v1/projects")
+    assert response.status_code == 401
 
 def test_cut_list_is_explicitly_preliminary():
     designs = client.post("/api/v1/concepts", json={
