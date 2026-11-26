@@ -60,7 +60,7 @@ Without the key, the app uses deterministic parametric presets and clearly repor
 
 ### 3. Run the full stack with Docker Compose (alternative)
 
-From the `design-scape-ai` directory, set `OPENAI_API_KEY` in your shell if you want AI image/prompt generation, then run:
+From the `design-scape-ai` directory, set `OPENAI_API_KEY` in your shell if you want AI image/prompt generation, then copy `.env.example` to `.env`, set a long random `JWT_SECRET` and then run:
 
 ```bash
 docker compose up --build
@@ -92,6 +92,9 @@ The runtime API currently persists users and projects through SQLAlchemy. The Pr
 
 ## API endpoints
 
+- `POST /api/v1/auth/register` and `POST /api/v1/auth/login`
+- `GET /api/v1/auth/me`
+- `GET /api/v1/projects`, `POST /api/v1/projects`, `GET/PUT/DELETE /api/v1/projects/{id}` (owner-scoped)
 - `GET /health`
 - `POST /api/v1/concepts`
 - `POST /api/v1/ai-concepts` (multipart form; requires server-side `OPENAI_API_KEY`)
