@@ -9,8 +9,22 @@ from typing import Literal
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+from sqlalchemy.orm import Session
+from fastapi import Depends
+from .db import Base, engine, get_db
+from . import models
+from .models import User
+from .security import get_current_user
+from .routers.auth import router as auth_router
+from .routers.projects import router as projects_router
 
-app = FastAPI(title="Design Scape AI API", version="0.3.0")
+app = FastAPI(title="Design Scape AI API", version="0.4.0")
+app.include_router(auth_router)
+app.include_router(projects_router)
+
+@app.on_event("startup")
+def initialize_database():
+    Base.metadata.create_all(bind=engine)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=os.getenv("CORS_ORIGINS", "http://localhost:3000").split(","),
@@ -146,8 +160,9 @@ def health():
     return {
         "status": "ok",
         "service": "design-scape-ai-api",
-        "version": "0.3.0",
+        "version": "0.4.0",
         "ai_configured": bool(os.getenv("OPENAI_API_KEY")),
+        "database_configured": bool(os.getenv("DATABASE_URL")),
     }
 
 @app.post("/api/v1/concepts", response_model=list[DesignSpec])
@@ -162,10 +177,14 @@ async def generate_ai_concepts(
     height_mm: int = Form(..., ge=2000, le=5000),
     prompt: str = Form(""),
     reference_image: UploadFile | None = File(default=None),
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
 ):
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise HTTPException(status_code=503, detail="AI provider is not configured. Add OPENAI_API_KEY to the backend environment.")
+    if current_user.credits < 1:
+        raise HTTPException(status_code=402, detail="No AI credits remaining. Upgrade your plan or contact the administrator.")
     image_data_url = None
     if reference_image:
         if reference_image.content_type not in {"image/jpeg", "image/png", "image/webp"}:
@@ -216,6 +235,9 @@ async def generate_ai_concepts(
             errors = validate_spec(room, design)
             if errors:
                 raise ValueError("; ".join(errors))
+        current_user.credits -= 1
+        db.add(current_user)
+        db.commit()
         return parsed
     except HTTPException:
         raise
