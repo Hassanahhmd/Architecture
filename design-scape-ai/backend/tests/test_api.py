@@ -55,3 +55,16 @@ def test_cut_list_is_explicitly_preliminary():
     assert response.status_code == 200
     assert response.json()["status"] == "preliminary"
     assert len(response.json()["rows"]) == len(designs[0]["modules"]) * 3
+
+def test_kitchen_concepts_do_not_overlap_tall_pantry_on_front_elevation():
+    response = client.post("/api/v1/concepts", json={
+        "product_type": "kitchen",
+        "room": {"width_mm": 4200, "depth_mm": 3200, "height_mm": 2800}
+    })
+    design = response.json()[0]
+    modules = design["modules"]
+    tall = next(m for m in modules if m["kind"] == "tall")
+    bases = [m for m in modules if m["kind"] == "base"]
+    walls = [m for m in modules if m["kind"] == "wall"]
+    assert all(b["x_mm"] + b["width_mm"] <= tall["x_mm"] or tall["x_mm"] + tall["width_mm"] <= b["x_mm"] for b in bases)
+    assert all(w["x_mm"] + w["width_mm"] <= tall["x_mm"] or tall["x_mm"] + tall["width_mm"] <= w["x_mm"] for w in walls)
