@@ -38,41 +38,6 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: pytest -q
-      - name: Verify OpenAI API key
-        if: github.event_name != 'pull_request'
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          python - <<'PY'
-          import os
-          import sys
-          import urllib.error
-          import urllib.request
-
-          key = os.environ.get("OPENAI_API_KEY", "")
-          if not key:
-              print("OPENAI_API_KEY repository secret is missing.")
-              sys.exit(1)
-
-          request = urllib.request.Request(
-              "https://api.openai.com/v1/models",
-              headers={"Authorization": f"Bearer {key}"},
-              method="GET",
-          )
-          try:
-              with urllib.request.urlopen(request, timeout=20) as response:
-                  if response.status == 200:
-                      print("OpenAI API key authentication successful.")
-                  else:
-                      print(f"OpenAI API returned HTTP {response.status}.")
-                      sys.exit(1)
-          except urllib.error.HTTPError as error:
-              print(f"OpenAI authentication check failed (HTTP {error.code}).")
-              sys.exit(1)
-          except Exception as error:
-              print(f"OpenAI connectivity check failed: {type(error).__name__}.")
-              sys.exit(1)
-          PY
 
   integrations:
     runs-on: ubuntu-latest
