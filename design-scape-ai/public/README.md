@@ -1,0 +1,1 @@
+Static assets for the Design Scape AI web app. Add approved logos, icons and reference assets here.
