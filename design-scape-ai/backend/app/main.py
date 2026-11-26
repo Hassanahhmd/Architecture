@@ -78,7 +78,9 @@ def generate(req: ConceptRequest):
     for i, finish in enumerate(FINISHES):
         modules = []
         if req.product_type == ProductType.kitchen:
-            for n in range(count):
+            has_tall = req.room.width_mm >= 3600
+            base_count = count - 1 if has_tall else count
+            for n in range(base_count):
                 modules.append(Module(
                     id=f"b{i}-{n}",
                     label=["Sink base", "Drawer base", "Hob base", "Storage base"][n % 4],
@@ -86,7 +88,8 @@ def generate(req: ConceptRequest):
                     height_mm=880, depth_mm=620, finish=finish,
                 ))
             upper_count = max(2, count - 1)
-            upper_unit = req.room.width_mm // upper_count
+            upper_span = req.room.width_mm - (660 if has_tall else 0)
+            upper_unit = upper_span // upper_count
             for n in range(upper_count):
                 modules.append(Module(
                     id=f"w{i}-{n}", label="Wall cabinet", kind="wall",
@@ -96,7 +99,7 @@ def generate(req: ConceptRequest):
                 ))
             # Tall pantry is placed only when there is sufficient width to avoid
             # silently extending the cabinet run outside the room envelope.
-            if req.room.width_mm >= 3600:
+            if has_tall:
                 modules.append(Module(
                     id=f"t{i}", label="Tall pantry", kind="tall",
                     x_mm=req.room.width_mm - 660, width_mm=648,
@@ -192,7 +195,7 @@ async def generate_ai_concepts(
                 {"role": "system", "content": "You are a careful kitchen and wardrobe CAD planner. Output valid JSON matching the requested schema. Do not claim code compliance or manufacturing readiness."},
                 {"role": "user", "content": user_content},
             ],
-            response_format={"type": "json_schema", "json_schema": {"name": "design_concepts", "strict": True, "schema": schema}},
+            response_format={"type": "json_object"},
         )
         payload = response.choices[0].message.content
         if not payload:
