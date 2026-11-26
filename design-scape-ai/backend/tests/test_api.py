@@ -106,3 +106,16 @@ def test_kitchen_concepts_do_not_overlap_tall_pantry_on_front_elevation():
     walls = [m for m in modules if m["kind"] == "wall"]
     assert all(b["x_mm"] + b["width_mm"] <= tall["x_mm"] or tall["x_mm"] + tall["width_mm"] <= b["x_mm"] for b in bases)
     assert all(w["x_mm"] + w["width_mm"] <= tall["x_mm"] or tall["x_mm"] + tall["width_mm"] <= w["x_mm"] for w in walls)
+
+def test_user_cannot_read_another_users_project():
+    import uuid
+    first = client.post("/api/v1/auth/register", json={"email": f"{uuid.uuid4()}@example.com", "password": "ci-test-password-123"}).json()
+    second = client.post("/api/v1/auth/register", json={"email": f"{uuid.uuid4()}@example.com", "password": "ci-test-password-123"}).json()
+    created = client.post("/api/v1/projects", headers={"Authorization": f"Bearer {first['access_token']}"}, json={
+        "name": "Private design", "product_type": "dressing",
+        "room": {"width": 3.0, "depth": 2.4, "height": 2.7},
+        "design": {"id": "private", "modules": []}
+    })
+    assert created.status_code == 201
+    hidden = client.get("/api/v1/projects/" + created.json()["id"], headers={"Authorization": f"Bearer {second['access_token']}"})
+    assert hidden.status_code == 404
