@@ -21,10 +21,13 @@ export function makeAlternatives(type:ProductType,room:Room):Design[]{
   const count=type==='kitchen'?Math.max(3,Math.min(7,Math.floor(room.width/.75))):Math.max(3,Math.min(7,Math.floor(room.width/.65)));
   const unit=room.width/count;
   if(type==='kitchen'){
-   for(let n=0;n<count;n++) modules.push(mk(`b${i}-${n}`,['Sink base','Drawer base','Hob base','Storage base'][n%4],n*unit,unit-.012,.88,.62,'base',finish));
+   const hasTall=room.width>=3.6;
+   const baseCount=hasTall?count-1:count;
+   for(let n=0;n<baseCount;n++) modules.push(mk(`b${i}-${n}`,['Sink base','Drawer base','Hob base','Storage base'][n%4],n*unit,unit-.012,.88,.62,'base',finish));
    const upperCount=Math.max(2,count-1);
-   for(let n=0;n<upperCount;n++) modules.push(mk(`w${i}-${n}`,'Wall cabinet',n*(room.width/upperCount),room.width/upperCount-.012,.72,.35,'wall',i%2===0?'white':finish,1.48));
-   modules.push(mk(`t${i}`,'Tall pantry',Math.max(0,room.width-.68),.66,Math.min(2.3,room.height-.1),.62,'tall',i%2===0?'oak':finish));
+   const upperSpan=room.width-(hasTall?.66:0);
+   for(let n=0;n<upperCount;n++) modules.push(mk(`w${i}-${n}`,'Wall cabinet',n*(upperSpan/upperCount),upperSpan/upperCount-.012,.72,.35,'wall',i%2===0?'white':finish,1.48));
+   if(hasTall) modules.push(mk(`t${i}`,'Tall pantry',Math.max(0,room.width-.66),.648,Math.min(2.3,room.height-.1),.62,'tall',i%2===0?'oak':finish));
   } else {
    for(let n=0;n<count;n++){
     const bay=mk(`d${i}-${n}`,n%2?'Hanging bay':'Shelving bay',n*unit,unit-.012,Math.min(2.35,room.height-.1),.6,'wardrobe',finish);
@@ -40,7 +43,8 @@ export function validateDesign(design:Design,room:Room){
  for(const m of design.modules){
   if(m.width<=0||m.height<=0||m.depth<=0) errors.push(`${m.label}: dimensions must be positive`);
   if(m.x<0||m.x+m.width>room.width+.001) errors.push(`${m.label}: exceeds room width`);
-  if(m.height>room.height) errors.push(`${m.label}: exceeds room height`);
+  if(m.y<0||m.y+m.height>room.height) errors.push(`${m.label}: exceeds room height`);
+  if(m.depth>room.depth) errors.push(`${m.label}: exceeds room depth`);
  }
  return {valid:errors.length===0,errors};
 }
