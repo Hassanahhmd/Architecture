@@ -192,7 +192,7 @@ async def generate_ai_concepts(
             model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"),
             temperature=0.4,
             messages=[
-                {"role": "system", "content": "You are a careful kitchen and wardrobe CAD planner. Output valid JSON matching the requested schema. Do not claim code compliance or manufacturing readiness."},
+                {"role": "system", "content": "You are a careful kitchen and wardrobe CAD planner. Output only JSON with one top-level key named designs containing exactly five design objects. Each design object must contain id, name, description, product_type, modules and finish. Each module must contain id, label, kind, x_mm, y_mm, width_mm, height_mm, depth_mm, finish and quantity. Use integer millimeters and only the allowed enum values. Do not claim code compliance or manufacturing readiness."},
                 {"role": "user", "content": user_content},
             ],
             response_format={"type": "json_object"},
